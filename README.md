@@ -1,12 +1,12 @@
 ## README
-Study Support仮
-url: https://xxx.com/
+Study Support仮 
+url:
 
 ## 製品概要 / Overview
-中級者の壁を突破するには1000時間費やす必要があるという法則があります。
-しかし、1000時間を勉強に使うというのはとても大変なことです。
-Study Supportは自分が努力してきた過程を可視化し、効率的に勉強を進められるよう
-サポートし、あなたのモチベーションを維持するお手伝いをします。
+中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
+しかし、1000時間を勉強に使うというのはとても大変なことです。  
+Study Supportは自分が努力してきた過程を可視化し、効率的に勉強を進められるように  
+サポートし、あなたのモチベーションを維持するお手伝いをします。 
 
 ## 開発言語 / Language
 - OS: Linux
@@ -27,7 +27,7 @@ Study Supportは自分が努力してきた過程を可視化し、効率的に�
 - OAuth認証によるTwitterとの連携機能
 - AWS/Docker/CircleCIを組み込んだインフラ構成
 
-## 実行手順
+## 実行手順 / Procedure
 ```
 $ git clone git@github.com:takaya8522/learning_management_app.git
 $ cd learning_management_app
@@ -36,14 +36,15 @@ $ rails db:create && rails db:migrate
 $ rails s
 ```
 
-## カタログ設計
-https://docs.google.com/spreadsheets/d/1OJsO9URVHPh7UKNb_cOECq93J4ENs1RVijoAgtxrYYw/edit?usp=sharing
+## カタログ設計とテーブル定義書 / Catalog Design & Table Definition
+使用ソフト: Google Sheets  
+https://docs.google.com/spreadsheets/d/18VkBayIlMdg-bML_hHs3Ka77BNrWWdjBx12f_PmN8MM/edit?usp=sharing
 
-## テーブル定義書
-https://docs.google.com/spreadsheets/d/1b29pPPevHSUXrvg2q2LhTVvuOzghVa0hnVMwlwT0_KI/edit?usp=sharing
+## ワイヤーフレーム / Wireframe
+使用ソフト: draw.io  
 
-## ワイヤーフレーム
+## ER図 / Entity Relationship Diagram
+使用ソフト: draw.io  
 
-## ER図
-
-## 画面遷移図
+## 画面遷移図 / Screen Transition Diagram
+使用ソフト: figma  
