@@ -5,8 +5,10 @@ url:
 ## 製品概要 / Overview
 中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
 しかし、1000時間を勉強に使うというのはとても大変なことです。  
-Study Supportは自分が努力してきた過程を可視化し、効率的に勉強を進められるように  
-サポートし、あなたのモチベーションを維持するお手伝いをします。 
+Study Supportはエビングハウスの忘却曲線理論による、脳科学的に脳の定着率が高いと言われている勉強周期を自動的に導き出し、
+あなたの学習をサポートします。
+また、今まで費やしてきた勉強記録をアプリに登録することにより、達成率をグラフにして表すことができます。
+それにより、自分の努力過程を視覚的に得ることができ、あなたのモチベーション維持の手伝いをします。
 
 ## 開発言語 / Language
 - OS: Linux
@@ -46,6 +48,8 @@ https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3
 
 ## ER図 / Entity Relationship Diagram
 使用ソフト: draw.io  
+![ER図](app/assets/images/ER_diagram.png "ER_diagram")
 
 ## 画面遷移図 / Screen Transition Diagram
 使用ソフト: draw.io  
+![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
