@@ -14,8 +14,8 @@
   <tbody>
     <% @study_records.each do |study_record| %>
       <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
+        <td><%= study_record.title %></td>
+        <td><%= study_record.content %></td>
         <td><%= link_to 'Show', study_record %></td>
         <td><%= link_to 'Edit', edit_study_record_path(study_record) %></td>
         <td><%= link_to 'Destroy', study_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>

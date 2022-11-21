@@ -6,12 +6,12 @@ class StudyRecordsController < ApplicationController
   end
 
   def new
-    @study_records = StudyRecords.new
+    @study_record = StudyRecord.new
   end
 
   def create
-    @study_records = StudyRecords.new(study_records_params)
-    if @study_records.save
+    @study_record = StudyRecord.new(study_record_params)
+    if @study_record.save
       redirect_to study_records_path, notice: t('.study_record_created')
     else
       render :new
