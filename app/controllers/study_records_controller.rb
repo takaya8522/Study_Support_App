@@ -6,13 +6,13 @@ class StudyRecordsController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @study_records = StudyRecords.new
   end
 
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      redirect_to tasks_path, notice: t('.study_record_created')
+    @study_records = StudyRecords.new(study_records_params)
+    if @study_records.save
+      redirect_to study_records_path, notice: t('.study_record_created')
     else
       render :new
     end
