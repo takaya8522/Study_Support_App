@@ -1,10 +1,10 @@
-<%= form_with(model: blog, local: true) do |form| %>
-  <% if blog.errors.any? %>
+<%= form_with(model: study_record, local: true) do |form| %>
+  <% if study_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(study_record.errors.count, "error") %> prohibited this study_record from being saved:</h2>
 
       <ul>
-        <% blog.errors.full_messages.each do |message| %>
+        <% study_record.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -19,6 +19,16 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :learning_cycle %>
+    <%= form.text_field :learning_cycle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comprehension %>
+    <%= form.text_field :comprehension %>
   </div>
 
   <div class="actions">
