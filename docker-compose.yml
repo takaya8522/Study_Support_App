@@ -7,7 +7,12 @@ services:
       - .env
     # environment:
     #   RAILS_ENV: development
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+
+    # =========ローカルと本番切り替え===========
+    command: bundle exec puma -C config/puma.rb -e production
+    # command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    # ======================================
+
     volumes:
       - .:/learning_management_app
       # コンテナの中身を保存しておくために作成したボリュームでマウント
@@ -16,17 +21,21 @@ services:
       - log-data:/learning_management_app/log
     # ports:
     #   - '3000:3000'
-    depends_on:
-      - db
-  db:
-    image: postgres
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    # environment:
-    #   - POSTGRES_PASSWORD=postgres
-    #   - POSTGRES_USER=postgres
-    env_file:
-      - .env
+
+  # =========ローカルと本番切り替え===========
+  #   depends_on:
+  #     - db
+  # db:
+  #   image: postgres
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
+  #   # environment:
+  #   #   - POSTGRES_PASSWORD=postgres
+  #   #   - POSTGRES_USER=postgres
+  #   env_file:
+  #     - .env
+  # ======================================
+
   web:
     build:
       context: ./nginx
