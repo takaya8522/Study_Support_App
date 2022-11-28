@@ -1,3 +1,7 @@
 class StudyRecord < ApplicationRecord
-  validates :title, presence: true
+  belongs_to :user
+  with_options presence: true do
+    validates :email
+    validates :name
+  end
 end
