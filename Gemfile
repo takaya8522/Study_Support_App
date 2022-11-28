@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # ログイン用
 gem 'devise'
 gem 'rexml'
+gem 'devise-i18n'
 
 # Lineログイン用
 gem 'omniauth-line'
