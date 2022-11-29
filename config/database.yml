@@ -84,6 +84,10 @@ test:
 #
 production:
   <<: *default
-  database: learning_management_app_production
-  username: learning_management_app
-  password: <%= ENV['LEARNING_MANAGEMENT_APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_DATABASE'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
