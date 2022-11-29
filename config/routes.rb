@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'study_records#index'
+  resources :study_records, only: [:index, :create, :new, :edit, :show, :update, :destroy]
 end

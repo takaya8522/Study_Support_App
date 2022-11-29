@@ -1,20 +1,45 @@
 version: '3'
 services:
+  app:
+    build:
+      context: .
+    env_file:
+      - ./environments/db.env
+    # environment:
+    #   RAILS_ENV: development
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    volumes:
+      - .:/learning_management_app
+      # コンテナの中身を保存しておくために作成したボリュームでマウント
+      - public-data:/learning_management_app/public
+      - tmp-data:/learning_management_app/tmp
+      - log-data:/learning_management_app/log
+    # ports:
+    #   - '3000:3000'
+    depends_on:
+      - db
   db:
     image: postgres
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
+      - db-data:/var/lib/postgresql/data
+    # environment:
+    #   - POSTGRES_PASSWORD=postgres
+    #   - POSTGRES_USER=postgres
+    env_file:
+      - ./environments/db.env
   web:
-    build: .
-    environment:
-      RAILS_ENV: development
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    build:
+      context: ./nginx
     volumes:
-      - .:/applearning_management_app
+      - public-data:/learning_management_app/public
+      - tmp-data:/learning_management_app/tmp
     ports:
-      - '3000:3000'
+      - "80:80"
     depends_on:
-      - db
+      - app
+# Dockerコンテナの中身を保存しておくための領域を設定
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:

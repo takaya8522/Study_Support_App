@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @study_record.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @study_record.content %>
+</p>
+
+<%= link_to 'Edit', edit_blog_path(@study_record) %> |
+<%= link_to 'Back', study_records_path %>
