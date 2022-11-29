@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_11_28_121724) do
   create_table "study_records", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
-    t.string "learning_cycle", null: false
+    t.integer "study_cycle", null: false
     t.boolean "comprehension", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

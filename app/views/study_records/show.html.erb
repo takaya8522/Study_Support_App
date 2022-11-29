@@ -1,13 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @study_record.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong><%= t('.content') %>:</strong>
   <%= @study_record.content %>
+</p>
+
+<p>
+  <strong><%= t('.study_cycle') %>:</strong>
+  <%= @study_record.study_cycle %>
+</p>
+
+<p>
+  <strong><%= t('.comprehension') %>:</strong>
+  <%= @study_record.comprehension %>
+</p>
+
+<p>
+  <strong><%= t('.created_at') %>:</strong>
+  <%= @study_record.created_at %>
 </p>
 
 <%= link_to 'Edit', edit_study_record_path(@study_record) %> |

@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LearningManagementApp</title>
+    <title>Study Support</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('favicon.png') %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
+    <% if user_signed_in? %>
+      <a><%= link_to t('.top'), root_path %></a>
+      <a><%= link_to t('.study_records_index_nav'), study_records_path %></a>
+      <a><%= link_to t('.new_task_nav'), new_study_record_path %></a>
+      <a><%= link_to t('.my_account'), user_path(current_user.id) %></a>
+      <a><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></a>
+    <% else %>
+      <a><%= link_to t('.sign_up'), new_user_registration_path %></a>
+      <a><%= link_to t('.sign_in'), new_user_session_path %></a>
+    <% end %>
     <%= yield %>
   </body>
 </html>

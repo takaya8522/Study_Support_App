@@ -1,0 +1,34 @@
+<h2>マイページ</h2>
+
+<div>
+  <p>名前 : <%= @user.name %></p>
+  <p>メールアドレス : <%= @user.email %></p>
+  <p><%= link_to "アカウント編集画面", edit_user_registration_path %></p>
+</div>
+
+<br>
+
+<div>
+  <p><%= @user.name %>さんの学習記録一覧</p>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_records.each do |study_record| %>
+      <tr>
+        <td><%= study_record.title %></td>
+        <td><%= study_record.content %></td>
+        <td><%= link_to 'Show', study_record %></td>
+        <td><%= link_to 'Edit', edit_study_record_path(study_record) %></td>
+        <td><%= link_to 'Destroy', study_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

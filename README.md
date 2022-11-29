@@ -1,6 +1,7 @@
 ## README
-Study Support仮  
+Study Support  
 url:
+![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "facebook_cover_photo_2")
 
 ## 製品概要 / Overview
 中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
@@ -28,6 +29,10 @@ Study Supportはエビングハウスの忘却曲線理論による、脳科学�
 - Chartkickを使ったグラフ作成機能
 - OAuth認証によるTwitterとの連携機能
 - AWS/Docker/CircleCIを組み込んだインフラ構成
+
+## インフラ図 / Infrastructure
+使用ソフト: draw.io  
+![インフラ図](app/assets/images/infrastructure.png "infrastructure")
 
 ## 実行手順 / Procedure
 ```

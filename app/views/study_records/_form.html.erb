@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :learning_cycle %>
-    <%= form.text_field :learning_cycle %>
+    <%= form.label :study_cycle %>
+    <%= form.select :study_cycle, [[ '忘却曲線', 1 ], [ '1日ごと', 2 ], [ '一週間ごと', 3 ]], { include_blank: true, selected: 1 } %>
   </div>
 
   <div class="field">
     <%= form.label :comprehension %>
-    <%= form.text_field :comprehension %>
+    <%= form.select :comprehension, [[ 'まだ理解していません', false ], [ '理解しました', true ]], { include_blank: true, selected: false } %>
   </div>
 
   <div class="actions">
