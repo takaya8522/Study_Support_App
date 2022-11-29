@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # ログイン用
 gem 'devise'
 gem 'rexml'
+gem 'devise-i18n'
+
+# Lineログイン用
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
 
 # 環境変数設定用
 gem 'dotenv-rails'
