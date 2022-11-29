@@ -1,6 +1,5 @@
 class StudyRecordsController < ApplicationController
   before_action :set_study_record, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :new, :create]
 
   def index
     @study_records = current_user.study_records
@@ -47,6 +46,6 @@ class StudyRecordsController < ApplicationController
   end
 
   def study_record_params
-    params.require(:study_record).permit(:title, :content, :learning_cycle, :comprehension, :user_id)
+    params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id)
   end
 end

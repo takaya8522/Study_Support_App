@@ -1,7 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h2>マイページ</h2>
 
-<h1>みんなの学習一覧</h1>
+<div>
+  <p>名前 : <%= @user.name %></p>
+  <p>メールアドレス : <%= @user.email %></p>
+  <p><%= link_to "アカウント編集画面", edit_user_registration_path %></p>
+</div>
 
+<div>
+  <p><%= @user.name %>さんの学習記録一覧</p>
+</div>
 <table>
   <thead>
     <tr>
@@ -23,7 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to '学習記録を登録する', new_study_record_path %>

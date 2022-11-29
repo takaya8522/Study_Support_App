@@ -3,11 +3,11 @@
 one:
   title: MyString
   description: MyText
-  learning_cycle: MyString
+  study_cycle: MyInteger
   comprehension: false
 
 two:
   title: MyString
   description: MyText
-  learning_cycle: MyString
+  study_cycle: MyInteger
   comprehension: false
