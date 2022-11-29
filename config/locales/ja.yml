@@ -1,0 +1,371 @@
+ja:
+  layouts:
+    application:
+      tasks_index_nav: 'タスク一覧'
+      new_task_nav: 'タスクを登録する'
+      sign_up: 'アカウント登録'
+      sign_in: 'ログイン'
+      my_account: 'アカウント詳細'
+      sign_out: 'ログアウト'
+      users_index: 'ユーザ一覧'
+      add_user: 'ユーザを登録する'
+      label_index: 'ラベル一覧'
+      add_label: 'ラベルを登録する'
+  study_records:
+    index:
+      search: '検索'
+      tasks_index_page: 'タスク一覧ページ'
+      title: 'タイトル'
+      content: '内容'
+      created_at: '作成日時'
+      deadline_on: '終了期限'
+      priority: '優先度'
+      status: 'ステータス'
+      show: '詳細'
+      edit: '編集'
+      destroy: '削除'
+      are_you_sure?: '本当に削除してもよろしいですか?'
+      label: ラベル
+    new:
+      New Task: 'タスク登録ページ'
+      create_task: '登録する'
+      back: '戻る'
+      label: ラベル
+    show:
+      show_task: 'タスク詳細ページ'
+      title: 'タイトル'
+      content: '内容'
+      created_at: '作成日時'
+      edit: '編集'
+      deadline_on: '終了期限'
+      priority: '優先度'
+      status: 'ステータス'
+      back: '戻る'
+      label: ラベル
+    edit:
+      edit_task: 'タスク編集ページ'
+      update_task: '更新する'
+      back: '戻る'
+      label: ラベル
+    create:
+      task_created: タスクを登録しました
+    update:
+      task_updated: タスクを更新しました
+    destroy:
+      task_destroyed: タスクを削除しました
+  users:
+    new:
+      Sign up: "アカウント登録ページ"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワード（確認）"
+      create: '登録'
+    show:
+      show_page: 'アカウント詳細ページ'
+      name: "名前"
+      email: "メールアドレス"
+      edit: '編集'
+      back: '戻る'
+    edit:
+      edit_page: "アカウント編集ページ"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワード(確認)"
+      back: '戻る'
+  sessions:
+    new:
+      log_in: "ログイン"
+      email: "メールアドレス"
+      password: "パスワード"
+      log_in_page: "ログインページ"
+  admin:
+    users:
+      index:
+        users_index_page: 'ユーザ一覧ページ'
+        name: '名前'
+        email: 'メールアドレス'
+        admin: '管理者権限'
+        tasks_number: '登録タスク数'
+        show_user: '詳細'
+        edit_user: '編集'
+        destroy_user: '削除'
+        are_you_sure?: '本当に削除してもよろしいですか？'
+      new:
+        sign_up_page: 'ユーザ登録ページ'
+        admin: "管理者権限"
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認)"
+        back: '戻る'
+        create: "登録する"
+        update: "更新する"
+        admin: "管理者権限"
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認)"
+      show:
+        show_user_page: "ユーザ詳細ページ"
+        admin: "管理者権限"
+        name: "名前"
+        email: "メールアドレス"
+        title: 'タイトル'
+        content: '内容'
+        created_at: '作成日時'
+        deadline_on: '終了期限'
+        priority: '優先度'
+        status: 'ステータス'
+        back: '戻る'
+      edit:
+        edit_user_page: 'ユーザ編集ページ'
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        admin: "管理者権限"
+        back: '戻る'
+        update: '更新する'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+  labels:
+    index:
+      labels_index_page: 'ラベル一覧ページ'
+      name: '名前'
+      tasks_number: 'タスク数'
+      edit: '編集'
+      destroy: '削除'
+      are_you_sure?: '本当に削除してもよろしいですか？'
+    new:
+      new_label_page: 'ラベル登録ページ'
+      back: '戻る'
+    edit:
+      edit_label_page: 'ラベル編集ページ'
+      back: '戻る'
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+    models:
+      user: 'ユーザ'
+      task: 'タスク'
+      label: 'ラベル'
+    attributes:
+      task:
+        title: タイトル
+        content: 内容
+        created_at: 作成日時
+        deadline_on:  終了期限
+        priority: 優先度
+        status: ステータス
+        label: ラベル
+        label_name: ラベル
+      user:
+        title: タイトル
+        email: メールアドレス
+        administration: 管理者権限
+        tasks_number: 登録タスク数
+        user_created: ユーザを登録しました
+        user_updated: ユーザを更新しました
+        user_deleted: ユーザを削除しました
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        login_required: ログインしてください
+        logout_required: ログアウトしてください
+        logged_in: ログインしました
+        correct_user: 本人以外アクセスできません
+        admin_user: 管理者以外はアクセスできません
+        admin_destroy: 管理者権限を持つアカウントが0件になるため削除できません
+        admin_update: 管理者権限を持つアカウントが0件になるため更新できません
+        account_created: アカウントを登録しました
+        account_updated: アカウントを更新しました
+      label:
+        name: 名前
+        title: タイトル
+        label_created: ラベルを登録しました
+        label_updated: ラベルを更新しました
+        label_destroyed: ラベルを削除しました
+        label_ids: ラベル
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
+      submit: 保存する     
+
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours: 約%{count}時間
+      about_x_months: 約%{count}ヶ月
+      about_x_years: 約%{count}年
+      almost_x_years: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_seconds: "%{count}秒未満"
+      less_than_x_minutes: "%{count}分未満"
+      over_x_years: "%{count}年以上"
+      x_seconds: "%{count}秒"
+      x_minutes: "%{count}分"
+      x_days: "%{count}日"
+      x_months: "%{count}ヶ月"
+      x_years: "%{count}年"
+    prompts:
+      second: 秒
+      minute: 分
+      hour: 時
+      day: 日
+      month: 月
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: 'バリデーションに失敗しました: %{errors}'
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      other_than: は%{count}以外の値にしてください
+      present: は入力しないでください
+      required: を入力してください
+      taken: はすでに使用されています
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+    template:
+      body: 次の項目を確認してください
+      header: "%{model}に%{count}個のエラーが発生しました"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: "、"
+      two_words_connector: "、"
+      words_connector: "、"
+  time:
+    am: 午前
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+    pm: 午後
