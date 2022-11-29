@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>みんなの学習一覧</h1>
+<h1><%= t('.study_record_index_page') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.content') %></th>
+      <th><%= t('.study_cycle') %></th>
+      <th><%= t('.comprehension') %></th>
+      <th><%= t('.created_at') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +19,12 @@
       <tr>
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
-        <td><%= link_to 'Show', study_record %></td>
-        <td><%= link_to 'Edit', edit_study_record_path(study_record) %></td>
-        <td><%= link_to 'Destroy', study_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= study_record.study_cycle %></td>
+        <td><%= study_record.comprehension %></td>
+        <td><%= study_record.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+        <td><%= link_to t('.show'), study_record %></td>
+        <td><%= link_to t('.edit'), edit_study_record_path(study_record) %></td>
+        <td><%= link_to t('.destroy'), study_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
