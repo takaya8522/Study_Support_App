@@ -22,8 +22,8 @@
 
 <p>
   <strong><%= t('.created_at') %>:</strong>
-  <%= @study_record.created_at %>
+  <%= @study_record.created_at.strftime('%Y/%m/%d %H:%M') %>
 </p>
 
-<%= link_to 'Edit', edit_study_record_path(@study_record) %> |
-<%= link_to 'Back', study_records_path %>
+<%= link_to t('.edit'), edit_study_record_path(@study_record) %> |
+<%= link_to t('.back'), study_records_path %>

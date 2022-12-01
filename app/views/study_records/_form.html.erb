@@ -1,7 +1,7 @@
 <%= form_with(model: study_record, local: true) do |form| %>
   <% if study_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(study_record.errors.count, "error") %> prohibited this study_record from being saved:</h2>
+      <h2><%= pluralize(study_record.errors.count, "件") %>エラーが発生しました！</h2>
 
       <ul>
         <% study_record.errors.full_messages.each do |message| %>
@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :study_cycle %>
-    <%= form.select :study_cycle, [[ '忘却曲線', 1 ], [ '1日ごと', 2 ], [ '一週間ごと', 3 ]], { include_blank: true, selected: 1 } %>
+    <%= form.select :study_cycle, StudyRecord.study_cycles.keys, include_blank: "" %>
   </div>
 
   <div class="field">
     <%= form.label :comprehension %>
-    <%= form.select :comprehension, [[ 'まだ理解していません', false ], [ '理解しました', true ]], { include_blank: true, selected: false } %>
+    <%= form.select :comprehension, StudyRecord.comprehensions.keys, include_blank: "" %>
   </div>
 
   <div class="actions">

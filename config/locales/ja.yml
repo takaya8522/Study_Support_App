@@ -1,16 +1,14 @@
 ja:
   layouts:
     application:
-      study_records_index_nav: '学習記録一覧'
-      new_task_nav: '学習記録を登録する'
+      study_records_index_nav: 'みんなの学習記録一覧'
+      new_record_nav: '学習記録を登録する'
       sign_up: 'アカウント登録'
       sign_in: 'ログイン'
-      my_account: 'マイアカウント'
+      my_account: 'マイページ'
       sign_out: 'ログアウト'
       users_index: 'ユーザ一覧'
       add_user: 'ユーザを登録する'
-      label_index: 'ラベル一覧'
-      add_label: 'ラベルを登録する'
   study_records:
     index:
       search: '検索'
@@ -21,18 +19,16 @@ ja:
       comprehension: '理解度'
       created_at: '作成日時'
       deadline_on: '終了期限'
-      priority: '優先度'
       status: 'ステータス'
+      create_record: '学習記録を登録する'
       show: '詳細'
       edit: '編集'
       destroy: '削除'
       are_you_sure?: '本当に削除してもよろしいですか?'
       label: ラベル
     new:
-      New Task: 'タスク登録ページ'
-      create_task: '登録する'
+      new_study_record: '学習記録を登録する'
       back: '戻る'
-      label: ラベル
     show:
       show_study_record: 'みんなの学習一覧'
       title: 'タイトル'
@@ -47,91 +43,30 @@ ja:
       back: '戻る'
       label: ラベル
     edit:
-      edit_study_record: 'タスク編集ページ'
+      edit_study_record: '学習記録編集ページ'
       update_study_record: '更新する'
       back: '戻る'
-      label: ラベル
+      show: '詳細'
     create:
-      study_record_created: タスクを登録しました
+      study_record_created: 学習記録を登録しました
     update:
-      study_record_updated: タスクを更新しました
+      study_record_updated: 学習記録を更新しました
     destroy:
-      study_record_destroyed: タスクを削除しました
+      study_record_destroyed: 学習記録を削除しました
   users:
-    new:
-      Sign up: "アカウント登録ページ"
-      name: "名前"
-      email: "メールアドレス"
-      password: "パスワード"
-      password_confirmation: "パスワード（確認）"
-      create: '登録'
     show:
-      show_page: 'アカウント詳細ページ'
+      show_page: 'マイページ'
       name: "名前"
       email: "メールアドレス"
-      edit: '編集'
+      show: '詳細'
+      edit: 'アカウント編集'
+      destroy: '削除'
       back: '戻る'
-    edit:
-      edit_page: "アカウント編集ページ"
-      name: "名前"
-      email: "メールアドレス"
-      password: "パスワード"
-      password_confirmation: "パスワード(確認)"
-      back: '戻る'
-  sessions:
-    new:
-      log_in: "ログイン"
-      email: "メールアドレス"
-      password: "パスワード"
-      log_in_page: "ログインページ"
-  admin:
-    users:
-      index:
-        users_index_page: 'ユーザ一覧ページ'
-        name: '名前'
-        email: 'メールアドレス'
-        admin: '管理者権限'
-        tasks_number: '登録タスク数'
-        show_user: '詳細'
-        edit_user: '編集'
-        destroy_user: '削除'
-        are_you_sure?: '本当に削除してもよろしいですか？'
-      new:
-        sign_up_page: 'ユーザ登録ページ'
-        admin: "管理者権限"
-        name: "名前"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード(確認)"
-        back: '戻る'
-        create: "登録する"
-        update: "更新する"
-        admin: "管理者権限"
-        name: "名前"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード(確認)"
-      show:
-        show_user_page: "ユーザ詳細ページ"
-        admin: "管理者権限"
-        name: "名前"
-        email: "メールアドレス"
-        title: 'タイトル'
-        content: '内容'
-        created_at: '作成日時'
-        deadline_on: '終了期限'
-        priority: '優先度'
-        status: 'ステータス'
-        back: '戻る'
-      edit:
-        edit_user_page: 'ユーザ編集ページ'
-        name: "名前"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード（確認）"
-        admin: "管理者権限"
-        back: '戻る'
-        update: '更新する'
+      title: 'タイトル'
+      content: '内容'
+      study_cycle: '学習サイクル'
+      comprehension: '理解度'
+      created_at: '作成日時'
   views:
     pagination:
       first: "&laquo; 最初"
@@ -139,20 +74,6 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
-  labels:
-    index:
-      labels_index_page: 'ラベル一覧ページ'
-      name: '名前'
-      tasks_number: 'タスク数'
-      edit: '編集'
-      destroy: '削除'
-      are_you_sure?: '本当に削除してもよろしいですか？'
-    new:
-      new_label_page: 'ラベル登録ページ'
-      back: '戻る'
-    edit:
-      edit_label_page: 'ラベル編集ページ'
-      back: '戻る'
 
   activerecord:
     errors:
@@ -163,50 +84,20 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       user: 'ユーザ'
-      task: 'タスク'
-      label: 'ラベル'
+      study_record: '学習記録'
     attributes:
-      task:
+      study_record:
         title: タイトル
         content: 内容
+        study_cycle: 学習サイクル
+        comprehension: 理解度
         created_at: 作成日時
         deadline_on:  終了期限
-        priority: 優先度
-        status: ステータス
-        label: ラベル
-        label_name: ラベル
-      user:
-        title: タイトル
-        email: メールアドレス
-        administration: 管理者権限
-        tasks_number: 登録タスク数
-        user_created: ユーザを登録しました
-        user_updated: ユーザを更新しました
-        user_deleted: ユーザを削除しました
-        name: 名前
-        password: パスワード
-        password_confirmation: パスワード（確認）
-        login_required: ログインしてください
-        logout_required: ログアウトしてください
-        logged_in: ログインしました
-        correct_user: 本人以外アクセスできません
-        admin_user: 管理者以外はアクセスできません
-        admin_destroy: 管理者権限を持つアカウントが0件になるため削除できません
-        admin_update: 管理者権限を持つアカウントが0件になるため更新できません
-        account_created: アカウントを登録しました
-        account_updated: アカウントを更新しました
-      label:
-        name: 名前
-        title: タイトル
-        label_created: ラベルを登録しました
-        label_updated: ラベルを更新しました
-        label_destroyed: ラベルを削除しました
-        label_ids: ラベル
   helpers:
     submit:
       create: 登録する
       update: 更新する
-      submit: 保存する     
+      submit: 保存する    
 
   date:
     abbr_day_names:

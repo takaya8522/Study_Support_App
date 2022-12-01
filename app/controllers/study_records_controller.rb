@@ -1,8 +1,9 @@
 class StudyRecordsController < ApplicationController
-  before_action :set_study_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_study_record, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @study_records = current_user.study_records
+    @study_records = StudyRecord.all
   end
 
   def new
@@ -24,7 +25,7 @@ class StudyRecordsController < ApplicationController
   end
 
   def edit
-    @labels = current_user.labels
+    @study_records = current_user.study_records
   end
 
   def update
