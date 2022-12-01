@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :study_cycle %>
-    <%= form.select :study_cycle, [[ '忘却曲線', 1 ], [ '1日ごと', 2 ], [ '一週間ごと', 3 ]], { include_blank: true, selected: 1 } %>
+    <%= form.select :study_cycle, StudyRecord.study_cycles.keys, include_blank: "" %>
   </div>
 
   <div class="field">
     <%= form.label :comprehension %>
-    <%= form.select :comprehension, [[ 'まだ理解していません', false ], [ '理解しました', true ]], { include_blank: true, selected: false } %>
+    <%= form.select :comprehension, StudyRecord.comprehensions.keys, include_blank: "" %>
   </div>
 
   <div class="actions">
