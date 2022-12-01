@@ -1,5 +1,5 @@
-<h1>学習記録を登録する</h1>
+<h1><%= t('.new_study_record') %></h1>
 
 <%= render 'form', study_record: @study_record %>
 
-<%= link_to 'Back', study_records_path %>
+<%= link_to t('.back'), study_records_path %>

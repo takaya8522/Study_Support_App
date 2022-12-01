@@ -1,7 +1,7 @@
 <%= form_with(model: study_record, local: true) do |form| %>
   <% if study_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(study_record.errors.count, "error") %> prohibited this study_record from being saved:</h2>
+      <h2><%= pluralize(study_record.errors.count, "件") %>エラーが発生しました！</h2>
 
       <ul>
         <% study_record.errors.full_messages.each do |message| %>

@@ -15,10 +15,11 @@
     <% if user_signed_in? %>
       <a><%= link_to t('.top'), root_path %></a>
       <a><%= link_to t('.study_records_index_nav'), study_records_path %></a>
-      <a><%= link_to t('.new_task_nav'), new_study_record_path %></a>
+      <a><%= link_to t('.new_record_nav'), new_study_record_path %></a>
       <a><%= link_to t('.my_account'), user_path(current_user.id) %></a>
       <a><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></a>
     <% else %>
+      <a><%= link_to t('.top'), root_path %></a>
       <a><%= link_to t('.sign_up'), new_user_registration_path %></a>
       <a><%= link_to t('.sign_in'), new_user_session_path %></a>
     <% end %>
