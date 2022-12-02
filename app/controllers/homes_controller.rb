@@ -1,7 +1,12 @@
 class HomesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user! 
 
-  def index; end
+  def top
+    if user_signed_in?
+      @user = User.find(current_user.id)
+      @study_records = current_user.study_records
+    end
+  end
 
-  def top; end
+  def about; end
 end
