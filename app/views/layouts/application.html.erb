@@ -9,20 +9,47 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag('favicon.png') %>
+    <script src="https://kit.fontawesome.com/9ec8e86bb6.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <a><%= link_to t('.top'), root_path %></a>
-      <a><%= link_to t('.study_records_index_nav'), study_records_path %></a>
-      <a><%= link_to t('.new_record_nav'), new_study_record_path %></a>
-      <a><%= link_to t('.my_account'), user_path(current_user.id) %></a>
-      <a><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></a>
-    <% else %>
-      <a><%= link_to t('.top'), root_path %></a>
-      <a><%= link_to t('.sign_up'), new_user_registration_path %></a>
-      <a><%= link_to t('.sign_in'), new_user_session_path %></a>
-    <% end %>
+    <ul class="global_nav">
+      <%# トップページリンク用ロゴマーグ %>
+      <%= link_to root_path, class:"logo" do %>
+        <li><%= image_tag "logo_transparent.png", class: "logo_img" %></li>
+      <% end %>
+
+      <%# ログインしている場合としてない場合を指定 %>
+      <% if user_signed_in? %>
+        <li><%= link_to t('.study_records_index_nav'), study_records_path %></li>
+        <li><%= link_to t('.new_record_nav'), new_study_record_path %></li>
+        <li><%= link_to t('.my_account'), user_path(current_user.id) %></>
+        <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
+        <%# プロファイル画像とユーザー名をクリックした場合のリンク先を指定 %>
+        <%= link_to edit_user_registration_path do %>
+          <span>
+            <li><%= image_tag "no_image.png", class: "nav_user_image" %><%#= attachment_image_tag current_user, :profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.png" %></li>
+            <li><%= current_user.name %>さん</li>
+          </span>
+        <% end %>
+        <%# 通知機能についてのコード。まだ試作。 %>
+        <%= link_to root_path do%> 
+          <% if current_user %>
+            <li class="nav-list-item fa-stack">
+              <i class="far fa-bell fa-lg fa-stack-2x"></i>
+              <i class="fa fa-circle fa-stack-1x n-circle"></i>
+            </li>
+          <% else %>
+            <li class="nav-list-item">
+              <i class="far fa-bell fa-lg" style="font-size: 1.8em;"></i>
+            </li>
+          <% end %>
+        <% end %>
+      <% else %>
+        <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
+        <li><%= link_to t('.sign_in'), new_user_session_path %></li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>

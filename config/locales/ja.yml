@@ -37,11 +37,7 @@ ja:
       comprehension: '理解度'
       created_at: '作成日時'
       edit: '編集'
-      deadline_on: '終了期限'
-      priority: '優先度'
-      status: 'ステータス'
       back: '戻る'
-      label: ラベル
     edit:
       edit_study_record: '学習記録編集ページ'
       update_study_record: '更新する'
@@ -67,6 +63,17 @@ ja:
       study_cycle: '学習サイクル'
       comprehension: '理解度'
       created_at: '作成日時'
+  homes:
+    top:
+      title: 'タイトル'
+      content: '内容'
+      study_cycle: '学習サイクル'
+      comprehension: '理解度'
+      created_at: '作成日時'
+      edit: '編集'
+      show: '詳細'
+      destroy: '削除'
+
   views:
     pagination:
       first: "&laquo; 最初"
