@@ -12,7 +12,7 @@ ja:
   study_records:
     index:
       search: '検索'
-      study_record_index_page: 'タスク一覧ページ'
+      study_record_index_page: 'みんなのタスク一覧ページ'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'
