@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   skip_before_action :authenticate_user! 
-  before_action :set_q, only: [:top]
+  before_action :set_q, only: [:top], if: proc { user_signed_in? }
 
   def top
     if user_signed_in?

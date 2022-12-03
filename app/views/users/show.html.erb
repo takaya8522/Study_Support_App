@@ -5,3 +5,9 @@
   <p><%= t('.email') %> : <%= @user.email %></p>
   <p><%= link_to t('.edit'), edit_user_registration_path %></p>
 </div>
+<div>
+  <!--ログインしてるユーザーが管理者の場合のみ-->
+  <% if current_user.try(:admin?) %>
+    <%= link_to '管理者ページ', rails_admin_path %>
+  <% end %>
+</div>

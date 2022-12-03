@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <%= link_to 'カテゴリーを登録する', categories_path %>
+
+  <div class="field">
+    <%= form.label :category_name %>
+    <%= form.select :category_id, @categories.map{|g| [g.name, g.id]} %>
+  </div>
+
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :study_records
+  has_many :study_records, dependent: :destroy
+  has_many :categories, dependent: :destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

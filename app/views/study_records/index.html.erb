@@ -12,6 +12,7 @@
 <table>
   <thead>
     <tr>
+      <th><%= t('.category') %></th>
       <th><%= t('.title') %></th>
       <th><%= t('.content') %></th>
       <th><%= t('.study_cycle') %></th>
@@ -24,6 +25,7 @@
   <tbody>
     <% @study_records.each do |study_record| %>
       <tr>
+        <td><%= study_record.category.name %></td>
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
         <td><%= study_record.study_cycle %></td>

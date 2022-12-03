@@ -1,5 +1,7 @@
 class StudyRecord < ApplicationRecord
   belongs_to :user
+  belongs_to :category
+
   with_options presence: true do
     validates :title
     validates :study_cycle
