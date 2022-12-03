@@ -33,6 +33,10 @@ gem 'devise'
 gem 'rexml'
 gem 'devise-i18n'
 
+# 管理者権限付与
+gem 'rails_admin'
+gem 'cancancan'
+
 # Lineログイン用
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
