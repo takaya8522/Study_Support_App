@@ -2,6 +2,11 @@
   <div>
     <h2><%= @user.name %>さんの学習記録一覧</h2>
   </div>
+
+  <%= link_to '今日の復習',{:controller=>"homes",:action=>"top",:q=>{:title_cont=>'テスト'}}%>
+  <%= link_to '全ての復習',{:controller=>"homes",:action=>"top",:q=>{:title_cont=>''}}%>
+  <%= link_to '完了した復習',{:controller=>"homes",:action=>"top",:q=>{:title_cont=>'テスト'}}%>
+
   <table>
     <thead>
       <tr>

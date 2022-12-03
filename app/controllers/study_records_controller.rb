@@ -1,10 +1,11 @@
 class StudyRecordsController < ApplicationController
   before_action :set_study_record, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index]
+  before_action :set_q, only: [:index]
 
   def index
     # ページネーション用設定（N1対策済み）
-    @study_records = StudyRecord.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @study_records = @q.result.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -49,5 +50,10 @@ class StudyRecordsController < ApplicationController
 
   def study_record_params
     params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id)
+  end
+
+  # ransack用設定
+  def set_q
+    @q = StudyRecord.ransack(params[:q])
   end
 end

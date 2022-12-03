@@ -2,6 +2,13 @@
 
 <h1><%= t('.study_record_index_page') %></h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_or_content_cont, 'キーワード' %>
+  <%= f.search_field :title_or_content_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
 <table>
   <thead>
     <tr>
