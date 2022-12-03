@@ -1,5 +1,5 @@
-# User.create!(name: "adminsさん", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true)
-# User.create!(name: "normalさん", email: "normalnormal@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "adminsさん", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true, provider: nil, uid: nil)
+User.create!(name: "normalさん", email: "normalnormal@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false, provider: nil, uid: nil)
 
 50.times do
   StudyRecord.create!(title: "英語の勉強",content: "単語を覚える",study_cycle: "一週間",comprehension: "まだ理解していません", user_id: User.first.id)
