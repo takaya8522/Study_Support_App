@@ -51,5 +51,11 @@
       <% end %>
     </ul>
     <%= yield %>
+    <footer>
+      <!--ログインしてるユーザーが管理者の場合のみ-->
+      <% if current_user.try(:admin?) %>
+        <%= link_to '管理者ページ', rails_admin_path %>
+      <% end %>
+    </footer>
   </body>
 </html>
