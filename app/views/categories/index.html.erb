@@ -1,0 +1,18 @@
+<h1><%= t('.labels_index_page') %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('.name') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to t('.edit'), edit_category_path(category) %></td>
+        <td><%= link_to t('.destroy'), category , class: 'destroy-category', method: :delete, data: { confirm: t('.are_you_sure?') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
