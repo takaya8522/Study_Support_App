@@ -18,7 +18,7 @@ class StudyRecordsController < ApplicationController
     @study_record.user_id = current_user.id
 
     if @study_record.save
-      redirect_to study_records_path, notice: t('.study_record_created')
+      redirect_to root_path, notice: t('.study_record_created')
     else
       render :new
     end
@@ -33,7 +33,7 @@ class StudyRecordsController < ApplicationController
 
   def update
     if @study_record.update(study_record_params)
-      redirect_to study_records_path, notice: t('.study_record_updated')
+      redirect_to root_path, notice: t('.study_record_updated')
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class StudyRecordsController < ApplicationController
 
   def destroy
     @study_record.destroy
-    redirect_to study_records_path, notice: t('.study_record_destroyed')
+    redirect_to root_path, notice: t('.study_record_destroyed')
   end
 
   private
