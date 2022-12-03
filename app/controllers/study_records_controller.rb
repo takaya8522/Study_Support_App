@@ -10,6 +10,7 @@ class StudyRecordsController < ApplicationController
 
   def new
     @study_record = StudyRecord.new
+    @categories = current_user.categories
   end
 
   def create
@@ -49,7 +50,7 @@ class StudyRecordsController < ApplicationController
   end
 
   def study_record_params
-    params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id)
+    params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id, category_ids: [])
   end
 
   # ransack用設定

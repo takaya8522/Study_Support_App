@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# cancancan用のモデル
 class Ability
   include CanCan::Ability
 
