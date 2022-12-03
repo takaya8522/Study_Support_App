@@ -3,7 +3,8 @@ class StudyRecordsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @study_records = StudyRecord.all
+    # ページネーション用設定（N1対策済み）
+    @study_records = StudyRecord.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new

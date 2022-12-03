@@ -4,7 +4,8 @@ class HomesController < ApplicationController
   def top
     if user_signed_in?
       @user = User.find(current_user.id)
-      @study_records = current_user.study_records
+      # ページネーション用設定（N1対策済み）
+      @study_records = current_user.study_records.includes(:user).order(created_at: :desc).page(params[:page])
     end
   end
 
