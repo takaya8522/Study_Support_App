@@ -44,8 +44,11 @@ gem 'omniauth-rails_csrf_protection'
 # 環境変数設定用
 gem 'dotenv-rails'
 
-# ページネーション
+# ページネーション用
 gem 'kaminari'
+
+# 検索・ソート用
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
