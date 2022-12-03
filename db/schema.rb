@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_03_122834) do
+ActiveRecord::Schema.define(version: 2022_12_03_165443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 2022_12_03_122834) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "study_record_categories", force: :cascade do |t|
-    t.bigint "study_record_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_study_record_categories_on_category_id"
-    t.index ["study_record_id"], name: "index_study_record_categories_on_study_record_id"
-  end
-
   create_table "study_records", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
@@ -40,6 +31,8 @@ ActiveRecord::Schema.define(version: 2022_12_03_122834) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_study_records_on_category_id"
     t.index ["user_id"], name: "index_study_records_on_user_id"
   end
 
@@ -65,7 +58,6 @@ ActiveRecord::Schema.define(version: 2022_12_03_122834) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "study_record_categories", "categories"
-  add_foreign_key "study_record_categories", "study_records"
+  add_foreign_key "study_records", "categories"
   add_foreign_key "study_records", "users"
 end

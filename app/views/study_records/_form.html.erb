@@ -11,14 +11,6 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :category_name %>
-    <%= form.collection_check_boxes(:category_ids, @categories, :id, :name) do |category|%>
-      <%= category.check_box %>
-      <%= category.text %>
-    <% end %>
-  </div>
-
   <%= link_to 'カテゴリーを登録する', categories_path %>
 
   <div class="field">

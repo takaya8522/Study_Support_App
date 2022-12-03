@@ -1,7 +1,6 @@
 class StudyRecord < ApplicationRecord
   belongs_to :user
-  has_many :study_record_categories, dependent: :destroy
-  has_many :categories, through: :study_record_categories
+  belongs_to :category
 
   with_options presence: true do
     validates :title
