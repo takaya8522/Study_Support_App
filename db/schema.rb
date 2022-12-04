@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_03_165443) do
+ActiveRecord::Schema.define(version: 2022_12_04_020357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 2022_12_03_165443) do
   create_table "study_records", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
-    t.integer "study_cycle", null: false
+    t.integer "study_cycle", default: 0, null: false
+    t.integer "review_count", default: 0, null: false
     t.boolean "comprehension", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,6 +35,28 @@ ActiveRecord::Schema.define(version: 2022_12_03_165443) do
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_study_records_on_category_id"
     t.index ["user_id"], name: "index_study_records_on_user_id"
+  end
+
+  create_table "study_timings", force: :cascade do |t|
+    t.datetime "first_timing"
+    t.datetime "second_timing"
+    t.datetime "third_timing"
+    t.datetime "fourth_timing"
+    t.bigint "study_record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_record_id"], name: "index_study_timings_on_study_record_id"
+  end
+
+  create_table "timing_results", force: :cascade do |t|
+    t.datetime "first_record"
+    t.datetime "second_record"
+    t.datetime "third_record"
+    t.datetime "fourth_record"
+    t.bigint "study_record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_record_id"], name: "index_timing_results_on_study_record_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +83,6 @@ ActiveRecord::Schema.define(version: 2022_12_03_165443) do
   add_foreign_key "categories", "users"
   add_foreign_key "study_records", "categories"
   add_foreign_key "study_records", "users"
+  add_foreign_key "study_timings", "study_records"
+  add_foreign_key "timing_results", "study_records"
 end

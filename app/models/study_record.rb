@@ -1,6 +1,8 @@
 class StudyRecord < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :study_timing, dependent: :destroy
+  has_many :timing_result, dependent: :destroy
 
   with_options presence: true do
     validates :title
