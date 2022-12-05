@@ -37,7 +37,6 @@ class StudyRecordsController < ApplicationController
   end
 
   def edit
-    @study_records = current_user.study_records
     @categories = current_user.categories
   end
 

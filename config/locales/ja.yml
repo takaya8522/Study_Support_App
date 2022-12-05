@@ -74,7 +74,12 @@ ja:
       edit: '編集'
       show: '詳細'
       destroy: '削除'
-
+  categories:
+    index:
+      name: '名前'
+      edit: '編集'
+      show: '詳細'
+      destroy: '削除'
   views:
     pagination:
       first: "&laquo; 最初"
