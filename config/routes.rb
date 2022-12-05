@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[show edit update destroy] do
     resources :categories, only: %i[index create update destroy]
     resources :study_records
-    resources :completes, only: %i[index show update destroy]
+    resources :completes, only: %i[index show]
   end
 end

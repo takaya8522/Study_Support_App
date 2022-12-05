@@ -9,6 +9,7 @@ class CompletesController < ApplicationController
 
   # 復習が完了した学習一覧の詳細
   def show
+    @study_timing = StudyTiming.find_by(study_record_id: params[:id])
   end
 
   # 学習記録を理解済みに変更するメソッド

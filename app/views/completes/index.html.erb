@@ -20,8 +20,7 @@
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
         <td><%= study_record.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-        <td><%= link_to t('.show'), user_complete_path(user_id: current_user.id, id: study_record.id) %></td>
-        <td><%= link_to t('.destroy'), user_complete_path(user_id: current_user.id, id: study_record.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.study_page'), user_complete_path(user_id: current_user.id, id: study_record.id) %></td>
       </tr>
     <% end %>
   </tbody>
