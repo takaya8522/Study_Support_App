@@ -32,6 +32,8 @@ class StudyRecordsController < ApplicationController
 
   def show
     @study_timing = StudyTiming.find_by(study_record_id: params[:id])
+    @current_time = Time.zone.now
+    @timing_result = TimingResult.find_by(study_record_id: params[:id])
   end
 
   def edit

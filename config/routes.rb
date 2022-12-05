@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
   }
+  
+  resources :users, only: %i[show edit update destroy] 
   resources :study_records, only: %i[index create new edit show update destroy]
-  resources :users, only: %i[show edit update destroy]
   resources :categories, only: %i[index create new edit show update destroy]
 end

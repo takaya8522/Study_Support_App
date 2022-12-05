@@ -35,13 +35,13 @@
         <%# 通知機能についてのコード。まだ試作。 %>
         <%= link_to root_path do%> 
           <% if current_user %>
-            <li class="nav-list-item fa-stack">
-              <i class="far fa-bell fa-lg fa-stack-2x"></i>
-              <i class="fa fa-circle fa-stack-1x n-circle"></i>
+            <li class="fa-stack">
+              <i class="far fa-bell fa-lg fa-stack-2x nav-list-item"></i>
+              <i class="fa fa-circle fa-stack-1x n-circle nav-list-circle"></i>
             </li>
           <% else %>
-            <li class="nav-list-item">
-              <i class="far fa-bell fa-lg" style="font-size: 1.8em;"></i>
+            <li>
+              <i class="far fa-bell fa-lg nav-list-item" style="font-size: 1.8em;"></i>
             </li>
           <% end %>
         <% end %>

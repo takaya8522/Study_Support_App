@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong><%= t('.category') %>:</strong>
+  <%= @study_record.category.name %>
+</p>
+
+<p>
   <strong><%= t('.title') %>:</strong>
   <%= @study_record.title %>
 </p>
@@ -43,6 +48,21 @@
 <p>
   <strong><%= t('.fourth_timing') %>:</strong>
   <%= @study_timing.fourth_timing.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>次の学習まで:</strong>
+  <%# 1日=86400秒 floorは小数点以下切り捨て、absは絶対値を出す %>
+  <% if ((@study_timing.first_timing - Time.now)/86400) < -1 %>
+    <p class="delay_relearn"><%= ((@study_timing.first_timing - Time.now)/86400).floor.abs %>日の遅れ</p>
+  <% elsif ((@study_timing.first_timing - Time.now)/86400) >= -1 && ((@study_timing.first_timing - Time.now)/86400) < 0 %>
+    <p class="ealry_relearn">復習タイミングになりました！</p>
+  <% elsif ((@study_timing.first_timing - Time.now)/86400) >= 0 %>
+    <%# ヘルパーに定義したdivideメソッドで小数点だけを返す %>
+    <p class="ealry_relearn">あと<%= ((@study_timing.first_timing - Time.now)/86400*24).floor %>時間と<%= divide_minute(@study_timing.first_timing - Time.now) %>分</p>
+  <% elsif ((@study_timing.first_timing - Time.now)/86400) > 1 %>
+    <p class="future_relearn">あと<%= ((@study_timing.first_timing - Time.now)/86400).floor %>日と<%= divide(@study_timing.first_timing - Time.now) %>時間</p>
+  <% end %>
 </p>
 
 <%= link_to t('.edit'), edit_study_record_path(@study_record) %> |
