@@ -21,8 +21,8 @@
 
       <%# ログインしている場合としてない場合を指定 %>
       <% if user_signed_in? %>
-        <li><%= link_to t('.study_records_index_nav'), study_records_path %></li>
-        <li><%= link_to t('.new_record_nav'), new_study_record_path %></li>
+        <li><%= link_to t('.study_records_index_nav'), user_study_records_path(user_id: current_user.id) %></li>
+        <li><%= link_to t('.new_record_nav'), new_user_study_record_path(user_id: current_user.id) %></li>
         <li><%= link_to t('.my_account'), user_path(current_user.id) %></>
         <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
         <%# プロファイル画像とユーザー名をクリックした場合のリンク先を指定 %>

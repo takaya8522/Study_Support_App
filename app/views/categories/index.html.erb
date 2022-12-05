@@ -10,12 +10,12 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= link_to t('.edit'), edit_category_path(category) %></td>
-        <td><%= link_to t('.destroy'), category , class: 'destroy-category', method: :delete, data: { confirm: t('.are_you_sure?') } %></td>
+        <td><%= link_to t('.edit'), edit_user_category_path(user_id: current_user.id, id: category.id) %></td>
+        <td><%= link_to t('.destroy'), user_category_path(user_id: current_user.id, id: category.id), class: 'destroy-category', method: :delete, data: { confirm: t('.are_you_sure?') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '新規登録', new_category_path %>
-<%= link_to '戻る', new_study_record_path %>
+<%= link_to '新規登録', new_user_category_path(current_user) %>
+<%= link_to '戻る', new_user_study_record_path(current_user) %>

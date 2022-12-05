@@ -1,5 +1,48 @@
 <h1><%= t('.new_study_record') %></h1>
 
-<%= render 'form', {study_record: @study_record, categories: @categories} %>
+<%= form_with(url: user_study_records_path(current_user), model: @study_record, local: true) do |form| %>
+  <% if @study_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(study_record.errors.count, "件") %>エラーが発生しました！</h2>
 
-<%= link_to t('.back'), study_records_path %>
+      <ul>
+        <% @study_record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= link_to 'カテゴリーを登録する', user_categories_path(current_user) %>
+
+  <div class="field">
+    <%= form.label :category_name %>
+    <%= form.select :category_id, @categories.map{|g| [g.name, g.id]} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :study_cycle %>
+    <%= form.select :study_cycle, StudyRecord.study_cycles.keys, include_blank: "" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comprehension %>
+    <%= form.select :comprehension, StudyRecord.comprehensions.keys, include_blank: "" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to t('.back'), user_study_records_path(current_user) %>

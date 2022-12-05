@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.user_id = current_user.id
     if @category.save
-      redirect_to categories_path, notice: Category.human_attribute_name(:category_created)
+      redirect_to user_categories_path(current_user), notice: Category.human_attribute_name(:category_created)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to labels_path, notice: Category.human_attribute_name(:category_updated)
+      redirect_to user_categories_path(current_user), notice: Category.human_attribute_name(:category_updated)
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    redirect_to categories_path, notice: category.human_attribute_name(:category_destroyed)
+    redirect_to user_categories_path(current_user), notice: category.human_attribute_name(:category_destroyed)
   end
 
   private

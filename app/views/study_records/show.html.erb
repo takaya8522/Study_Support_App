@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<a href="https://twitter.com/intent/tweet?text=【<%= @study_record.title %>】を復習します%0a&url=https://aaaaaa.com/users/,復習" class="twitter-share-button" data-size="large" data-lang="ja" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fab fa-twitter fa-2x post_show_twitter"></i>ツイッターで共有する</a>
+
 <p>
   <strong><%= t('.category') %>:</strong>
   <%= @study_record.category.name %>
@@ -65,5 +67,5 @@
   <% end %>
 </p>
 
-<%= link_to t('.edit'), edit_study_record_path(@study_record) %> |
-<%= link_to t('.back'), study_records_path %>
+<%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %> |
+<%= link_to t('.back'), user_study_records_path(current_user) %>

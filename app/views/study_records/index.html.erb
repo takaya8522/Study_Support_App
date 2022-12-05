@@ -2,7 +2,7 @@
 
 <h1><%= t('.study_record_index_page') %></h1>
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, url: user_study_records_path(current_user) do |f| %>
   <%= f.label :title_or_content_cont, 'キーワード' %>
   <%= f.search_field :title_or_content_cont %>
   <br>
@@ -27,9 +27,9 @@
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
         <td><%= study_record.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-        <td><%= link_to t('.show'), study_record %></td>
-        <td><%= link_to t('.edit'), edit_study_record_path(study_record) %></td>
-        <td><%= link_to t('.destroy'), study_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.show'), user_study_record_path(user_id: current_user.id, id: study_record.id) %></td>
+        <td><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: study_record.id) %></td>
+        <td><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: study_record.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to t('.create_record'), new_study_record_path %>
+<%= link_to t('.create_record'), new_user_study_record_path(current_user) %>
