@@ -3,6 +3,7 @@ ja:
     application:
       study_records_index_nav: '学習記録一覧'
       new_record_nav: '学習記録を登録する'
+      completed_study_records_index_nav: '学習完了済み'
       sign_up: 'アカウント登録'
       sign_in: 'ログイン'
       my_account: 'マイページ'

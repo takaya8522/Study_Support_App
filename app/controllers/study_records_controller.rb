@@ -5,7 +5,7 @@ class StudyRecordsController < ApplicationController
 
   def index
     # ページネーション用設定（N1対策済み）
-    @study_records = @q.result.includes(:user).order(created_at: :desc).page(params[:page])
+    @study_records = @q.result.where(user_id: params[:user_id], comprehension: false).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
