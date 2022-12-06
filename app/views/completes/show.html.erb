@@ -33,23 +33,8 @@
 </p>
 
 <p>
-  <strong><%= t('.first_timing') %>:</strong>
-  <%= @study_timing.first_timing.strftime("%Y-%m-%d %H:%M") %>
-</p>
-
-<p>
-  <strong><%= t('.second_timing') %>:</strong>
-  <%= @study_timing.second_timing.strftime("%Y-%m-%d %H:%M") %>
-</p>
-
-<p>
-  <strong><%= t('.third_timing') %>:</strong>
-  <%= @study_timing.third_timing.strftime("%Y-%m-%d %H:%M") %>
-</p>
-
-<p>
-  <strong><%= t('.fourth_timing') %>:</strong>
-  <%= @study_timing.fourth_timing.strftime("%Y-%m-%d %H:%M") %>
+  <strong><%= t('.review_count') %>:</strong>
+  <%= @study_record.review_count %>
 </p>
 
 <%= render partial: 'checked_form', locals: { study_record: @study_record, study_timing: @study_timing, timing_result: @timing_result } %>
@@ -57,4 +42,4 @@
 <%= link_to t('change_comprehension'), change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %><br>
 <%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %>|
 <%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: 'Are you sure?' } %>|
-<%= link_to t('.back'), user_complete_path(current_user) %>
+<%= link_to t('.back'), user_completes_path(current_user) %>
