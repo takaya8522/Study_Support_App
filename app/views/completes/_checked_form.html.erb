@@ -1,0 +1,41 @@
+<p>復習チェックフォーム</p>
+<div>
+    <table>
+      <thead>
+        <tr>
+          <td><p>復習タイミング</p></td>
+          <td></td>
+          <td><p>実施時間</p></td>
+          <td><p>復習プラン</p></td>
+        </tr>
+      </thead>
+        <%# postテーブルのrelearn_countの値に応じて表示するフォームを変える %>
+        <%# 復習回数が0のとき %>
+      <tbody>
+        <tr>
+          <td>1回目</td>
+          <td><i class="far fa-check-square"></i></td>
+          <td><%= timing_result.first_record.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= study_timing.first_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>2回目</td>
+          <td><i class="far fa-check-square"></i></td>
+          <td><%= timing_result.second_record.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= study_timing.second_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>3回目</td>
+          <td><i class="far fa-check-square"></i></td>
+          <td><%= timing_result.third_record.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= study_timing.third_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>4回目</td>
+          <td><i class="far fa-check-square"></i></td>
+          <td><%= timing_result.fourth_record.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= study_timing.fourth_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

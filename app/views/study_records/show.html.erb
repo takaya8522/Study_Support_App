@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <a href="https://twitter.com/intent/tweet?text=【<%= @study_record.title %>】を復習します%0a&url=https://aaaaaa.com/users/,復習" class="twitter-share-button" data-size="large" data-lang="ja" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fab fa-twitter fa-2x post_show_twitter"></i>ツイッターで共有する</a>
 
@@ -53,6 +54,11 @@
 </p>
 
 <p>
+  <strong><%= t('.review_count') %>:</strong>
+  <%= @study_record.review_count %>
+</p>
+
+<p>
   <strong>次の学習まで:</strong>
   <%# 1日=86400秒 floorは小数点以下切り捨て、absは絶対値を出す %>
   <% if ((@study_timing.first_timing - Time.now)/86400) < -1 %>
@@ -66,6 +72,8 @@
     <p class="future_relearn">あと<%= ((@study_timing.first_timing - Time.now)/86400).floor %>日と<%= divide(@study_timing.first_timing - Time.now) %>時間</p>
   <% end %>
 </p>
+
+<%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
 
 <%= link_to t('change_comprehension'), change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %><br>
 <%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %>|
