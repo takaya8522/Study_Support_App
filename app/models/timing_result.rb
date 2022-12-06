@@ -14,5 +14,6 @@ class TimingResult < ApplicationRecord
       hash_timing = Hash[*array_timing]
       return hash_timing
     end
+    false
   end
 end

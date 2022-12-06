@@ -11,19 +11,31 @@ module StudyRecordsHelper
     (diff_time / 3600 % 1 * 60).round
   end
 
-  # 現在時刻が通知時間よりも後の場合にtrueを返すメソッド
-  def check_timing_bool(study_timing, review_count, current_time)
-    if review_count.zero?
-      return true if study_timing.first_timing <= current_time
+  def set_timing(review_count, study_timing)
+    if review_count == 0
+      return study_timing.first_timing
     elsif review_count == 1
-      return true if study_timing.second_timing <= current_time
+      return study_timing.second_timing
     elsif review_count == 2
-      return true if study_timing.third_timing <= current_time
+      return study_timing.third_timing
     elsif review_count == 3
-      return true if study_timing.forth_timing <= current_time
-    else
-      false
+      return study_timing.fourth_timing
     end
-    false
   end
+
+  # 現在時刻が通知時間よりも後の場合にtrueを返すメソッド
+  # def check_timing_bool(study_timing, review_count, current_time)
+  #   if review_count.zero?
+  #     return true if study_timing.first_timing <= current_time
+  #   elsif review_count == 1
+  #     return true if study_timing.second_timing <= current_time
+  #   elsif review_count == 2
+  #     return true if study_timing.third_timing <= current_time
+  #   elsif review_count == 3
+  #     return true if study_timing.forth_timing <= current_time
+  #   else
+  #     false
+  #   end
+  #   false
+  # end
 end
