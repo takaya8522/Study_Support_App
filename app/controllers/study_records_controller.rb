@@ -5,7 +5,7 @@ class StudyRecordsController < ApplicationController
 
   def index
     # ページネーション用設定（N1対策済み）
-    @study_records = @q.result.includes(:user).order(created_at: :desc).page(params[:page])
+    @study_records = @q.result.where(user_id: params[:user_id], comprehension: false).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -18,6 +18,12 @@ class StudyRecordsController < ApplicationController
     @study_record.user_id = current_user.id
 
     if @study_record.save
+      # 予定復習タイミングを同時に作成
+      StudyTiming.create!(study_record_id: @study_record.id,
+        first_timing: 1.day.from_now, second_timing: 3.days.from_now,
+        third_timing: 10.days.from_now, fourth_timing:  1.month.from_now)
+      TimingResult.create!(study_record_id: @study_record.id)
+
       redirect_to root_path, notice: t('.study_record_created')
     else
       render :new
@@ -25,10 +31,14 @@ class StudyRecordsController < ApplicationController
   end
 
   def show
+    @study_timing = StudyTiming.find_by(study_record_id: params[:id])
+    @current_time = Time.zone.now
+    @timing_result = TimingResult.find_by(study_record_id: params[:id])
+    @review_count = @study_record.review_count
   end
 
   def edit
-    @study_records = current_user.study_records
+    @categories = current_user.categories
   end
 
   def update

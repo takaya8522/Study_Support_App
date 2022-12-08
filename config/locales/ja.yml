@@ -1,8 +1,9 @@
 ja:
   layouts:
     application:
-      study_records_index_nav: 'みんなの学習記録一覧'
+      study_records_index_nav: '学習記録一覧'
       new_record_nav: '学習記録を登録する'
+      completed_study_records_index_nav: '学習完了済み'
       sign_up: 'アカウント登録'
       sign_in: 'ログイン'
       my_account: 'マイページ'
@@ -12,7 +13,7 @@ ja:
   study_records:
     index:
       search: '検索'
-      study_record_index_page: 'みんなのタスク一覧ページ'
+      study_record_index_page: '学習記録一覧ページ'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'
@@ -30,7 +31,7 @@ ja:
       new_study_record: '学習記録を登録する'
       back: '戻る'
     show:
-      show_study_record: 'みんなの学習一覧'
+      show_study_record: '学習記録一覧'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'
@@ -73,7 +74,12 @@ ja:
       edit: '編集'
       show: '詳細'
       destroy: '削除'
-
+  categories:
+    index:
+      name: '名前'
+      edit: '編集'
+      show: '詳細'
+      destroy: '削除'
   views:
     pagination:
       first: "&laquo; 最初"

@@ -1,0 +1,11 @@
+<%# 1日=86400秒 floorは小数点以下切り捨て、absは絶対値を出す %>
+<% if ((set_timing(review_count, study_timing) - Time.now)/86400) < -1 %>
+  <p><%= ((set_timing(review_count, study_timing) - Time.now)/86400).floor.abs %>日の遅れ</p>
+<% elsif ((set_timing(review_count, study_timing) - Time.now)/86400) >= -1 && ((set_timing(review_count, study_timing) - Time.now)/86400) < 0 %>
+  <p>復習タイミングになりました！</p>
+<% elsif ((set_timing(review_count, study_timing) - Time.now)/86400) > 1 %>
+  <p>あと<%= ((set_timing(review_count, study_timing) - Time.now)/86400).floor %>日と<%= divide_hour(set_timing(review_count, study_timing) - Time.now) %>時間</p>
+<% elsif ((set_timing(review_count, study_timing) - Time.now)/86400) >= 0 %>
+  <%# ヘルパーに定義したdivideメソッドで小数点だけを返す %>
+  <p>あと<%= ((set_timing(review_count, study_timing) - Time.now)/86400*24).floor %>時間と<%= divide_minute(set_timing(review_count, study_timing) - Time.now) %>分</p>
+<% end %>

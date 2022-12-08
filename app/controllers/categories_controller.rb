@@ -1,11 +1,8 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ edit update destroy ]
+  before_action :set_category, only: %i[ update destroy ]
 
   def index
-    @categories = current_user.categories
-  end
-
-  def new
+    @categories = current_user.categories.page(params[:page])
     @category = Category.new
   end
 
@@ -13,18 +10,15 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.user_id = current_user.id
     if @category.save
-      redirect_to categories_path, notice: Category.human_attribute_name(:category_created)
+      redirect_to request.referer
     else
       render :new
     end
   end
 
-  def edit
-  end
-
   def update
     if @category.update(category_params)
-      redirect_to labels_path, notice: Category.human_attribute_name(:category_updated)
+      redirect_to request.referer
     else
       render :edit
     end
@@ -32,7 +26,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    redirect_to categories_path, notice: category.human_attribute_name(:category_destroyed)
+    redirect_to request.referer
   end
 
   private

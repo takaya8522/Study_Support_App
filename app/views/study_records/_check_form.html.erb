@@ -1,0 +1,71 @@
+<p>復習チェックフォーム</p>
+<div>
+  <%# 復習したらチェックして送信するフォーム %>
+  <%= form_with(model: study_record, url: user_review_count_path(current_user), method: :patch, local: true) do |f| %>
+    <table>
+      <thead>
+        <tr>
+          <td><p>復習タイミング</p></td>
+          <td></td>
+          <td><p>実施時間</p></td>
+          <td><p>復習プラン</p></td>
+        </tr>
+      </thead>
+        <%# postテーブルのrelearn_countの値に応じて表示するフォームを変える %>
+        <%# 復習回数が0のとき %>
+      <tbody>
+        <tr>
+          <td>1回目</td>
+          <td><% if study_record.review_count == 0 %>
+                <p><%= f.check_box(:first_record, {checked: false}, checked_value = "true", unchecked_value = "false" ) %></p>
+              <% elsif study_record.review_count > 0 %><i class="far fa-check-square"></i>
+              <% end %>
+          </td>
+          <td><%= timing_result.first_record.strftime("%Y-%m-%d %H:%M") unless timing_result.first_record.nil? %></td>
+          <td><%= study_timing.first_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>2回目</td>
+          <td><% if study_record.review_count == 1 %>
+                <p class="post_show_score_checkbox"><%= f.check_box(:second_record, {checked: false}, checked_value = "true", unchecked_value = "false" ) %></p>
+              <% elsif study_record.review_count > 1 %><i class="far fa-check-square"></i>
+              <% end %>
+          </td>
+          <td><%= timing_result.second_record.strftime("%Y-%m-%d %H:%M") unless timing_result.second_record.nil? %></td>
+          <td><%= study_timing.second_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>3回目</td>
+          <td><% if study_record.review_count == 2 %>
+                <p class="post_show_score_checkbox"><%= f.check_box(:third_record, {checked: false}, checked_value = "true", unchecked_value = "false" ) %></p>
+              <% elsif study_record.review_count > 2 %><i class="far fa-check-square"></i>
+              <% end %>
+          </td>
+          <td><%= timing_result.third_record.strftime("%Y-%m-%d %H:%M") unless timing_result.third_record.nil? %></td>
+          <td><%= study_timing.third_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+        <tr>
+          <td>4回目</td>
+          <td><% if study_record.review_count == 3 %>
+                <p class="post_show_score_checkbox"><%= f.check_box(:fourth_record, {checked: false}, checked_value = "true", unchecked_value = "false" ) %></p>
+              <% elsif study_record.review_count > 3 %><i class="far fa-check-square"></i>
+              <% end %>
+          </td>
+          <td><%= timing_result.fourth_record.strftime("%Y-%m-%d %H:%M") unless timing_result.fourth_record.nil? %></td>
+          <td><%= study_timing.fourth_timing.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <%# 通知時間前に送信出来ないようにする %>
+          <td><%# if check_timing_bool(study_timing, study_record.review_count, current_time) %>
+                <%= f.submit "復習登録" %>
+              <%# end %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  <% end %>
+</div>
