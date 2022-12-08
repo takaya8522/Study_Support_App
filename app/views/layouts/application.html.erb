@@ -41,7 +41,7 @@
           </span>
         <% end %>
         <%= link_to root_path do%> 
-          <% if unchecked_notifications %>
+          <% if current_user.study_records.present? && unchecked_notifications %>
             <li class="fa-stack">
               <i class="far fa-bell fa-lg fa-stack-2x nav-list-item"></i>
               <i class="fa fa-circle fa-stack-1x n-circle nav-list-circle"></i>

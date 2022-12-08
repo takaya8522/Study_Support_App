@@ -6,10 +6,16 @@ Rails.application.routes.draw do
   # 学習理解度を更新するため
   patch 'users/:id/change_comprehension' => 'completes#change_comprehension', as: 'change_comprehension'
   
-  # devise lineログインのため
+  # devise lineログイ、ゲストログイン機能のため
   devise_for :users, controllers: {
-    omniauth_callbacks: "omniauth_callbacks"
+    omniauth_callbacks: "omniauth_callbacks",
+    registrations: 'users/registrations'
   }
+
+  # ゲストログイン用
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
   
   resources :users, only: %i[show edit update destroy] do
     resources :categories, only: %i[index create update destroy]
