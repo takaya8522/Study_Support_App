@@ -28,11 +28,6 @@
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :study_cycle %>
-    <%= form.select :study_cycle, StudyRecord.study_cycles.keys, include_blank: "" %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
