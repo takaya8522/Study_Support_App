@@ -1,7 +1,7 @@
 module StudyRecordsHelper
   # 残り何時間か返すメソッド
   # 例 (111111.11秒 * 1分/60秒 * 1時間/60分 % 24時間 = 6.864...時間).round = 7時間
-  def divide(diff_time)
+  def divide_hour(diff_time)
     (diff_time / 3600 % 24).round
   end
 
