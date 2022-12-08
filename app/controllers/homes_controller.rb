@@ -1,20 +1,17 @@
 class HomesController < ApplicationController
   skip_before_action :authenticate_user! 
-  before_action :set_q, only: [:top], if: proc { user_signed_in? }
 
   def top
     if user_signed_in?
-      # ページネーション用設定（N1対策済み）
-      @study_records = @q.result.where(user_id: params[:user_id], comprehension: false).includes(:user).order(created_at: :desc).page(params[:page])
+      @study_records = StudyRecord.where(user_id: current_user.id, comprehension: false).includes(:user)
+
+      order_array = StudyRecord.latest_study_record(@study_records, current_user.id)
+      # idと何ターム目かとターム、ジャンル名、タイトル、内容の配列
+      @order_study_records = order_array[0]
+      # ジャンル名の配列
+      @categories = order_array[1]
     end
   end
 
   def about; end
-
-  private
-
-  # ransack用設定
-  def set_q
-    @q = current_user.study_records.ransack(params[:q])
-  end
 end
