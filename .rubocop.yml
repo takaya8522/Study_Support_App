@@ -1,1 +1,21 @@
 inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  # rubocopの更新を許可
+  NewCops: enable
+
+  # Rubyバージョン指定
+  TargetRubyVersion: 3.0
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
