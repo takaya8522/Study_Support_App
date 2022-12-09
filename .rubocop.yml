@@ -5,17 +5,31 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
-AllCops:
-  # rubocopの更新を許可
-  NewCops: enable
-
-  # Rubyバージョン指定
-  TargetRubyVersion: 3.0
-
 # 日本語でのコメントを許可
 AsciiComments:
   Enabled: false
 
-# クラスのコメント必須を無視
+# 複数行での「lambda」で「->」による省略記法を許可
+Lambda:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# クラスにコメントを残さない
 Documentation:
   Enabled: false
+
+# 「and」「or」の使用を許可
+AndOr:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - tmp/**/*

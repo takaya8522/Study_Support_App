@@ -1,6 +1,6 @@
 class CompletesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_study_record, only: %i[show edit update destroy]
+  before_action :set_study_record, only: %i[show]
 
   # 復習が完了した学習一覧
   def index
