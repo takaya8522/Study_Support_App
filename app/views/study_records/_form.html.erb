@@ -12,6 +12,9 @@
   <% end %>
 
   <%= link_to 'カテゴリーを登録する', user_categories_path(current_user) %>
+  <% if current_user.categories.empty? %>
+    <div>まずはカテゴリーを登録してください！</div>
+  <% end %>
 
   <div class="field">
     <%= form.label :category_name %>
