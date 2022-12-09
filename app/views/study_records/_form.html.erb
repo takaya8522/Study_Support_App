@@ -12,6 +12,9 @@
   <% end %>
 
   <%= link_to 'カテゴリーを登録する', user_categories_path(current_user) %>
+  <% if current_user.categories.empty? %>
+    <div>まずはカテゴリーを登録してください！</div>
+  <% end %>
 
   <div class="field">
     <%= form.label :category_name %>
@@ -26,11 +29,6 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :study_cycle %>
-    <%= form.select :study_cycle, StudyRecord.study_cycles.keys, include_blank: "" %>
   </div>
 
   <div class="actions">
