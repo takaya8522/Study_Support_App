@@ -11,6 +11,7 @@ module StudyRecordsHelper
     (diff_time / 3600 % 1 * 60).round
   end
 
+  # review_countによってstudy_timingを算出するメソソッド
   def set_timing(review_count, study_timing)
     if review_count == 0
       return study_timing.first_timing
@@ -24,7 +25,7 @@ module StudyRecordsHelper
   end
 
   def set_forgetting_curve(study_record)
-    # グラフの開始時刻日をレビューカウントごとに算出する
+    # グラフの開始時刻日をレビューカウントごとに算出するメソッド
     if study_record.review_count.zero?
       study_record_time = study_record.created_at
     elsif study_record.review_count == 1
