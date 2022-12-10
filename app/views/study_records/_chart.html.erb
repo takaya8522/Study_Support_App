@@ -1,0 +1,15 @@
+<%# 記憶忘却推移を表現したグラフ %>
+<%= area_chart set_forgetting_curve(study_record),
+          id: 'total-attendance-chart',
+          width: '60%',
+          height: height,
+          marigin_top: '30px',
+          colors: ['#F99F48'],
+          xtitle: "時間経過", ytitle: "節約率",
+          xmin:  study_record.created_at.ago(1.minutes).strftime('%m/%d %H:%M'),
+          xmax: study_record.created_at.since(10.days).strftime('%m/%d %H:%M'),
+          min: 0, max: 100,
+          points: false, curve: false,
+          messages: {empty: "グラフデータがありません"},
+          discrete: true
+          %>
