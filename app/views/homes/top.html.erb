@@ -49,7 +49,7 @@
               </td>
               <%# 復習進捗 %>
               <td><%= order_study_record[1] %>回目</td>
-              <td><%= link_to "復習画面", user_study_record_path(user_id: current_user.id, id: order_study_record[0]) %></td>
+              <td><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: order_study_record[0]) %></td>
             </tr>
           <% end %>
         <% end %>

@@ -27,7 +27,7 @@
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
         <td><%= render partial: 'time_limit', locals: { study_timing: study_record.study_timing[0], review_count: study_record.review_count } %></td>
-        <td><%= link_to t('.study_page'), user_study_record_path(user_id: current_user.id, id: study_record.id) %></td>
+        <td><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: study_record.id) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -16,22 +16,15 @@ ja:
       study_record_index_page: '学習記録一覧ページ'
       title: 'タイトル'
       content: '内容'
-      study_cycle: '学習サイクル'
-      comprehension: '理解度'
-      created_at: '作成日時'
-      deadline_on: '終了期限'
-      status: 'ステータス'
-      create_record: '学習記録を登録する'
-      show: '詳細'
-      edit: '編集'
-      destroy: '削除'
-      are_you_sure?: '本当に削除してもよろしいですか?'
-      label: ラベル
+      next_study: '次の復習時間'
+      review_count: '復習回数'
+      create_record: '学習履歴を登録する'
+      review_page: '復習画面'
     new:
       new_study_record: '学習記録を登録する'
       back: '戻る'
     show:
-      show_study_record: '学習記録一覧'
+      study_record_show_page: '学習記録詳細ページ'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'
@@ -39,6 +32,10 @@ ja:
       created_at: '作成日時'
       edit: '編集'
       back: '戻る'
+      destroy: '削除'
+      review_count: '復習回数'
+      category: 'カテゴリー'
+      change_comprehension: '理解済みにする!'
     edit:
       edit_study_record: '学習記録編集ページ'
       update_study_record: '更新する'
@@ -68,18 +65,36 @@ ja:
     top:
       title: 'タイトル'
       content: '内容'
-      study_cycle: '学習サイクル'
-      comprehension: '理解度'
-      created_at: '作成日時'
-      edit: '編集'
-      show: '詳細'
-      destroy: '削除'
+      next_study: '次の復習時間'
+      review_count: '復習回数'
+      create_record: '学習履歴を登録する'
+      review_page: '復習画面'
   categories:
     index:
+      categories_index_page: 'カテゴリー登録ページ'
       name: '名前'
       edit: '編集'
       show: '詳細'
       destroy: '削除'
+  completes:
+    index:
+      completed_study_record_index_page: '復習済み学習一覧ページ'
+      title: 'タイトル'
+      content: '内容'
+      category: 'カテゴリー'
+      created_at: '作成日時'
+      review_page: '復習画面'
+    show:
+      study_record_show_page: '学習記録詳細ページ'
+      title: 'タイトル'
+      content: '内容'
+      study_cycle: '学習サイクル'
+      comprehension: '理解度'
+      created_at: '作成日時'
+      back: '戻る'
+      destroy: '削除'
+      review_count: '復習回数'
+      category: 'カテゴリー'
   views:
     pagination:
       first: "&laquo; 最初"
@@ -106,6 +121,7 @@ ja:
         comprehension: 理解度
         created_at: 作成日時
         deadline_on:  終了期限
+        category_name: カテゴリー名
   helpers:
     submit:
       create: 登録する

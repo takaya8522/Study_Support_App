@@ -1,4 +1,4 @@
-<h1><%= t('.labels_index_page') %></h1>
+<h1><%= t('.categories_index_page') %></h1>
 <div>
   <%= form_with(model: [current_user, @category], method: :post, local: true) do |f| %>      
     <% if @category.errors.any? %>
@@ -32,7 +32,7 @@
             <td><%= category.name %></td>
             <td><%= f.text_field :name %></td>
             <td><%= f.submit t('.edit') %></td>
-            <td><%= link_to t('.delete'), user_category_path(user_id: current_user.id, id: category.id), method: :delete, data: {confirm: "紐付いた投稿がすべて削除されますが、本当に削除しますか？"} %>
+            <td><%= link_to t('.destroy'), user_category_path(user_id: current_user.id, id: category.id), method: :delete, data: {confirm: "紐付いた投稿がすべて削除されますが、本当に削除しますか？"} %>
             </td>
           </tr>
           <% end %>
