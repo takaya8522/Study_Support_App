@@ -68,7 +68,9 @@
   </div>
   <div>
     <p>忘却曲線とは？？</p>
-    <%= link_to '忘却曲線について', homes_about_path %>
+    <p uk-margin>
+      <button class="uk-button uk-button-default"><%= link_to '忘却曲線について', homes_about_path %></button>
+    </p>
   </div>
   <%= render 'content' %>
 <% end %>

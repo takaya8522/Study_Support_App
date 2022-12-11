@@ -10,6 +10,7 @@ ja:
       sign_out: 'ログアウト'
       users_index: 'ユーザ一覧'
       add_user: 'ユーザを登録する'
+      schedule: 'スケジュール'
   study_records:
     index:
       search: '検索'
