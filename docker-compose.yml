@@ -9,27 +9,27 @@ services:
     command: bundle exec puma -C config/puma.rb -e production
     # command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     # ======================================
-    # volumes:
-    #   - .:/learning_management_app
-    #   # コンテナの中身を保存しておくために作成したボリュームでマウント
-    #   - public-data:/learning_management_app/public
-    #   - tmp-data:/learning_management_app/tmp
-    #   - log-data:/learning_management_app/log
-    # networks:
-    #   - learning_management_app-network
-    
-    # =========ローカルと本番切り替え===========
-    depends_on:
-      - db
-      
-  db:
-    image: postgres
     volumes:
-      - db-data:/var/lib/postgresql/data
-    env_file:
-      - .env
+      - .:/learning_management_app
+      # コンテナの中身を保存しておくために作成したボリュームでマウント
+      - public-data:/learning_management_app/public
+      - tmp-data:/learning_management_app/tmp
+      - log-data:/learning_management_app/log
     networks:
       - learning_management_app-network
+    
+    # =========ローカルと本番切り替え===========
+  #   depends_on:
+  #     - db
+      
+  # db:
+  #   image: postgres
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
+  #   env_file:
+  #     - .env
+  #   networks:
+  #     - learning_management_app-network
     # ======================================
 
   web:
