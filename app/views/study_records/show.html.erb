@@ -1,54 +1,64 @@
-<h1><%= t('.study_record_show_page') %></h1>
+<div class="uk-text-left uk-grid-divider" uk-grid>
+  <div class="uk-width-2-3 ">
+    <article class="uk-article">
+      <h1><%= t('.study_record_show_page') %></h1>
 
-<a href="https://twitter.com/intent/tweet?text=【<%= @study_record.title %>】を復習します%0a&url=https://aaaaaa.com/users/,復習" class="twitter-share-button" data-size="large" data-lang="ja" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fab fa-twitter fa-2x post_show_twitter"></i>ツイッターで共有する</a>
+      <a href="https://twitter.com/intent/tweet?text=【<%= @study_record.title %>】を復習します%0a&url=https://aaaaaa.com/users/,復習" class="twitter-share-button" data-size="large" data-lang="ja" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fab fa-twitter fa-2x post_show_twitter"></i>ツイッターで共有する</a>
 
-<p>
-  <strong><%= t('.category') %>:</strong>
-  <%= @study_record.category.name %>
-</p>
+      <p>
+        <strong>次の学習まで:</strong>
+        <%= render partial: 'time_limit', locals: { study_timing: @study_timing, review_count: @review_count } %>
+      </p>
 
-<p>
-  <strong><%= t('.title') %>:</strong>
-  <%= @study_record.title %>
-</p>
+      <%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
 
-<p>
-  <strong><%= t('.content') %>:</strong>
-  <%= @study_record.content %>
-</p>
+      <%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
 
-<p>
-  <strong><%= t('.study_cycle') %>:</strong>
-  <%= @study_record.study_cycle %>
-</p>
+      <div class="uk-button-group">
+          <button class="uk-button uk-button-default"><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></button>
+          <button class="uk-button uk-button-default"><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %></button>
+          <button class="uk-button uk-button-default"><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %></button>
+          <button class="uk-button uk-button-default"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+      </div>
+    </article>
+  </div>
 
-<p>
-  <strong><%= t('.comprehension') %>:</strong>
-  <%= @study_record.comprehension %>
-</p>
-
-<p>
-  <strong><%= t('.created_at') %>:</strong>
-  <%= @study_record.created_at.strftime('%Y/%m/%d %H:%M') %>
-</p>
-
-<p>
-  <strong><%= t('.review_count') %>:</strong>
-  <%= @study_record.review_count %>
-</p>
-
-<p>
-  <strong>次の学習まで:</strong>
-  <%= render partial: 'time_limit', locals: { study_timing: @study_timing, review_count: @review_count } %>
-</p>
-
-<%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
-
-<%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
-
-<div class="uk-button-group">
-    <button class="uk-button uk-button-default"><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></button>
-    <button class="uk-button uk-button-default"><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %></button>
-    <button class="uk-button uk-button-default"><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %></button>
-    <button class="uk-button uk-button-default"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+  <div class="uk-width-1-3">
+    <div class="uk-panel uk-panel-box uk-text-left">
+      <p>
+        <strong><%= t('.category') %>:</strong>
+        <%= @study_record.category.name %>
+      </p>
+  
+      <p>
+        <strong><%= t('.title') %>:</strong>
+        <%= @study_record.title %>
+      </p>
+  
+      <p>
+        <strong><%= t('.content') %>:</strong>
+        <%= @study_record.content %>
+      </p>
+  
+      <p>
+        <strong><%= t('.study_cycle') %>:</strong>
+        <%= @study_record.study_cycle %>
+      </p>
+  
+      <p>
+        <strong><%= t('.comprehension') %>:</strong>
+        <%= @study_record.comprehension %>
+      </p>
+  
+      <p>
+        <strong><%= t('.created_at') %>:</strong>
+        <%= @study_record.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </p>
+  
+      <p>
+        <strong><%= t('.review_count') %>:</strong>
+        <%= @study_record.review_count %>
+      </p>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" dir="ltr" class="uk-notouch">
   <%= render 'layouts/head' %>  
   <body>
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
@@ -11,7 +11,9 @@
           </div>
         <% end %>
       <% end %>
-      <%= yield %>
+      <div class="uk-margin-large-left">
+        <%= yield %>
+      </div>
    </div> 
    <%# AOS用設定 %>
    <script>
