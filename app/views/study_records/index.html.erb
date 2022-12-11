@@ -6,7 +6,7 @@
   <%= f.label :title_or_content_cont, 'キーワード' %>
   <%= f.search_field :title_or_content_cont %>
   <br>
-  <%= f.submit '検索' %>
+  <%= f.submit '検索', class: "uk-button uk-button-primary uk-button-small" %>
 <% end %>
 
 <table>
@@ -27,7 +27,7 @@
         <td><%= study_record.title %></td>
         <td><%= study_record.content %></td>
         <td><%= render partial: 'time_limit', locals: { study_timing: study_record.study_timing[0], review_count: study_record.review_count } %></td>
-        <td><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: study_record.id) %></td>
+        <td><button class="uk-button uk-button-default uk-button-small"><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: study_record.id) %></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to t('.create_record'), new_user_study_record_path(current_user) %>
+<button class="uk-button uk-button-default uk-button-small"><%= link_to t('.create_record'), new_user_study_record_path(current_user) %></button>

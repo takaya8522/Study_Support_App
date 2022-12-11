@@ -17,7 +17,7 @@
         <tr>
           <td>1回目</td>
           <td><% if study_record.review_count == 0 %>
-                <p><%= f.check_box(:first_record, {checked: false}, checked_value = "true", unchecked_value = "false" ) %></p>
+                <p><%= f.check_box(:first_record, {checked: false, class: "uk-checkbox"}, checked_value = "true", unchecked_value = "false" ) %></p>
               <% elsif study_record.review_count > 0 %><i class="far fa-check-square"></i>
               <% end %>
           </td>
@@ -59,7 +59,7 @@
         <tr>
           <%# 通知時間前に送信出来ないようにする %>
           <td><%# if check_timing_bool(study_timing, study_record.review_count, current_time) %>
-                <%= f.submit "復習登録" %>
+                <%= f.submit "復習登録", class: "uk-button uk-button-primary uk-button-small" %>
               <%# end %></td>
           <td></td>
           <td></td>

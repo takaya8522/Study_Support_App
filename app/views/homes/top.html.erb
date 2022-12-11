@@ -2,11 +2,13 @@
   <div>
     <h2>次の学習予定</h2>
     <h4>下をクリックして、学習記録を登録してください！！！</h4>
-     <%= link_to t('.create_record'), new_user_study_record_path(current_user) %>
+     <button class="uk-button uk-button-default"><%= link_to t('.create_record'), new_user_study_record_path(current_user) %></button>
   </div>
 <% elsif user_signed_in? %>
-  <div>
-    <h2>次の学習予定</h2>
+  <div class="uk-grid" data-uk-grid-margin>
+    <div class="uk-width-1-1 uk-row-first">
+      <h1>次の学習予定</h1>
+    </div>
   </div>
   <%# ジャンルごとに表示 %>
   <% @categories.each do |category| %>
@@ -37,19 +39,19 @@
               <%# 学習までの残り時間を表示 %>
               <td>
                 <% if ((order_study_record[2] - Time.now)/86400) < -1 %>
-                  <p><%= ((order_study_record[2] - Time.now)/86400).floor.abs %>日の遅れ</p>
+                  <%= ((order_study_record[2] - Time.now)/86400).floor.abs %>日の遅れ
                 <% elsif ((order_study_record[2] - Time.now)/86400) >= -1 && ((order_study_record[2] - Time.now)/86400) < 0 %>
-                  <p>復習タイミングになりました！</p>
+                  復習タイミングになりました！
                 <% elsif ((order_study_record[2] - Time.now)/86400) > 1 %>
-                  <p>あと<%= ((order_study_record[2] - Time.now)/86400).floor %>日と<%= divide_hour(order_study_record[2] - Time.now) %>時間</p>
+                  あと<%= ((order_study_record[2] - Time.now)/86400).floor %>日と<%= divide_hour(order_study_record[2] - Time.now) %>時間
                 <% elsif ((order_study_record[2] - Time.now)/86400) >= 0 %>
                   <%# ヘルパーに定義したdivideメソッドで小数点だけを返す %>
-                  <p>あと<%= ((order_study_record[2] - Time.now)/86400*24).floor %>時間と<%= divide_minute(order_study_record[2] - Time.now) %>分</p>
+                  あと<%= ((order_study_record[2] - Time.now)/86400*24).floor %>時間と<%= divide_minute(order_study_record[2] - Time.now) %>分
                 <% end %>
               </td>
               <%# 復習進捗 %>
               <td><%= order_study_record[1] %>回目</td>
-              <td><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: order_study_record[0]) %></td>
+              <td><button class="uk-button uk-button-default uk-button-small"><%= link_to t('.review_page'), user_study_record_path(user_id: current_user.id, id: order_study_record[0]) %></button></td>
             </tr>
           <% end %>
         <% end %>
@@ -57,18 +59,23 @@
     </table>
   <% end %>
   <br>
-  <%= link_to t('.create_record'), new_user_study_record_path(current_user) %>
+  <button class="uk-button uk-button-default"><%= link_to t('.create_record'), new_user_study_record_path(current_user) %></button>
 <% else %>
-  <div>
-    <h2>Study Support</h2>
-    <h4>サイトについての説明文</h4>
+  <div class="uk-width-medium-1-1 uk-row-first">
+    <div class="uk-vertical-align uk-text-center ">
+      <%= image_tag 'logo_transparent.png', width: '55%' %>
+      <div data-aos="fade-up" data-aos-duration="1500" data-aos-anchor-placement="top-center">
+        <h5>
+          <p>中級者の壁を突破するには1000時間費やす必要があるという法則があります。</p>
+          <p>しかし、1000時間を勉強に使うというのはとても大変なことです。</p>
+          <p>Study Supportはエビングハウスの忘却曲線理論による、脳科学的に脳の定着率が高いと言われている</p>
+          <p>勉強周期を自動的に導き出し、あなたの学習をサポートします。</p>
+          <p>また今まで費やしてきた勉強記録をアプリに登録することにより、時間の節約率をグラフにして表すことができます。</p>
+          <p>Study Supportにより自分の努力過程を視覚的に得ることができ、あなたのモチベーションを高めることができます。</p>
+        </h5>
+        <button class="uk-button uk-button-default uk-margin-medium-bottom" ><%= link_to '忘却曲線とは？', homes_about_path %></button>
+      </div>
+      <%= render 'content' %>
+    </div>
   </div>
-  <div>
-    <%= image_tag 'logo_transparent.png', width: '30%' %>
-  </div>
-  <div>
-    <p>忘却曲線とは？？</p>
-    <%= link_to '忘却曲線について', homes_about_path %>
-  </div>
-  <%= render 'content' %>
 <% end %>

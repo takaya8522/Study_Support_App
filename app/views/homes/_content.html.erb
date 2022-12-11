@@ -1,15 +1,8 @@
-<div>
-  <div>
-    <p>初めてご利用の方</p>
-    <%= link_to "アカウント登録", new_user_registration_path %>
-  </div>
-  <div>
-      <%= link_to "ログイン", new_user_session_path %>
-  </div>
-  <div>
-    <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
-  </div>
-  <div>
-    <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, method: :post %>
-  </div>
-</div>
+<p>初めてご利用の方</p>
+
+<p uk-margin>
+  <button class="uk-button uk-button-default"><%= link_to "アカウント登録", new_user_registration_path %></button>
+  <button class="uk-button uk-button-default"><%= link_to "ログイン", new_user_session_path %></button>
+  <button class="uk-button uk-button-default"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></button>
+  <button class="uk-button uk-button-default"><%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, method: :post %></button>
+</p>

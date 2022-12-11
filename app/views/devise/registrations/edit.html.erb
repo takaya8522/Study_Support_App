@@ -4,13 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "uk-textarea uk-form-width-medium" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-textarea uk-form-width-medium" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br>
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "uk-textarea uk-form-width-medium" %>
     <% if @minimum_password_length %>
       <br>
       <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
@@ -28,26 +28,27 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "uk-textarea uk-form-width-medium" %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br>
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "uk-textarea uk-form-width-medium" %>
   </div>
 
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
+    <%#= render 'layouts/drop_area' %> 
   </div>
 
   <div class="actions">
-    <%= f.submit t('.update') %>
+    <%= f.submit t('.update'), class: "uk-button uk-button-primary uk-button-small" %>
   </div>
 <% end %>
 
 <h3><%= t('.cancel_my_account') %></h3>
 
-<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
+<p><%= t('.unhappy') %><%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete , class: "uk-button uk-button-normal " %></p>
 
 <%= link_to t('devise.shared.links.back'), :back %>

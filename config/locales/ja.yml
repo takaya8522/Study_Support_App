@@ -1,15 +1,10 @@
 ja:
   layouts:
-    application:
-      study_records_index_nav: '学習記録一覧'
+    navbar:
+      schedule: 'スケジュール'
+      completed_records: '学習完了済み'
       new_record_nav: '学習記録を登録する'
-      completed_study_records_index_nav: '学習完了済み'
-      sign_up: 'アカウント登録'
-      sign_in: 'ログイン'
-      my_account: 'マイページ'
-      sign_out: 'ログアウト'
-      users_index: 'ユーザ一覧'
-      add_user: 'ユーザを登録する'
+      study_records_index: '学習記録一覧'
   study_records:
     index:
       search: '検索'
