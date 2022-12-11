@@ -46,7 +46,9 @@
 
 <%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
 
-<%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %><br>
-<%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %>|
-<%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %>|
-<%= link_to t('.back'), user_study_records_path(current_user) %>
+<div class="uk-button-group">
+    <button class="uk-button uk-button-default"><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></button>
+    <button class="uk-button uk-button-default"><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %></button>
+    <button class="uk-button uk-button-default"><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %></button>
+    <button class="uk-button uk-button-default"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+</div>

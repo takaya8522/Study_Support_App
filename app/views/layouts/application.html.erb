@@ -22,15 +22,16 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-
-    <% if flash %>
-      <% flash.each do |message_type, message| %>
-        <div uk-alert class="alert alert-<%= message_type %>">
-          <%= message %>
-        </div>
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+      <%= render 'layouts/navbar' %>    
+      <% if flash %>
+        <% flash.each do |message_type, message| %>
+          <div uk-alert class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= yield %>
+      <%= yield %>
+   </div> 
   </body>
 </html>

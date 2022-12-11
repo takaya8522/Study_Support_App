@@ -1,6 +1,6 @@
 <%# ログインしている場合としてない場合を指定 %>
 <% if user_signed_in? %>
-  <nav class="uk-navbar-container" uk-navbar>
+  <nav class="uk-navbar-container uk-margin-large-bottom" uk-navbar>
     <div class="uk-navbar-left">
       <ul class="uk-navbar-nav">
         <%# トップページリンク用ロゴマーグ %>
@@ -25,16 +25,16 @@
         <li class="uk-active"><%= link_to t('.my_account'), user_path(current_user) %></li>
         <li class="uk-active"><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
         <%# プロファイル画像とユーザー名をクリックした場合のリンク先を指定 %>
-        <%= link_to edit_user_registration_path do %>
-          <li>
-            <% if current_user.image.attached? %>
-              <%= image_tag current_user.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0").processed, class: "nav_user_image" %>
-            <% else %>
-              <%= image_tag "no_image.png", class: "nav_user_image" %>
-            <% end %>
-          </li>
-          <li><%= current_user.name %>さん</li>
-        <% end %>
+        <li class="uk-active">  
+          <%= link_to edit_user_registration_path do %>
+              <% if current_user.image.attached? %>
+                <%= image_tag current_user.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0").processed, class: "nav_user_image" %>
+              <% else %>
+                <%= image_tag "no_image.png", class: "nav_user_image" %>
+              <% end %>
+              <%= current_user.name %>さん
+          <% end %>
+        </li>
         <li>
           <%= link_to root_path do%> 
             <% if current_user.study_records.where(comprehension: false).present? && check_notifications %>

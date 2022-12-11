@@ -2,4 +2,4 @@
 
 <%= render 'form', {study_record: @study_record, categories: @categories} %>
 
-<%= link_to t('.back'), user_study_records_path(current_user) %>
+<button class="uk-button uk-button-default uk-button-small"><%= link_to t('.back'), user_study_records_path(current_user) %></button>

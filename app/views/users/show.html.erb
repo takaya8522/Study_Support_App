@@ -3,11 +3,11 @@
 <div>
   <p><%= t('.name') %> : <%= @user.name %></p>
   <p><%= t('.email') %> : <%= @user.email %></p>
-  <p><%= link_to t('.edit'), edit_user_registration_path %></p>
+  <button class="uk-button uk-button-default" ><%= link_to t('.edit'), edit_user_registration_path %></button>
 </div>
 <div>
   <!--ログインしてるユーザーが管理者の場合のみ-->
   <% if current_user.try(:admin?) %>
-    <%= link_to '管理者ページ', rails_admin_path %>
+    <button class="uk-button uk-button-default" ><%= link_to '管理者ページ', rails_admin_path %></button>
   <% end %>
 </div>
