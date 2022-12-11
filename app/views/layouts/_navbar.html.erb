@@ -12,8 +12,8 @@
           <a>学習記録</a>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
-              <li class="uk-active"><%= link_to t('.study_records_index_nav'), user_study_records_path(current_user) %></li>
-              <li class="uk-active"><%= link_to t('.completed_study_records_index_nav'), user_completes_path(current_user) %></li>
+              <li class="uk-active"><%= link_to t('.study_records_index'), user_study_records_path(current_user) %></li>
+              <li class="uk-active"><%= link_to t('.completed_records'), user_completes_path(current_user) %></li>
             </ul>
           </div>
         </li>
@@ -54,7 +54,7 @@
   </nav>
 <% else %>
   <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-right">
+    <div class="uk-navbar-left">
       <ul class="uk-navbar-nav">
         <li class="uk-active">
           <%# トップページリンク用ロゴマーグ %>
@@ -62,12 +62,8 @@
             <%= image_tag "logo_transparent.png", class: "logo_img" %>
           <% end %>
         </li>
+        <li class="uk-active"><%= link_to t('.sign_up'), new_user_registration_path %></li>
+        <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
       </ul>
-    <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-          <li class="uk-active"><%= link_to t('.sign_up'), new_user_registration_path %></li>
-          <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
-        </ul>
-    </div>
   </nav>
 <% end %>
