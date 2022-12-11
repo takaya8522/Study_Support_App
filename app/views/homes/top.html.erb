@@ -63,16 +63,18 @@
 <% else %>
   <div class="uk-width-medium-1-1 uk-row-first">
     <div class="uk-vertical-align uk-text-center ">
-      <%= image_tag 'logo_transparent.png', width: '50%' %>
+      <%= image_tag 'logo_transparent.png', width: '55%' %>
+      <div data-aos="fade-up" data-aos-duration="1500" data-aos-anchor-placement="top-center">
         <h5>
           <p>中級者の壁を突破するには1000時間費やす必要があるという法則があります。</p>
           <p>しかし、1000時間を勉強に使うというのはとても大変なことです。</p>
           <p>Study Supportはエビングハウスの忘却曲線理論による、脳科学的に脳の定着率が高いと言われている</p>
           <p>勉強周期を自動的に導き出し、あなたの学習をサポートします。</p>
-          <p>また、今まで費やしてきた勉強記録をアプリに登録することにより、達成率をグラフにして表すことができます。</p>
-          <p>それにより、自分の努力過程を視覚的に得ることができ、あなたのモチベーション維持のへ手伝いをします。</p>
+          <p>また今まで費やしてきた勉強記録をアプリに登録することにより、時間の節約率をグラフにして表すことができます。</p>
+          <p>Study Supportにより自分の努力過程を視覚的に得ることができ、あなたのモチベーションを高めることができます。</p>
         </h5>
         <button class="uk-button uk-button-default uk-margin-medium-bottom" ><%= link_to '忘却曲線とは？', homes_about_path %></button>
+      </div>
       <%= render 'content' %>
     </div>
   </div>

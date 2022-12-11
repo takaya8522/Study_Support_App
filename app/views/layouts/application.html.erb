@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Study Support</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag('favicon.png') %>
-
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/9ec8e86bb6.js" crossorigin="anonymous"></script>
-
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/css/uikit.min.css" />
-
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
-  </head>
-
+  <%= render 'layouts/head' %>  
   <body>
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
       <%= render 'layouts/navbar' %>    
@@ -33,5 +13,9 @@
       <% end %>
       <%= yield %>
    </div> 
+   <%# AOS用設定 %>
+   <script>
+      AOS.init();
+    </script>
   </body>
 </html>
