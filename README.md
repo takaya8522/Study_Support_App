@@ -8,13 +8,13 @@ url:
 しかし、1000時間を勉強に使うというのはとても大変なことです。  
 Study Supportはエビングハウスの忘却曲線理論による、脳科学的に脳の定着率が高いと言われている勉強周期を自動的に導き出し、
 あなたの学習をサポートします。
-また、今まで費やしてきた勉強記録をアプリに登録することにより、達成率をグラフにして表すことができます。
-それにより、自分の努力過程を視覚的に得ることができ、あなたのモチベーション維持のへ手伝いをします。
+また今まで費やしてきた勉強記録をアプリに登録することにより、時間の節約率をグラフにして表すことができます。
+Study Supportにより自分の努力過程を視覚的に得ることができ、あなたのモチベーションを高めることができます。
 
 ## 開発言語 / Language
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
-- Front End: HTML, CSS, JavaScript, jQuery, Bootstrap
+- Front End: HTML, CSS, JavaScript, UIkit
 - Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, Route53, CloudFormation, S3, CodeDeploy, ChatBot ), CircleCI
 - DB: PostgreSQL
 
@@ -27,7 +27,8 @@ Study Supportはエビングハウスの忘却曲線理論による、脳科学�
 - devise-i18n
 - kaminari 
 - Chartkickを使ったグラフ作成機能
-- OAuth認証によるTwitterとの連携機能
+- OAuth認証によるLineログイン機能
+- UIkit/AOSによるデザイン構成
 - AWS/Docker/CircleCIを組み込んだインフラ構成
 
 ## インフラ図 / Infrastructure
