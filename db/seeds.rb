@@ -4,6 +4,12 @@ User.create!(name: "normal", email: "normalnormal@piyopiyo.com", password: "1234
 Category.create!(name: "英語", user_id: User.first.id)
 Category.create!(name: "プログラミング", user_id: User.first.id)
 
+StudyRecord.create!(title: "単語の勉強", content: "単語帳を読む", user_id: User.first.id, category_id: Category.first.id)
+StudyRecord.create!(title: "英文法の勉強", content: "英文法の本を読む", user_id: User.first.id, category_id: Category.first.id)
+StudyRecord.create!(title: "リスニングの勉強", content: "英語のニュースを聞く", user_id: User.first.id, category_id: Category.first.id)
+StudyRecord.create!(title: "プログラミングの勉強", content: "qiitaを見る", user_id: User.first.id, category_id: Category.second.id)
+StudyRecord.create!(title: "プログラミングの勉強", content: "技術書を見る", user_id: User.first.id, category_id: Category.second.id)
+
 # 50.times do
 #   StudyRecord.create!(title: "英文法の勉強",content: "英文法の本を読む",study_cycle: "一週間",comprehension: "まだ理解していません", user_id: User.first.id)
 # end
