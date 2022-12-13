@@ -5,12 +5,12 @@
 
   <div class="field">
     <%= f.label :name %><br/>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前を入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "emailを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br>
-    <%= f.password_field :password, autocomplete: "new-password", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください", class: "uk-textarea uk-form-width-large" %>
     <% if @minimum_password_length %>
       <br>
       <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワードを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br>
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワードを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">

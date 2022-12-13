@@ -3,6 +3,7 @@ services:
   app:
     build:
       context: .
+    # image: 625361546604.dkr.ecr.ap-northeast-1.amazonaws.com/lm_app:latest
     env_file:
       - .env
     # =========ローカルと本番切り替え===========
@@ -35,6 +36,7 @@ services:
   web:
     build:
       context: ./nginx
+    # image: 625361546604.dkr.ecr.ap-northeast-1.amazonaws.com/nginx
     volumes:
       - public-data:/learning_management_app/public
       - tmp-data:/learning_management_app/tmp

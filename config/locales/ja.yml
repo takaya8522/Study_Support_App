@@ -5,6 +5,10 @@ ja:
       completed_records: '学習完了済み'
       new_record_nav: '学習記録を登録する'
       study_records_index: '学習記録一覧'
+      sign_up: 'アカウント登録'
+      sign_in: 'ログイン'
+      my_account: 'マイアカウント'
+      sign_out: 'サインアウト'
   study_records:
     index:
       search: '検索'
@@ -15,6 +19,7 @@ ja:
       review_count: '復習回数'
       create_record: '学習履歴を登録する'
       review_page: '復習画面'
+      category: 'カテゴリー'
     new:
       new_study_record: '学習記録を登録する'
       back: '戻る'
@@ -108,6 +113,9 @@ ja:
     models:
       user: 'ユーザ'
       study_record: '学習記録'
+      category: 'カテゴリー'
+      study_timing: '学習タイミング'
+      timing_result: '復習結果'
     attributes:
       study_record:
         title: タイトル
@@ -117,6 +125,7 @@ ja:
         created_at: 作成日時
         deadline_on:  終了期限
         category_name: カテゴリー名
+        category: カテゴリー
   helpers:
     submit:
       create: 登録する

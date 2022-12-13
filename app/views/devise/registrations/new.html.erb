@@ -5,12 +5,12 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前を入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-textarea uk-form-width-medium" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "emailを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">
@@ -18,12 +18,12 @@
     <% if @minimum_password_length %>
     <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %><br>
-    <%= f.password_field :password, autocomplete: "new-password" , class: "uk-textarea uk-form-width-medium"%>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください", class: "uk-textarea uk-form-width-large"%>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "uk-textarea uk-form-width-medium"%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワードを入力してください", class: "uk-textarea uk-form-width-large"%>
   </div>
 
   <div class="field">

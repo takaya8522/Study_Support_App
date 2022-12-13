@@ -17,18 +17,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :category_name %>
-    <%= form.select :category_id, categories.map{|g| [g.name, g.id]}, {},{class: "uk-select uk-form-width-medium"} %>
+    <%= form.label :category_name %><br>
+    <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: true, selected: 1}, {class: "uk-select uk-form-width-medium"} %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "uk-textarea uk-form-width-medium" %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, placeholder: "タイトルを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, class: "uk-textarea uk-form-width-medium" %>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, placeholder: "内容を入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
   <div class="actions">

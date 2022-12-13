@@ -2,7 +2,7 @@
   <span uk-icon="icon: cloud-upload"></span>
   <span class="uk-text-middle">Attach binaries by dropping them here or</span>
   <div uk-form-custom>
-      <input type="file" name="user[image]" id="user_image">
+    <input type="file" multiple>
       <span class="uk-link">selecting one</span>
   </div>
 </div>
@@ -15,8 +15,10 @@
 
   UIkit.upload('.js-upload', {
 
-      url: '',
+      url: 'edit_user_path',
       multiple: true,
+      name: "user[:image]",
+      id: "user_image",
 
       beforeSend: function () {
           console.log('beforeSend', arguments);

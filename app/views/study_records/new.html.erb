@@ -1,5 +1,5 @@
 <h1><%= t('.new_study_record') %></h1>
 
-<%= render 'form', {study_record: @study_record, categories: @categories} %>
+<%= render 'form', {study_record: @study_record} %>
 
 <button class="uk-button uk-button-default uk-button-small"><%= link_to t('.back'), user_study_records_path(current_user) %></button>

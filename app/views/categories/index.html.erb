@@ -11,16 +11,16 @@
         </ul>
       </div>
     <% end %>
-    <%= f.text_field :name %>
-    <%= f.submit "追加" %>
+    <%= f.text_field :name, class: "uk-textarea uk-form-width-medium" %>
+    <%= f.submit "追加", class: "uk-button uk-button-primary uk-button-small" %>
   <% end %>
 
   <% if @categories.present? %>
     <table>
       <thead>
         <tr>
-          <td>現在のジャンル名</td>
-          <td>変更後のジャンル名</td>
+          <td>現在のカテゴリー名</td>
+          <td>変更後のカテゴリー名</td>
           <td></td>
           <td></td>
         </tr>
@@ -30,8 +30,8 @@
           <%= form_with(model: [current_user, category], method: :patch, local: true) do |f| %>
           <tr>
             <td><%= category.name %></td>
-            <td><%= f.text_field :name %></td>
-            <td><%= f.submit t('.edit') %></td>
+            <td><%= f.text_field :name, class: "uk-textarea uk-form-width-medium" %></td>
+            <td><%= f.submit t('.edit'), class: "uk-button uk-button-primary uk-button-small" %></td>
             <td><%= link_to t('.destroy'), user_category_path(user_id: current_user.id, id: category.id), method: :delete, data: {confirm: "紐付いた投稿がすべて削除されますが、本当に削除しますか？"} %>
             </td>
           </tr>
@@ -42,7 +42,7 @@
     <%= paginate @categories %>
   <% else %>
     <div>
-      <p>学習したいジャンル名を入れてください。</p>
+      <p>学習したいカテゴリー名を入れてください。</p>
     </div>
   <% end %>
 </div>

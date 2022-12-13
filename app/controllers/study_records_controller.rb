@@ -10,7 +10,6 @@ class StudyRecordsController < ApplicationController
 
   def new
     @study_record = StudyRecord.new
-    @categories = current_user.categories
   end
 
   def create
