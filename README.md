@@ -21,15 +21,13 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 ## 機能・使用Gem / Functions・Gem
 - devise
 - ransack
-- rails_admin
 - cancancan
 - rexml
 - devise-i18n
 - kaminari 
 - Chartkickを使ったグラフ作成機能
-- OAuth認証によるLineログイン機能
 - UIkit/AOSによるデザイン構成
-- AWS/Docker/CircleCIを組み込んだインフラ構成
+- AWS/Docker/RDSを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
 使用ソフト: draw.io  
