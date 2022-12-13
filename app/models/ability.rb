@@ -9,6 +9,7 @@ class Ability
     if user && user.admin?
       # 全ての機能を使えるように設定
       can :manage, :all
+      can :access_admin_users_page, :all
     end
 
     # Define abilities for the user here. For example:
