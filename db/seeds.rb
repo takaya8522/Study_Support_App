@@ -10,10 +10,17 @@ StudyRecord.create!(title: "リスニングの勉強", content: "英語のニュ
 StudyRecord.create!(title: "プログラミングの勉強", content: "qiitaを見る", user_id: User.first.id, category_id: Category.second.id)
 StudyRecord.create!(title: "プログラミングの勉強", content: "技術書を見る", user_id: User.first.id, category_id: Category.second.id)
 
-# 50.times do
-#   StudyRecord.create!(title: "英文法の勉強",content: "英文法の本を読む",study_cycle: "一週間",comprehension: "まだ理解していません", user_id: User.first.id)
-# end
+StudyTiming.create!(study_record_id: StudyRecord.first.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+TimingResult.create!(study_record_id: StudyRecord.first.id)
 
-# 50.times do
-#   StudyRecord.create!(title: "Rubyの勉強",content: "コードを覚える",study_cycle: "一週間",comprehension: "まだ理解していません", user_id: User.second.id)
-# end
+StudyTiming.create!(study_record_id: StudyRecord.second.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+TimingResult.create!(study_record_id: StudyRecord.second.id)
+
+StudyTiming.create!(study_record_id: StudyRecord.third.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+TimingResult.create!(study_record_id: StudyRecord.third.id)
+
+StudyTiming.create!(study_record_id: StudyRecord.fourth.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+TimingResult.create!(study_record_id: StudyRecord.fourth.id)
+
+StudyTiming.create!(study_record_id: StudyRecord.fifth.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+TimingResult.create!(study_record_id: StudyRecord.fifth.id)
