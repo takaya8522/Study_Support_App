@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "homes#top"
   get "homes/about", to: "homes#about"
   get "homes/index", to: "homes#index"
@@ -23,5 +22,10 @@ Rails.application.routes.draw do
     resources :study_records
     resources :completes, only: %i[index show]
     resources :review_counts, only: %i[update]
+  end
+
+  # 管理者ページ用
+  namespace :admin do
+    resources :users
   end
 end

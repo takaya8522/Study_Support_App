@@ -8,6 +8,6 @@
 <div>
   <!--ログインしてるユーザーが管理者の場合のみ-->
   <% if current_user.try(:admin?) %>
-    <button class="uk-button uk-button-default" ><%= link_to '管理者ページ', rails_admin_path %></button>
+    <button class="uk-button uk-button-default" ><%= link_to '管理者ページ', admin_users_path %></button>
   <% end %>
 </div>
