@@ -12,9 +12,9 @@
 <table class="uk-table uk-table-divider">
   <thead>
     <tr>
-      <th><%= t('.category') %></th>
-      <th><%= t('.title') %></th>
-      <th><%= t('.content') %></th>
+      <th><%= sort_link @q, :category_name, t('.category') %></th>
+      <th><%= sort_link @q, :title, t('.title') %></th>
+      <th><%= sort_link @q, :content, t('.content') %></th>
       <th><%= t('.next_study') %></th>
       <th colspan="3"></th>
     </tr>
