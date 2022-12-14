@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  first_record: 2022-12-04 02:03:57
-  study_record: one
-
-two:
-  first_record: 2022-12-04 02:03:57
-  study_record: two
