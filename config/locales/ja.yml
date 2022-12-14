@@ -24,7 +24,7 @@ ja:
       new_study_record: '学習記録を登録する'
       back: '戻る'
     show:
-      study_record_show_page: '学習記録詳細ページ'
+      study_record_show_page: '復習登録ページ'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'
@@ -85,7 +85,7 @@ ja:
       created_at: '作成日時'
       review_page: '復習画面'
     show:
-      study_record_show_page: '学習記録詳細ページ'
+      study_record_show_page: '復習登録ページ'
       title: 'タイトル'
       content: '内容'
       study_cycle: '学習サイクル'

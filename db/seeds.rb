@@ -1,8 +1,14 @@
 User.create!(name: "admins", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true, provider: nil, uid: nil)
 User.create!(name: "normal", email: "normalnormal@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false, provider: nil, uid: nil)
+User.create!(name: "一郎", email: "1111111111@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false, provider: nil, uid: nil)
+User.create!(name: "次郎", email: "2222222222@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false, provider: nil, uid: nil)
+User.create!(name: "三郎", email: "3333333333@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false, provider: nil, uid: nil)
 
 Category.create!(name: "英語", user_id: User.first.id)
 Category.create!(name: "プログラミング", user_id: User.first.id)
+Category.create!(name: "数学", user_id: User.first.id)
+Category.create!(name: "国語", user_id: User.first.id)
+Category.create!(name: "理科", user_id: User.first.id)
 
 StudyRecord.create!(title: "単語の勉強", content: "単語帳を読む", user_id: User.first.id, category_id: Category.first.id)
 StudyRecord.create!(title: "英文法の勉強", content: "英文法の本を読む", user_id: User.first.id, category_id: Category.first.id)

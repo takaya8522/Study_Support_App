@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('.study_record_index_page') %></h1>
+<h1 class="uk-heading-line"><span><%= t('.study_record_index_page') %></span></h1>
 
 <%= search_form_for @q, url: user_study_records_path(current_user) do |f| %>
   <%= f.label :title_or_content_cont, 'キーワード' %>
@@ -9,7 +9,7 @@
   <%= f.submit '検索', class: "uk-button uk-button-primary uk-button-small" %>
 <% end %>
 
-<table>
+<table class="uk-table uk-table-divider">
   <thead>
     <tr>
       <th><%= t('.category') %></th>
@@ -34,6 +34,15 @@
 </table>
 <%= paginate @study_records %>
 
-<br>
+<div class="uk-margin-medium-top">
+  <button class="uk-button uk-button-default uk-button-large uk-width-1-3" type="button" uk-toggle="target: #offcanvas-flip">使い方を見る</button>
 
-<button class="uk-button uk-button-default uk-button-small"><%= link_to t('.create_record'), new_user_study_record_path(current_user) %></button>
+  <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+      <div class="uk-offcanvas-bar">
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+          <h3>学習一覧ページの見方</h3>
+          <p>登録した学習記録が一覧で表示されます。</p>
+          <p>復習をしたい場合は、復習画面ボタンをクリックしてください。</p>
+      </div>
+  </div>
+</div>

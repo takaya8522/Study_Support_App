@@ -1,5 +1,22 @@
-<h1><%= t('.new_study_record') %></h1>
+<div>
+  <h1><%= t('.new_study_record') %></h1>
+  <%= render 'form', study_record: @study_record %>
+  <button class="uk-button uk-button-default uk-button-small"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+</div>
 
-<%= render 'form', {study_record: @study_record} %>
+<div class="uk-margin-large-top">
+  <button class="uk-button uk-button-default uk-button-large uk-width-1-3" type="button" uk-toggle="target: #offcanvas-flip">使い方を見る</button>
 
-<button class="uk-button uk-button-default uk-button-small"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+  <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+      <div class="uk-offcanvas-bar">
+
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+          <h3>登録方法</h3>
+
+          <p>学習記録を登録する前に、まずはカテゴリーを登録してください。</p>
+          <p>学習記録を登録すると、忘却曲線に基づいた復習予定時刻が自動的に作成されます。</p>
+          <p>登録した学習記録は、「学習記録一覧ページ」、「スケジュールページ」で確認できます。</p>
+      </div>
+  </div>
+</div>
