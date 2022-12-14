@@ -6,7 +6,7 @@ FactoryBot.define do
     password_confirmation { '123456' }
     admin { 'true' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
   end
 
   factory :normal_user, class: User do
@@ -16,6 +16,6 @@ FactoryBot.define do
     password_confirmation { '123456' }
     admin { 'false' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
   end
 end

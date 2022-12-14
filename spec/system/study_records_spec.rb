@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "学習記録管理機能", type: :system do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
-  let!(:first_category) { FactoryBot.create(:first_category) }
+  let!(:first_category) { FactoryBot.create(:first_category, user_id: @current_user.id) }
   let(:test_study_record) { FactoryBot.create(:study_record, user_id: @current_user.id, category_id: @category) }
   before do
     @current_user = User.find_by(email: "adminadmino@piyopiyo.com")

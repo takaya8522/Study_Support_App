@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :StudyRecord do
     title { 'テスト' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
     category_id { 1 }
     user_id { 1 }
   end
@@ -11,7 +11,7 @@ FactoryBot.define do
     title { '単語の勉強' }
     content { '単語帳を読む' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
     category_id { 1 }
     user_id { 1 }
   end
@@ -20,7 +20,7 @@ FactoryBot.define do
     title { '英文法の勉強' }
     content { '英文法の本を読む' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
     category_id { 1 }
     user_id { 1 }
   end
@@ -29,7 +29,7 @@ FactoryBot.define do
     title { 'リスニングの勉強' }
     content { '英語のニュースを聞く' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
     category_id { 1 }
     user_id { 1 }
   end
@@ -38,7 +38,7 @@ FactoryBot.define do
     title { 'プログラミングの勉強' }
     content { 'qiitaを見る' }
     created_at { Time.now }
-    deadline_on { Time.now }
+    updated_at { Time.now }
     category_id { 2 }
     user_id { 1 }
   end
