@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :review_counts, only: %i[update]
   end
 
-  # 管理者ページ用
+  # 管理者用ページ用
   namespace :admin do
     resources :users
   end

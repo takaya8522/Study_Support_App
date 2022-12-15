@@ -30,7 +30,8 @@
               <%# 投稿を未復習順に表示 %>
               <% i = 0 %>
               <% @order_study_records.each do |order_study_record| %>
-                <% break if i == 4 %>
+                <%# 期限が近い順に6件文ループさせる %>
+                <% break if i == 6 %>
                 <%# genre_idが一致したら表示 %>
                 <% if order_study_record[3] == category %>
                   <% i += 1 %>

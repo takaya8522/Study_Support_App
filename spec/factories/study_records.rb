@@ -1,6 +1,7 @@
 FactoryBot.define do
-  factory :StudyRecord do
+  factory :study_record do
     title { 'テスト' }
+    content { 'テスト' }
     created_at { Time.now }
     updated_at { Time.now }
     category_id { 1 }

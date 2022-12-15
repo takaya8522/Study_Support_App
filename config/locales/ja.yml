@@ -98,7 +98,7 @@ ja:
   admin:
     users:
       index:
-        admin_index_page: '管理者ページ'
+        admin_index_page: '管理者用ページ'
         user: 'ユーザー名'
         created_at: '作成日時'
         destroy: '削除する'

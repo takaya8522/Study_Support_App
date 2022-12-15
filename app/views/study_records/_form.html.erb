@@ -11,27 +11,22 @@
     </div>
   <% end %>
 
-  <button class="uk-button uk-button-default uk-button-small"><%= link_to 'カテゴリーを登録する', user_categories_path(current_user) %></button>
-  <% if current_user.categories.empty? %>
-    <div>まずはカテゴリーを登録してください！</div>
-  <% end %>
-
-  <div class="field">
+  <div class="field uk-margin-small-bottom">
     <%= form.label :category_name %><br>
-    <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: true, selected: 1}, {class: "uk-select uk-form-width-medium"} %>
+    <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: true, selected: 0}, {class: "uk-select uk-form-width-medium"} %>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin-small-bottom">
     <%= form.label :title %><br>
     <%= form.text_field :title, placeholder: "タイトルを入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin-small-bottom">
     <%= form.label :content %><br>
     <%= form.text_area :content, placeholder: "内容を入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit class: "uk-button uk-button-primary uk-button-small" %>
+  <div class="actions  uk-margin-small-bottom">
+    <%= form.submit class: "uk-button uk-button-primary uk-button" %>
   </div>
 <% end %>
