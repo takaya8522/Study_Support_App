@@ -7,8 +7,8 @@ services:
     env_file:
       - .env
     # =========ローカルと本番切り替え===========
-    # command: bundle exec puma -C config/puma.rb -e production
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    command: bundle exec puma -C config/puma.rb -e production
+    # command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     # ======================================
     volumes:
       - .:/learning_management_app
@@ -20,17 +20,17 @@ services:
       - learning_management_app-network
     
     # =========ローカルと本番切り替え===========
-    depends_on:
-      - db
+  #   depends_on:
+  #     - db
 
-  db:
-    image: postgres
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    env_file:
-      - .env
-    networks:
-      - learning_management_app-network
+  # db:
+  #   image: postgres
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
+  #   env_file:
+  #     - .env
+  #   networks:
+  #     - learning_management_app-network
     # ======================================
 
   web:
@@ -47,12 +47,13 @@ services:
     networks:
       - learning_management_app-network
 
-  chrome:
-    image: seleniarm/standalone-chromium
-    ports:
-      - "4444:4444"
-    # ref: https://github.com/seleniumhq-community/docker-seleniarm#--shm-size2g
-    shm_size: 2gb
+  # ローカル環境でRspecを実行するため
+  # chrome:
+  #   image: seleniarm/standalone-chromium
+  #   ports:
+  #     - "4444:4444"
+  #   # ref: https://github.com/seleniumhq-community/docker-seleniarm#--shm-size2g
+  #   shm_size: 2gb
 
 # Dockerコンテナの中身を保存しておくための領域を設定
 volumes:
