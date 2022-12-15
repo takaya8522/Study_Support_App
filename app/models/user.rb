@@ -2,6 +2,11 @@ class User < ApplicationRecord
   has_many :study_records, dependent: :destroy
   has_many :categories, dependent: :destroy
   has_one_attached :image
+
+  with_options presence: true do
+    validates :name
+    validates :email
+  end
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
