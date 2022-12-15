@@ -2,22 +2,22 @@ require 'rails_helper'
 
 RSpec.describe "学習記録管理機能", type: :system do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
-  let!(:first_category) { FactoryBot.create(:first_category, user_id: @current_user.id) }
-  let(:test_study_record) { FactoryBot.create(:study_record, user_id: @current_user.id, category_id: @category) }
   before do
     @current_user = User.find_by(email: "adminadmino@piyopiyo.com")
-    @category = Category.find_by(name: "英語")
+    @category.id = Category.find_by(name: "英語")
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'adminadmino@piyopiyo.com'
     fill_in 'パスワード', with: '123456'
     click_button 'ログイン'
   end
+  let!(:first_category) { FactoryBot.create(:first_category, user_id: @current_user.id) }
+  let(:test_study_record) { FactoryBot.create(:study_record, user_id: @current_user.id, category_id: @category.id) }
 
   describe '登録機能' do
     context '学習機能を登録した場合' do
       it '登録した学習記録が表示される' do
         visit new_user_study_record_path(@current_user)
-        select '英語', from: 'カテゴリー名'
+        select '英語', from: 'category'
         fill_in 'タイトル', with: '単語の勉強'
         fill_in '内容', with: '単語帳を読む'
         click_button '登録する'
@@ -27,10 +27,10 @@ RSpec.describe "学習記録管理機能", type: :system do
   end
 
   describe '一覧表示機能' do
-    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category) }
-    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category) }
-    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category) }
-    let(:fourth_study_record) { FactoryBot.create(:study_record, user_id: @current_user.id, category_id: @category) }
+    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category.id) }
+    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category.id) }
+    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category.id) }
+    let(:fourth_study_record) { FactoryBot.create(:study_record, user_id: @current_user.id, category_id: @category.id) }
     before do
       visit user_study_records_path(@current_user)
     end
@@ -66,9 +66,9 @@ RSpec.describe "学習記録管理機能", type: :system do
   end
 
   describe 'ソート機能' do
-    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category) }
-    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category) }
-    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category) }
+    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category.id) }
+    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category.id) }
+    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category.id) }
     before do
       visit user_study_records_path(@current_user)
     end
@@ -90,9 +90,9 @@ RSpec.describe "学習記録管理機能", type: :system do
   end
 
   describe '検索機能' do
-    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category) }
-    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category) }
-    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category) }
+    let!(:first_study_record) { FactoryBot.create(:first_study_record, title: 'study_record_title1', user_id: @current_user.id, category_id: @category.id) }
+    let!(:second_study_record) { FactoryBot.create(:second_study_record, title: 'study_record_title2', user_id: @current_user.id, category_id: @category.id) }
+    let!(:third_study_record) { FactoryBot.create(:third_study_record, title: 'study_record_title3', user_id: @current_user.id, category_id: @category.id) }
     before do
       visit user_study_records_path(@current_user)
     end

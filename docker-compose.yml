@@ -46,11 +46,14 @@ services:
       - app
     networks:
       - learning_management_app-network
-    environment:
-      - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
 
-  selenium_chrome:
-    image: selenium/standalone-chrome-debug
+  chrome:
+    image: seleniarm/standalone-chromium
+    ports:
+      - "4444:4444"
+    # ref: https://github.com/seleniumhq-community/docker-seleniarm#--shm-size2g
+    shm_size: 2gb
+
 # Dockerコンテナの中身を保存しておくための領域を設定
 volumes:
   public-data:

@@ -21,5 +21,15 @@ module LearningManagementApp
 
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+
+    # specファイルの自動生成機能OFF
+    config.generators do |g|
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       controller_specs: false,
+                       routing_specs: false,
+                       request_specs: false
+    end
   end
 end
