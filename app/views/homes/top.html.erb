@@ -81,7 +81,7 @@
   <div class="uk-width-medium-1-1 uk-row-first">
     <div class="uk-vertical-align uk-text-center">
       <div class="uk-margin-xlarge-bottom">
-        <div id="test-filter" class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex" uk-parallax="start: 100%; end: 100%; sepia: 100;" style="background-image: url('/assets/logo_transparent.png'); height: 520px; background-size: 110%;"></div>
+        <div id="test-filter" class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex" uk-parallax="start: 100%; end: 100%; sepia: 100;" style="background-image: url('<%= asset_path "logo_transparent.png" %>'); height: 520px; background-size: 110%;"></div>
         <div class="uk-margin-top">
           <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" uk-parallax="target: #test-filter; start: 100%; end: 100%; blur: 0,10;" style="font-size: 35px; font-family: 'Raleway', sans-serif;">Scroll Down</h1>
         </div>
@@ -99,7 +99,7 @@
       <div data-aos="zoom-in" data-aos-duration="1500" data-aos-anchor-placement="top-center">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-xlarge" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
-              <img src="/assets/forgetting_curve.png" alt="" uk-cover>
+              <img src="<%= asset_path "forgetting_curve.png" %>" alt="" uk-cover>
               <canvas width="800" height="400"></canvas>
             </div>
             <div>

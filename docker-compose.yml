@@ -47,13 +47,14 @@ services:
     networks:
       - learning_management_app-network
 
-  # ローカル環境でRspecを実行するため
+  # ========ローカル環境でRspecを実行するため==========
   # chrome:
   #   image: seleniarm/standalone-chromium
   #   ports:
   #     - "4444:4444"
   #   # ref: https://github.com/seleniumhq-community/docker-seleniarm#--shm-size2g
   #   shm_size: 2gb
+  # ===============================================
 
 # Dockerコンテナの中身を保存しておくための領域を設定
 volumes:
