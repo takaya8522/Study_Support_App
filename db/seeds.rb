@@ -30,3 +30,12 @@ TimingResult.create!(study_record_id: StudyRecord.fourth.id)
 
 StudyTiming.create!(study_record_id: StudyRecord.fifth.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
 TimingResult.create!(study_record_id: StudyRecord.fifth.id)
+
+# 50.times do |n|
+#   StudyRecord.create!(title: "単語の勉強", content: "単語帳を読む", user_id: User.first.id, category_id: Category.first.id)
+# end
+
+# StudyRecord.all.each do |study_record|
+#   study_record.study_timing.create!(first_timing: 1.day.from_now, second_timing: 2.days.from_now,third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+#   study_record.timing_result.create!
+# end
