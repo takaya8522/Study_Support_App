@@ -1,6 +1,6 @@
 ## README
 Study Support  
-url:
+url: http://study-support-app.jp/
 ![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "facebook_cover_photo_2")
 
 ## 製品概要 / Overview
@@ -37,9 +37,9 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 ```
 $ git clone git@github.com:takaya8522/learning_management_app.git
 $ cd learning_management_app
-$ bundle install
-$ rails db:create && rails db:migrate
-$ rails s
+$ docker-compose build --no-cache
+$ docker-compose up -d
+$ docker-compose exec app rails db:create && rails db:migrate
 ```
 
 ## カタログ設計とテーブル定義書 / Catalog Design & Table Definition

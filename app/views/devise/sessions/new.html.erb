@@ -1,26 +1,33 @@
-<h2><%= t('.sign_in') %></h2>
+<div class="uk-container uk-container-center">
+  <h2><%= t('.sign_in') %></h2>
+  <div class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" uk-grid>
+    <div class="uk-width-1-3@s uk-position-relative">
+      <div class="uk-card uk-card-default uk-card-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field uk-margin-small-bottom">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-textarea uk-form-width-medium" %>
+          </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-textarea uk-form-width-medium" %>
+          <div class="field uk-margin-small-bottom">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, autocomplete: "current-password", class: "uk-textarea uk-form-width-medium" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="field uk-margin-small-bottom">
+              <%= f.check_box :remember_me, class: "uk-checkbox" %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+
+          <div class="actions uk-margin-small-bottom">
+            <%= f.submit t('.sign_in'), class: "uk-button uk-button-primary uk-button-small" %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+  		</div>
+  	</div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "uk-textarea uk-form-width-medium" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me, class: "uk-checkbox" %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit t('.sign_in'), class: "uk-button uk-button-primary uk-button-small" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "layouts/space" %>
+</div>

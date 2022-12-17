@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Support</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag('favicon.png') %>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/9ec8e86bb6.js" crossorigin="anonymous"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="uk-section">	
+<div class="uk-container uk-container-small">
+  <div id="switcher">
+									<label class="uk-switch" for="on-1">
+										<input type="checkbox" id="on-1" />
+										<div class="uk-switch-slider uk-switch-on-off round"></div>
+									</label>
+								</div>
+		<div class="uk-timeline" uk-scrollspy="cls: uk-animation-fade; target: > div > .uk-card; delay: 500;">
+			<div class="uk-timeline-item">
+				<div class="uk-timeline-icon uk-background-primary uk-border-circle uk-flex uk-flex-center uk-flex-middle">
+					<span uk-icon="star" class="uk-light"></span>
+
+				</div>
+				<div class="uk-timeline-content uk-card uk-card-body uk-card-default">
+					<h2 class="uk-background-primary uk-light">LOREM IPSUM DOLOR</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+					</p>
+					<a href="#" class="uk-button uk-button-default">button</a>
+				</div>
+			</div>
+
+			<div class="uk-timeline-item">
+				<div class="uk-timeline-icon uk-background-primary uk-border-circle uk-flex uk-flex-center uk-flex-middle">
+					<span uk-icon="happy" class="uk-light"></span>
+
+				</div>
+				<div class="uk-timeline-content uk-card uk-card-body uk-card-default right">
+					<h2 class="uk-background-primary uk-light">LOREM IPSUM DOLOR</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+					</p>
+					<a href="#" class="uk-button uk-button-default">button</a>
+				</div>
+			</div>
+
+			<div class="uk-timeline-item">
+				<div class="uk-timeline-icon uk-background-primary uk-border-circle uk-flex uk-flex-center uk-flex-middle">
+					<span uk-icon="lifesaver" class="uk-light"></span>
+
+				</div>
+				<div class="uk-timeline-content uk-padding-remove uk-card uk-card-body uk-card-default">
+          <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url(https://getuikit.com/docs/images/dark.jpg);">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+        <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">Headline</h1>
+        <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+</div>
+				</div>
+			</div>
+
+      <div class="uk-timeline-item">
+				<div class="uk-timeline-icon uk-background-primary uk-border-circle uk-flex uk-flex-center uk-flex-middle">
+					<span uk-icon="comments" class="uk-light"></span>
+
+				</div>
+				<div class="uk-timeline-content uk-card uk-card-body uk-card-default right">
+					<div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <img class="uk-border-circle" width="40" height="40" src="https://getuikit.com/docs/images/avatar.jpg">
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+					<a href="#" class="uk-button uk-button-default">button</a>
+				</div>
+			</div>
+
+			<div class="uk-timeline-item">
+				<div class="uk-timeline-icon uk-background-primary uk-border-circle uk-flex uk-flex-center uk-flex-middle">
+					<span uk-icon="world" class="uk-light"></span>
+
+				</div>
+				<div class="uk-timeline-content uk-padding-remove uk-card uk-card-body uk-card-default">
+					<div class="uk-card-media-top">
+                <img src="https://getuikit.com/docs/images/light.jpg" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">Media Top</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+					<a href="#" class="uk-button uk-button-default">button</a>
+            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </div>
+</body>
+</html>

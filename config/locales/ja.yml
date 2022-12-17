@@ -9,6 +9,8 @@ ja:
       sign_in: 'ログイン'
       my_account: 'マイアカウント'
       sign_out: 'サインアウト'
+      home: 'ホーム'
+      edit: 'アカウント編集'
   study_records:
     index:
       search: '検索'

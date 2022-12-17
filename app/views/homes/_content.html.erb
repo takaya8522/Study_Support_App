@@ -1,10 +1,17 @@
-<div class="uk-margin-large-bottom">
+<div class="uk-margin-large-bottom uk-text-large">
   <p>初めてご利用の方</p>
-
-  <p uk-margin>
-    <button class="uk-button uk-button-default"><%= link_to "アカウント登録", new_user_registration_path %></button>
-    <button class="uk-button uk-button-default"><%= link_to "ログイン", new_user_session_path %></button>
-    <button class="uk-button uk-button-default"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></button>
-    <button class="uk-button uk-button-default"><%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, method: :post %></button>
-  </p>
+  <div class="uk-button-group">
+    <%= link_to new_user_registration_path do %>
+      <button class="uk-button uk-button-default">アカウント登録</button>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <button class="uk-button uk-button-default">ログイン</button>
+    <% end %>
+    <%= link_to users_guest_sign_in_path, method: :post do %>
+      <button class="uk-button uk-button-default">ゲストログイン（閲覧用）</button>
+    <% end %>
+    <%= link_to users_guest_admin_sign_in_path, method: :post do %>
+      <button class="uk-button uk-button-default">ゲスト管理者ログイン（閲覧用）</button>
+    <% end %>
+  </div>
 </div>
