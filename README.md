@@ -14,8 +14,8 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 ## 開発言語 / Language
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
-- Front End: HTML, CSS, JavaScript, UIkit
-- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, Route53, CloudFormation, S3, CodeDeploy, ChatBot ), CircleCI
+- Front End: HTML, CSS, JavaScript, Uikit
+- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, Route53, S3 )
 - DB: PostgreSQL
 
 ## 機能・使用Gem / Functions・Gem
@@ -25,8 +25,9 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 - rexml
 - devise-i18n
 - kaminari 
+- dotenv-rails
 - Chartkickを使ったグラフ作成機能
-- UIkit/AOSによるデザイン構成
+- Uikit/AOS/Lorem Picsumによるデザイン構成
 - AWS/Docker/RDSを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
