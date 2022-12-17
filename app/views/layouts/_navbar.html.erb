@@ -110,11 +110,15 @@
         <% end %>
 			</li>
       <li>
+        <%= link_to "https://www.wantedly.com/id/takaya_suzuki01" do %>
+				  <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
+        <% end %>
+			</li>
+      <li>
         <%= mail_to 'tky8522@yahoo.co.jp' do %>
 				  <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
         <% end %>
 			</li>
-      <br>
       <li>
         Created By Takaya Suzuki
 			</li>
@@ -178,18 +182,23 @@
 					  <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%=t('.sign_out')%>
           <% end %>
 				</li>
-        <li>
-          <%= link_to edit_user_registration_path do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: settings"></span><%=t('.edit')%>
-          <% end %>
-				</li>
-        <% if current_user.try(:admin?) %>
-          <li>
-            <%= link_to admin_users_path do %>
-				  	  <span class="uk-margin-small-right" uk-icon="icon: cog"></span>管理者用ページ
+	      <li class="uk-parent">
+					<a href="#"><span class="uk-margin-small-right" uk-icon="icon: settings"></span><%=t('.edit')%><span uk-nav-parent-icon></span></a>
+					<ul class="uk-nav-sub">
+            <li>
+              <%= link_to edit_user_registration_path do %>
+				    	  <span class="uk-margin-small-right" uk-icon="icon: cog"></span>マイアカウント編集
+              <% end %>
+				    </li>
+            <% if current_user.try(:admin?) %>
+              <li>
+                <%= link_to admin_users_path do %>
+				      	  <span class="uk-margin-small-right" uk-icon="icon: users"></span>管理者用ページ
+                <% end %>
+				      </li>
             <% end %>
-				  </li>
-        <% end %>
+					</ul>
+				</li>
 				<li class="uk-nav-header">About Me</li>
         <li>
           <%= link_to "https://twitter.com/Takaya8522" do %>
@@ -199,6 +208,11 @@
         <li>
           <%= link_to "https://github.com/takaya8522" do %>
 					  <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
+          <% end %>
+				</li>
+        <li>
+          <%= link_to "https://www.wantedly.com/id/takaya_suzuki01" do %>
+					  <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
           <% end %>
 				</li>
         <li>
