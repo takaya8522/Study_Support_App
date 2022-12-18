@@ -27,7 +27,7 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 - kaminari 
 - dotenv-rails
 - Chartkickを使ったグラフ作成機能
-- Uikit/AOS/Lorem Picsumによるデザイン構成
+- Uikit/AOS/Lorem Picsum(画像表示API)によるデザイン構成
 - AWS/Docker/RDSを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
