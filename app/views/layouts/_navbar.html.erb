@@ -1,48 +1,33 @@
-<!-- 通常用navbar ログイン中、かつトップページにいる場合 -->
-<% if user_signed_in? == false && current_page?(root_path) %>
-  <div class="uk-position-top" id="top">
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar="dropbar: false;" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-section-primary uk-light; bottom: #scrollup-dropdown">
-      <!-- LEFT -->
-      <div class="uk-navbar-left uk-light">
-        <a class="uk-navbar-item uk-logo"></a>
-        <!-- widthsが960pxかそれ以上の場合は表示(uk-visible@m)-->
-        <ul class="uk-navbar-nav">
+<!-- 通常用navbar -->
+<div class="uk-position-top" id="top">
+  <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar="dropbar: false;" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-section-primary uk-light; bottom: #scrollup-dropdown">
+    <!-- LEFT -->
+    <div class="uk-navbar-left uk-light">
+      <a class="uk-navbar-item uk-logo"></a>
+      <ul class="uk-navbar-nav">
+        <% if user_signed_in? == false && current_page?(root_path) %>
           <li class="uk-active"><%= link_to t('.sign_up'), new_user_registration_path %></li>
           <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-<% else %>
-  <div class="uk-position-top" id="top">
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar="dropbar: false;" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-section-primary uk-light; bottom: #scrollup-dropdown">
-      <!-- LEFT -->
-      <div class="uk-navbar-left uk-light">
-        <a class="uk-navbar-item uk-logo"></a>
-        <!-- widthsが960pxかそれ以上の場合は表示(uk-visible@m)-->
-        <ul class="uk-navbar-nav uk-visible@m">
-          <% if user_signed_in? %>
-            <li class="uk-active"><%= link_to t('.home'), root_path %></li>
-            <li class="uk-active"><%= link_to t('.my_account'), user_path(current_user) %></li>
-            <li class="uk-active"><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li class="uk-active"><%= link_to t('.home'), root_path %></li>
-            <li class="uk-active"><%= link_to t('.sign_up'), new_user_registration_path %></li>
-            <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
-      <!-- モバイル画面のみ表示 -->
-      <div class="uk-navbar-right">
-        <!--モバイル用のメニュートグルボタン-->
-        <a class="uk-navbar-toggle uk-hidden@m" uk-toggle="target: #offcanvas">
-          <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-right">Menu</span>
-        </a>
-      </div>
-    </nav>
-  </div>
-<% end %>
-
+        <% elsif user_signed_in? %>
+          <li class="uk-active"><%= link_to t('.home'), root_path %></li>
+          <li class="uk-active"><%= link_to t('.my_account'), user_path(current_user) %></li>
+          <li class="uk-active"><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="uk-active"><%= link_to t('.home'), root_path %></li>
+          <li class="uk-active"><%= link_to t('.sign_up'), new_user_registration_path %></li>
+          <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- モバイル画面のみ表示 -->
+    <div class="uk-navbar-right">
+      <!--モバイル用のメニュートグルボタン-->
+      <a class="uk-navbar-toggle uk-hidden@m" uk-toggle="target: #offcanvas">
+        <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-right">Menu</span>
+      </a>
+    </div>
+  </nav>
+</div>
 
 <!-- モバイル用のナビバー -->
 <nav id="offcanvas" uk-offcanvas="overlay: true; mode: push; flip: true">
@@ -143,12 +128,28 @@
   </div>
 </nav>
 
-<%# headerの背景画像・ロゴ サインインしている場合と、していない場合で表示を切り替える %>
+<%# headerの背景画像・ロゴ サインインしている場合と、していない場合で表示領域を切り替える %>
 <% if user_signed_in? == false && current_page?(root_path) %>
-  <header>
+  <header class="uk-visible@m">
     <div class="uk-section-secondary">
       <!-- navbarの背景画像をアクセス毎に変更する -->
       <div class="uk-background-fixed uk-background-norepeat uk-background-cover uk-background-center-center uk-background-image@s uk-section uk-section-xlarge uk-flex uk-flex-middle" uk-parallax="bgx: 0,-60" uk-height viewport="offset-top: false" style="background-image: linear-gradient(to right, rgba(30, 75, 115, 0.9), rgba(255, 255, 255, 0)), url('https://picsum.photos/id/20/1920/1100/?blur=1');">
+        <div class="uk-width-1-1">
+          <div class="uk-container uk-container-large">
+            <h1 class="uk-margin-small uk-margin-medium-top uk-width-large@m uk-text-left@m uk-text-center uk-h6 uk-heading-line" uk-parallax="opacity: 1,0;viewport: 0.95;media: @s" style="font-family: 'Raleway', sans-serif;">
+              <span>Make learning more fun & more efficiently</span>
+            </h1>
+            <h2 class="uk-margin-small uk-text-left@m uk-text-center uk-heading-small" uk-parallax="y: 0,60;opacity: 1,0;easing: 0.8;viewport: 0.95;media: @s" style="font-family: 'Raleway', sans-serif;">Study Support</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <%# モバイル用画面の場合はbackground-fixedを無効にする %>
+  <header class="uk-hidden@m">
+    <div class="uk-section-secondary">
+      <!-- navbarの背景画像をアクセス毎に変更する -->
+      <div class="uk-background-norepeat uk-background-cover uk-background-center-center uk-background-image@s uk-section uk-section-xlarge uk-flex uk-flex-middle" uk-parallax="bgx: 0,-60" uk-height viewport="offset-top: false" style="background-image: linear-gradient(to right, rgba(30, 75, 115, 0.9), rgba(255, 255, 255, 0)), url('https://picsum.photos/id/20/1920/1100/?blur=1');">
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
             <h1 class="uk-margin-small uk-margin-medium-top uk-width-large@m uk-text-left@m uk-text-center uk-h6 uk-heading-line" uk-parallax="opacity: 1,0;viewport: 0.95;media: @s" style="font-family: 'Raleway', sans-serif;">
