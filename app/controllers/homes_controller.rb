@@ -12,6 +12,4 @@ class HomesController < ApplicationController
       @categories = order_array[1]
     end
   end
-
-  def about; end
 end

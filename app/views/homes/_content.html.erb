@@ -1,6 +1,6 @@
 <%# 通常用始めての方用ボタン %>
-<div class="uk-margin-large-bottom uk-text-large uk-visible@s">
-  <p>初めてご利用の方</p>
+<div class="uk-margin-large-bottom uk-visible@s">
+  <h1 style="font-size: 25px; font-family: 'Raleway', sans-serif;">Get Started</h1>
   <div class="uk-button-group">
     <%= link_to new_user_registration_path do %>
       <button class="uk-button uk-button-default">アカウント登録</button>
@@ -9,17 +9,17 @@
       <button class="uk-button uk-button-default">ログイン</button>
     <% end %>
     <%= link_to users_guest_sign_in_path, method: :post do %>
-      <button class="uk-button uk-button-default">ゲストログイン</button>
+      <button class="uk-button uk-button-default">ゲストログイン(閲覧用)</button>
     <% end %>
-    <%= link_to users_guest_admin_sign_in_path, method: :post do %>
-      <button class="uk-button uk-button-default">ゲスト管理者ログイン</button>
-    <% end %>
+    <%#= link_to users_guest_admin_sign_in_path, method: :post do %>
+      <%# <button class="uk-button uk-button-default">ゲスト管理者ログイン</button> %>
+    <%# end %>
   </div>
 </div>
 
 <%# モバイル用初めての方ボタン %>
 <div class="uk-button-group uk-hidden@s uk-margin-large-bottom">
-    <button class="uk-button uk-button-default uk-text-default">初めてご利用の方</button>
+    <button class="uk-button uk-button-default uk-text-default" style="font-size: 20px; font-family: 'Raleway', sans-serif;">Get Started</button>
     <div class="uk-inline">
         <button class="uk-button uk-button-default" type="button" aria-label="Toggle Dropdown"><span uk-icon="icon:  triangle-down"></span></button>
         <div uk-dropdown="mode: click; target: !.uk-button-group;">

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root "homes#top"
-  get "homes/index", to: "homes#index"
   # 学習理解度を更新するため
   patch 'users/:id/change_comprehension' => 'completes#change_comprehension', as: 'change_comprehension'
   

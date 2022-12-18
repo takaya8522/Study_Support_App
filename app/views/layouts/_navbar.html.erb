@@ -10,7 +10,6 @@
           <li class="uk-active"><%= link_to t('.sign_in'), new_user_session_path %></li>
         <% elsif user_signed_in? %>
           <li class="uk-active"><%= link_to t('.home'), root_path %></li>
-          <li class="uk-active"><%= link_to t('.my_account'), user_path(current_user) %></li>
           <li class="uk-active"><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li class="uk-active"><%= link_to t('.home'), root_path %></li>
