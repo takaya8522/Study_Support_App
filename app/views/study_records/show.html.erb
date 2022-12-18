@@ -8,13 +8,31 @@
         <strong>次の学習まで: </strong>
         <%= render partial: 'time_limit', locals: { study_timing: @study_timing, review_count: @review_count } %>
       </p>
-      <%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
-      <%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
-      <div class="uk-button-group">
+      <div class="uk-margin-small">
+        <%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
+        <%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
+      </div>
+      <div class="uk-button-group uk-visible@s">
         <button class="uk-button uk-button-default"><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></button>
         <button class="uk-button uk-button-default"><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %></button>
         <button class="uk-button uk-button-default"><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %></button>
         <button class="uk-button uk-button-default"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
+      </div>
+      <%# モバイル用ボタン %>
+      <div class="uk-button-group uk-hidden@s uk-margin-large-bottom">
+          <button class="uk-button uk-button-default">ステータスを変更する</button>
+          <div class="uk-inline">
+              <button class="uk-button uk-button-default" type="button" aria-label="Toggle Dropdown"><span uk-icon="icon:  triangle-down"></span></button>
+              <div uk-dropdown="mode: click; target: !.uk-button-group;">
+                  <ul class="uk-nav uk-dropdown-nav">
+                      <li><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></li>
+                      <li><%= link_to t('.edit'), edit_user_study_record_path(user_id: current_user.id, id: @study_record.id) %></li>
+                      <li class="uk-nav-divider"></li>
+                      <li><%= link_to t('.destroy'), user_study_record_path(user_id: current_user.id, id: @study_record.id), method: :delete, data: { confirm: '本当によろしいですか?' } %></li>
+                      <li><%= link_to t('.back'), user_study_records_path(current_user) %></li>
+                  </ul>
+              </div>
+          </div>
       </div>
 		</div>
 	</div>
