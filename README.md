@@ -1,6 +1,6 @@
 ## README
 Study Support  
-url: http://study-support-app.jp/
+url: https://study-support-app.jp/
 ![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "facebook_cover_photo_2")
 
 ## 製品概要 / Overview
