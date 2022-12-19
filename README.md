@@ -1,7 +1,7 @@
 ## README
 Study Support  
 url: https://study-support-app.jp/
-![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "facebook_cover_photo_2")
+![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "cover_photo.png")
 
 ## 製品概要 / Overview
 中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
@@ -15,7 +15,7 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
 - Front End: HTML, CSS, JavaScript, Uikit
-- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, Route53, S3 )
+- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, ALB, Route53, S3 )
 - DB: PostgreSQL
 
 ## 機能・使用Gem / Functions・Gem
@@ -26,8 +26,10 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 - devise-i18n
 - kaminari 
 - dotenv-rails
+- rspec
+- rubocop
 - Chartkickを使ったグラフ作成機能
-- Uikit/AOS/Lorem Picsum(画像表示API)によるデザイン構成
+- Uikit(フロントフレームワーク)/AOS(jsライブラリ)/Lorem Picsum(画像表示API)によるデザイン構成
 - AWS/Docker/RDSを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
