@@ -1,7 +1,7 @@
 ## README
 Study Support  
 url: https://study-support-app.jp/
-![タイトルロゴ](app/assets/images/facebook_cover_photo_2.png "cover_photo.png")
+![タイトルロゴ](app/assets/images/cover_photo.png "cover_photo.png")
 
 ## 製品概要 / Overview
 中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
