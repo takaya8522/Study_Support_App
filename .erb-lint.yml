@@ -1,0 +1,9 @@
+---
+glob: "**/*.{html,text,js}{+*,}.erb"
+exclude:
+  - '**/vendor/**/*'
+  - '**/node_modules/**/*'
+linters:
+  # 自動生成したERBファイルの閉じタグを検証から除外する
+  SelfClosingTag:
+    enabled: false

@@ -83,6 +83,9 @@ group :development do
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+
+  # erbファイルリファクタリング用
+  gem 'erb_lint', require: false
 end
 
 group :test do
