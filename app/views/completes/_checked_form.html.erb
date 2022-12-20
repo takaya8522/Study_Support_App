@@ -13,36 +13,40 @@
     <tbody>
       <tr>
         <td>1回目</td>
-        <td><% if study_record.review_count > 0 %>
-              <i class="far fa-check-square"></i>
-            <% end %>
+        <td>
+          <% if study_record.review_count > 0 %>
+            <i class="far fa-check-square"></i>
+          <% end %>
         </td>
         <td><%= timing_result.first_record.strftime("%Y-%m-%d %H:%M") unless timing_result.first_record.nil? %></td>
         <td><%= study_timing.first_timing.strftime("%Y-%m-%d %H:%M") %></td>
       </tr>
       <tr>
         <td>2回目</td>
-        <td><% if study_record.review_count > 1 %>
-              <i class="far fa-check-square"></i>
-            <% end %>
+        <td>
+          <% if study_record.review_count > 1 %>
+            <i class="far fa-check-square"></i>
+          <% end %>
         </td>
         <td><%= timing_result.second_record.strftime("%Y-%m-%d %H:%M") unless timing_result.second_record.nil? %></td>
         <td><%= study_timing.second_timing.strftime("%Y-%m-%d %H:%M") %></td>
       </tr>
       <tr>
         <td>3回目</td>
-        <td><% if study_record.review_count > 2 %>
-              <i class="far fa-check-square"></i>
-            <% end %>
+        <td>
+          <% if study_record.review_count > 2 %>
+            <i class="far fa-check-square"></i>
+          <% end %>
         </td>
         <td><%= timing_result.third_record.strftime("%Y-%m-%d %H:%M") unless timing_result.third_record.nil? %></td>
         <td><%= study_timing.third_timing.strftime("%Y-%m-%d %H:%M") %></td>
       </tr>
       <tr>
         <td>4回目</td>
-        <td><% if study_record.review_count > 3 %>
-              <i class="far fa-check-square"></i>
-            <% end %>
+        <td>
+          <% if study_record.review_count > 3 %>
+            <i class="far fa-check-square"></i>
+          <% end %>
         </td>
         <td><%= timing_result.fourth_record.strftime("%Y-%m-%d %H:%M") unless timing_result.fourth_record.nil? %></td>
         <td><%= study_timing.fourth_timing.strftime("%Y-%m-%d %H:%M") %></td>
