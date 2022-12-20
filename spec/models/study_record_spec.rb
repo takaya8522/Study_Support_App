@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe StudyRecord, type: :model do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
   let!(:category) { FactoryBot.create(:category, user_id: admin_user.id) }
+
   describe 'バリデーションのテスト' do
     context '学習記録のタイトルが空文字の場合' do
       it 'バリデーションに失敗する' do

@@ -13,6 +13,7 @@ RSpec.describe "ユーザー管理機能", type: :system do
         expect(page).to have_content '学習記録一覧'
       end
     end
+
     context 'ログインせずにタスク一覧画面に遷移した場合' do
       it 'ログイン画面に遷移し、「ログインしてください」というメッセージが表示される', js: true do
         visit user_path(1)
@@ -25,6 +26,7 @@ RSpec.describe "ユーザー管理機能", type: :system do
   describe 'ログイン機能' do
     let!(:admin_user) { FactoryBot.create(:admin_user) }
     let!(:normal_user) { FactoryBot.create(:normal_user) }
+
     before do
       visit new_user_session_path
       fill_in 'メールアドレス', with: 'adminadmino@piyopiyo.com'
@@ -46,7 +48,7 @@ RSpec.describe "ユーザー管理機能", type: :system do
         visit user_path(normal_user)
         expect(page).to have_content '他のユーザーページにはアクセスできません'
       end
-      
+
       it 'ログアウトするとログイン画面に遷移し、「ログアウトしました」というメッセージが表示される', js: true do
         click_on 'サインアウト'
         expect(page).to have_content 'ログアウトしました'
@@ -68,17 +70,17 @@ RSpec.describe "ユーザー管理機能", type: :system do
       end
 
       it '管理者用ページにアクセスできる' do
-        find("#admin_page").click
+        find_by_id('admin_page').click
         expect(page).to have_content 'admins'
       end
 
       it 'ユーザを削除できる', js: true do
-        find("#admin_page").click
+        find_by_id('admin_page').click
         click_on '削除する', match: :first
-        expect{
+        expect do
           expect(page.accept_confirm).to eq "本当に削除してもよろしいですか？"
           expect(page).to have_content "ユーザを削除しました"
-          }
+        end
       end
     end
 

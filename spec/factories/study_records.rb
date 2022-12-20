@@ -4,7 +4,7 @@ FactoryBot.define do
     content { 'テスト' }
     created_at { Time.now }
     updated_at { Time.now }
-  
+
     factory :first_study_record do
       title { '単語の勉強' }
       content { '単語帳を読む' }

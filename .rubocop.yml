@@ -14,6 +14,7 @@ AllCops:
     - "bin/*"
     - "node_modules/**/*"
     - tmp/**/*
+    - "spec/**/*"
 
   # 新ルールを有効化
   NewCops: enable
@@ -69,8 +70,8 @@ Style/Documentation:
   Enabled: false
 
 # ％i（）構文を使用していないシンボルで構成される配列リテラルをチェック（無効）
-# Style/SymbolArray:
-#   Enabled: false
+Style/SymbolArray:
+  Enabled: false
 
 # 文字列に値が代入されて変わっていないかチェック（無効）
 Style/FrozenStringLiteralComment:
@@ -79,3 +80,7 @@ Style/FrozenStringLiteralComment:
 # メソッドパラメータ名の最小文字数を設定
 Naming/MethodParameterName:
   MinNameLength: 1
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false

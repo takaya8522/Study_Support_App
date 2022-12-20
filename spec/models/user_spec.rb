@@ -7,10 +7,10 @@ RSpec.describe User, type: :model do
     context 'ユーザの名前が空文字の場合' do
       it 'バリデーションに失敗する' do
         user = User.create(name: "",
-          email: "piyo@piyopiyo.com",
-          password: "MyString",
-          password_confirmation: "MyString",
-          admin: false)
+                           email: "piyo@piyopiyo.com",
+                           password: "MyString",
+                           password_confirmation: "MyString",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end
@@ -18,10 +18,10 @@ RSpec.describe User, type: :model do
     context 'ユーザのメールアドレスが空文字の場合' do
       it 'バリデーションに失敗する' do
         user = User.create(name: "MyString",
-          email: "",
-          password: "MyString",
-          password_confirmation: "MyString",
-          admin: false)
+                           email: "",
+                           password: "MyString",
+                           password_confirmation: "MyString",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end
@@ -29,10 +29,10 @@ RSpec.describe User, type: :model do
     context 'ユーザのパスワードが空文字の場合' do
       it 'バリデーションに失敗する' do
         user = User.create(name: "MyString",
-          email: "piyo@piyopiyo.com",
-          password: "",
-          password_confirmation: "",
-          admin: false)
+                           email: "piyo@piyopiyo.com",
+                           password: "",
+                           password_confirmation: "",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end
@@ -40,10 +40,10 @@ RSpec.describe User, type: :model do
     context 'ユーザのメールアドレスがすでに使用されていた場合' do
       it 'バリデーションに失敗する' do
         user = User.create(name: "MyString",
-          email: "adminadmino@piyopiyo.com",
-          password: "MyString",
-          password_confirmation: "MyString",
-          admin: false)
+                           email: "adminadmino@piyopiyo.com",
+                           password: "MyString",
+                           password_confirmation: "MyString",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end
@@ -51,10 +51,10 @@ RSpec.describe User, type: :model do
     context 'ユーザのパスワードが6文字未満の場合' do
       it 'バリデーションに失敗する' do
         user = User.create(name: "MyString",
-          email: "piyo@piyopiyo.com",
-          password: "1234",
-          password_confirmation: "1234",
-          admin: false)
+                           email: "piyo@piyopiyo.com",
+                           password: "1234",
+                           password_confirmation: "1234",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end
@@ -62,10 +62,10 @@ RSpec.describe User, type: :model do
     context 'ユーザの名前に値があり、メールアドレスが使われていない値で、かつパスワードが6文字以上の場合' do
       it 'バリデーションに成功する' do
         user = User.create(name: "MyString",
-          email: "piyopiyo",
-          password: "MyString",
-          password_confirmation: "MyString",
-          admin: false)
+                           email: "piyopiyo",
+                           password: "MyString",
+                           password_confirmation: "MyString",
+                           admin: false)
         expect(user).not_to be_valid
       end
     end

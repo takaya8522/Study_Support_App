@@ -1,5 +1,5 @@
 Capybara.register_driver :chrome_headless do |app|
-  options = ::Selenium::WebDriver::Chrome::Options.new
+  options = Selenium::WebDriver::Chrome::Options.new
 
   options.add_argument('--headless')
   options.add_argument('--no-sandbox')
@@ -16,7 +16,7 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
 
-  config.before(:each, type: :system, js: true) do
+  config.before(:each, js: true, type: :system) do
     if ENV["SELENIUM_DRIVER_URL"].present?
       driven_by :selenium, using: :chrome, options: {
         browser: :remote,

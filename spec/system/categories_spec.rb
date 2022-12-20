@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Categories", type: :system do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
+
   before do
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'adminadmino@piyopiyo.com'
@@ -19,8 +20,10 @@ RSpec.describe "Categories", type: :system do
       end
     end
   end
+
   describe '一覧表示機能' do
     let!(:first_category) { FactoryBot.create(:category, user_id: admin_user.id) }
+
     context '一覧画面に遷移した場合' do
       it '登録済みのカテゴリー一覧が表示される' do
         visit user_categories_path(admin_user)

@@ -3,12 +3,14 @@ require 'rails_helper'
 RSpec.describe "学習結果管理機能", type: :system do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
   let!(:first_category) { FactoryBot.create(:category, user_id: admin_user.id) }
+
   before do
     visit new_user_session_path
     fill_in 'メールアドレス', with: 'adminadmino@piyopiyo.com'
     fill_in 'パスワード', with: '123456'
     click_button 'ログイン'
   end
+
   describe '登録機能' do
     before do
       visit new_user_study_record_path(admin_user)
@@ -18,8 +20,9 @@ RSpec.describe "学習結果管理機能", type: :system do
       click_button '登録する'
       test = StudyRecord.find_by(title: 'テスト')
 
-      visit user_study_record_path(admin_user,test)
+      visit user_study_record_path(admin_user, test)
     end
+
     context '学習結果を登録した場合' do
       it '復習画面に学習結果が表示される' do
         check 'study_record_first_record'

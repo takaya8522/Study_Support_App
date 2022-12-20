@@ -8,8 +8,19 @@ class StudyRecordsController < ApplicationController
     @study_records = @q.result.where(user_id: params[:user_id], comprehension: false).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def show
+    @study_timing = StudyTiming.find_by(study_record_id: params[:id])
+    @current_time = Time.zone.now
+    @timing_result = TimingResult.find_by(study_record_id: params[:id])
+    @review_count = @study_record.review_count
+  end
+
   def new
     @study_record = StudyRecord.new
+  end
+
+  def edit
+    @categories = current_user.categories
   end
 
   def create
@@ -27,17 +38,6 @@ class StudyRecordsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @study_timing = StudyTiming.find_by(study_record_id: params[:id])
-    @current_time = Time.zone.now
-    @timing_result = TimingResult.find_by(study_record_id: params[:id])
-    @review_count = @study_record.review_count
-  end
-
-  def edit
-    @categories = current_user.categories
   end
 
   def update
