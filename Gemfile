@@ -62,7 +62,6 @@ group :development, :test do
 
   # テスト用にRspec/factory_botを導入
   gem 'rspec-rails', '~> 5.0.0'
-  gem 'rexml'
   gem 'factory_bot_rails'
 end
 
