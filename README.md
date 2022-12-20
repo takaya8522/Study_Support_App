@@ -46,6 +46,10 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 使用ソフト: draw.io  
 ![インフラ図](app/assets/images/infrastructure.png "infrastructure")
 
+## レスポンシブデザイン / Responsive Designs
+使用ソフト: Mockup Photos
+![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
+
 ## 実行手順 / Procedure
 ```
 $ git clone git@github.com:takaya8522/learning_management_app.git
@@ -70,7 +74,3 @@ https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3
 ## 画面遷移図 / Screen Transition Diagram
 使用ソフト: draw.io  
 ![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
-
-## レスポンシブデザイン / Responsive Designs
-使用ソフト: Mockup Photos
-![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
