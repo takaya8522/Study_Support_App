@@ -14,7 +14,7 @@ RSpec.describe "ユーザー管理機能", type: :system do
       end
     end
     context 'ログインせずにタスク一覧画面に遷移した場合' do
-      it 'ログイン画面に遷移し、「ログインしてください」というメッセージが表示される' do
+      it 'ログイン画面に遷移し、「ログインしてください」というメッセージが表示される', js: true do
         visit user_path(1)
         sleep 1
         expect(page).to have_content 'ログインもしくはアカウント登録してください。'
@@ -33,21 +33,21 @@ RSpec.describe "ユーザー管理機能", type: :system do
     end
 
     context '登録済みのユーザでログインした場合' do
-      it 'タスク一覧画面に遷移し、「ログインしました」というメッセージが表示される' do
+      it 'タスク一覧画面に遷移し、「ログインしました」というメッセージが表示される', js: true do
         expect(page).to have_content 'ログインしました'
       end
 
-      it '自分の詳細画面にアクセスできる' do
+      it '自分の詳細画面にアクセスできる', js: true do
         visit user_path(admin_user)
-        expect(page).to have_content 'adminsさん'
+        expect(page).to have_content 'admins'
       end
 
-      it '他人の詳細画面にアクセスすると、「他のユーザーページにはアクセスできません」というメッセージが表示される' do
+      it '他人の詳細画面にアクセスすると、「他のユーザーページにはアクセスできません」というメッセージが表示される', js: true do
         visit user_path(normal_user)
         expect(page).to have_content '他のユーザーページにはアクセスできません'
       end
       
-      it 'ログアウトするとログイン画面に遷移し、「ログアウトしました」というメッセージが表示される' do
+      it 'ログアウトするとログイン画面に遷移し、「ログアウトしました」というメッセージが表示される', js: true do
         click_on 'サインアウト'
         expect(page).to have_content 'ログアウトしました'
       end
@@ -64,16 +64,15 @@ RSpec.describe "ユーザー管理機能", type: :system do
         fill_in 'メールアドレス', with: 'adminadmino@piyopiyo.com'
         fill_in 'パスワード', with: '123456'
         click_button 'ログイン'
+        visit user_path(admin_user)
       end
 
       it '管理者用ページにアクセスできる' do
-        click_on 'マイアカウント'
         find("#admin_page").click
-        expect(page).to have_content 'adminsさん'
+        expect(page).to have_content 'admins'
       end
 
-      it 'ユーザを削除できる' do
-        click_on 'マイアカウント'
+      it 'ユーザを削除できる', js: true do
         find("#admin_page").click
         click_on '削除する', match: :first
         expect{
