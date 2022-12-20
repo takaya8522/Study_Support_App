@@ -1,6 +1,6 @@
 <h1><%= t('.categories_index_page') %></h1>
 <div>
-  <%= form_with(model: [current_user, @category], method: :post, local: true) do |f| %>      
+  <%= form_with(model: [current_user, @category], method: :post, local: true) do |f| %>
     <% if @category.errors.any? %>
       <div>
         <h2><%= pluralize(@category.errors.count, "件") %>エラーが発生しました！</h2>

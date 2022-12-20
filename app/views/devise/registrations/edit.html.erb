@@ -6,7 +6,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :name %><br/>
+          <%= f.label :name %><br>
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前を入力してください", class: "uk-textarea uk-form-width-large" %>
         </div>
 
@@ -41,7 +41,7 @@
         <div class="field">
           <%= f.label :image %><br>
           <%= f.file_field :image %>
-          <%#= render 'layouts/drop_area' %> 
+          <%#= render 'layouts/drop_area' %>
         </div>
 
         <div class="actions">
@@ -52,6 +52,6 @@
       <h3><%= t('.cancel_my_account') %></h3>
       <p><%= t('.unhappy') %><%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete , class: "uk-button uk-button-normal " %></p>
       <%= link_to t('devise.shared.links.back'), :back %>
-		</div>
-	</div>
+    </div>
+  </div>
 </div>

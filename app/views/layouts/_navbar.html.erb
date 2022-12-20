@@ -38,91 +38,91 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to root_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: calendar"></span><%=t('.schedule')%>
+            <span class="uk-margin-small-right" uk-icon="icon: calendar"></span><%= t('.schedule') %>
           <% end %>
-			  </li>
-			  <li>
+        </li>
+        <li>
           <%= link_to new_user_study_record_path(current_user) do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: pencil"></span><%=t('.new_record_nav')%>
+            <span class="uk-margin-small-right" uk-icon="icon: pencil"></span><%= t('.new_record_nav') %>
           <% end %>
-			  </li>
+        </li>
         <li>
           <%= link_to user_study_records_path(current_user) do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: list"></span><%=t('.study_records_index')%>
+            <span class="uk-margin-small-right" uk-icon="icon: list"></span><%= t('.study_records_index') %>
           <% end %>
-			  </li>
+        </li>
         <li>
           <%= link_to user_completes_path(current_user) do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: check"></span><%=t('.completed_records')%>
+            <span class="uk-margin-small-right" uk-icon="icon: check"></span><%= t('.completed_records') %>
           <% end %>
-			  </li>
+        </li>
       <% else %>
         <li>
           <%= link_to root_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: home"></span>Home
+            <span class="uk-margin-small-right" uk-icon="icon: home"></span>Home
           <% end %>
-			  </li>
+        </li>
       <% end %>
-			<li class="uk-nav-header">Account</li>
+      <li class="uk-nav-header">Account</li>
       <% if user_signed_in? %>
         <li>
           <%= link_to user_path(current_user) do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: user"></span><%=t('.my_account')%>
+            <span class="uk-margin-small-right" uk-icon="icon: user"></span><%= t('.my_account') %>
           <% end %>
-			  </li>
+        </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%=t('.sign_out')%>
+            <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%= t('.sign_out') %>
           <% end %>
-			  </li>
+        </li>
          <li>
           <%= link_to edit_user_registration_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: settings"></span><%=t('.edit')%>
+            <span class="uk-margin-small-right" uk-icon="icon: settings"></span><%= t('.edit') %>
           <% end %>
-			  </li>
+        </li>
       <% else %>
         <li>
           <%= link_to new_user_registration_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: user"></span><%=t('.sign_up')%>
+            <span class="uk-margin-small-right" uk-icon="icon: user"></span><%= t('.sign_up') %>
           <% end %>
-			  </li>
+        </li>
         <li>
           <%= link_to new_user_session_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: sign-in"></span><%=t('.sign_in')%>
+            <span class="uk-margin-small-right" uk-icon="icon: sign-in"></span><%= t('.sign_in') %>
           <% end %>
-			  </li>
+        </li>
       <% end %>
       <% if current_user.try(:admin?) %>
         <li>
           <%= link_to admin_users_path do %>
-			  	  <span class="uk-margin-small-right" uk-icon="icon: cog"></span>管理者用ページ
+            <span class="uk-margin-small-right" uk-icon="icon: cog"></span>管理者用ページ
           <% end %>
-			  </li>
+        </li>
       <% end %>
       <li class="uk-nav-header">About Me</li>
       <li>
         <%= link_to "https://twitter.com/Takaya8522" do %>
-				  <span class="uk-margin-small-right" uk-icon="icon: twitter"></span>Twitter
+          <span class="uk-margin-small-right" uk-icon="icon: twitter"></span>Twitter
         <% end %>
-			</li>
+      </li>
       <li>
         <%= link_to "https://github.com/takaya8522" do %>
-				  <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
+          <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
         <% end %>
-			</li>
+      </li>
       <li>
         <%= link_to "https://www.wantedly.com/id/takaya_suzuki01" do %>
-				  <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
+          <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
         <% end %>
-			</li>
+      </li>
       <li>
         <%= mail_to 'tky8522@yahoo.co.jp' do %>
-				  <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
+          <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
         <% end %>
-			</li>
+      </li>
       <li>
         Created By Takaya Suzuki
-			</li>
+      </li>
     </ul>
   </div>
 </nav>
@@ -182,84 +182,84 @@
 <%# 左側ダッシュボード用 %>
 <% if user_signed_in? %>
 <div class="uk-grid uk-grid-collapse">
-	<aside class="uk-width-medium uk-position-relative uk-visible@m">
-		<div class="uk-tile uk-tile-default uk-tile-small uk-width-medium uk-position-fixed uk-box-shadow-medium" uk-overflow-auto style="top: 175px; bottom: 0;">
-			<ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-				<li class="uk-nav-header">Dashboard</li>
+  <aside class="uk-width-medium uk-position-relative uk-visible@m">
+    <div class="uk-tile uk-tile-default uk-tile-small uk-width-medium uk-position-fixed uk-box-shadow-medium" uk-overflow-auto style="top: 175px; bottom: 0;">
+      <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+        <li class="uk-nav-header">Dashboard</li>
         <li>
           <%= link_to root_path do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: calendar"></span><%=t('.schedule')%>
+            <span class="uk-margin-small-right" uk-icon="icon: calendar"></span><%= t('.schedule') %>
           <% end %>
-				</li>
-				<li>
+        </li>
+        <li>
           <%= link_to new_user_study_record_path(current_user) do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: pencil"></span><%=t('.new_record_nav')%>
+            <span class="uk-margin-small-right" uk-icon="icon: pencil"></span><%= t('.new_record_nav') %>
           <% end %>
-				</li>
+        </li>
         <li>
           <%= link_to user_study_records_path(current_user) do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: list"></span><%=t('.study_records_index')%>
+            <span class="uk-margin-small-right" uk-icon="icon: list"></span><%= t('.study_records_index') %>
           <% end %>
-				</li>
+        </li>
         <li>
           <%= link_to user_completes_path(current_user) do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: check"></span><%=t('.completed_records')%>
+            <span class="uk-margin-small-right" uk-icon="icon: check"></span><%= t('.completed_records') %>
           <% end %>
-				</li>
-				<li class="uk-nav-header">Account</li>
+        </li>
+        <li class="uk-nav-header">Account</li>
         <li>
           <%= link_to user_path(current_user) do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: user"></span><%=t('.my_account')%>
+            <span class="uk-margin-small-right" uk-icon="icon: user"></span><%= t('.my_account') %>
           <% end %>
-				</li>
+        </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%=t('.sign_out')%>
+            <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%= t('.sign_out') %>
           <% end %>
-				</li>
-	      <li class="uk-parent">
-					<a href="#"><span class="uk-margin-small-right" uk-icon="icon: settings"></span><%=t('.edit')%><span uk-nav-parent-icon></span></a>
-					<ul class="uk-nav-sub">
+        </li>
+        <li class="uk-parent">
+          <a href="#"><span class="uk-margin-small-right" uk-icon="icon: settings"></span><%= t('.edit') %><span uk-nav-parent-icon></span></a>
+          <ul class="uk-nav-sub">
             <li>
               <%= link_to edit_user_registration_path do %>
-				    	  <span class="uk-margin-small-right" uk-icon="icon: cog"></span>マイアカウント編集
+                <span class="uk-margin-small-right" uk-icon="icon: cog"></span>マイアカウント編集
               <% end %>
-				    </li>
+            </li>
             <% if current_user.try(:admin?) %>
               <li>
                 <%= link_to admin_users_path do %>
-				      	  <span class="uk-margin-small-right" uk-icon="icon: users"></span>管理者用ページ
+                  <span class="uk-margin-small-right" uk-icon="icon: users"></span>管理者用ページ
                 <% end %>
-				      </li>
+              </li>
             <% end %>
-					</ul>
-				</li>
-				<li class="uk-nav-header">About Me</li>
+          </ul>
+        </li>
+        <li class="uk-nav-header">About Me</li>
         <li>
           <%= link_to "https://twitter.com/Takaya8522" do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: twitter"></span>Twitter
+            <span class="uk-margin-small-right" uk-icon="icon: twitter"></span>Twitter
           <% end %>
-				</li>
+        </li>
         <li>
           <%= link_to "https://github.com/takaya8522" do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
+            <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
           <% end %>
-				</li>
+        </li>
         <li>
           <%= link_to "https://www.wantedly.com/id/takaya_suzuki01" do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
+            <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
           <% end %>
-				</li>
+        </li>
         <li>
           <%= mail_to 'tky8522@yahoo.co.jp' do %>
-					  <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
+            <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
           <% end %>
-				</li>
+        </li>
         <br>
         <li>
           Created By Takaya Suzuki
-			  </li>
-			</ul>
-		</div>
-	</aside>
+        </li>
+      </ul>
+    </div>
+  </aside>
 <% end %>
