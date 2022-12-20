@@ -14,23 +14,33 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 ## 開発言語 / Language
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
-- Front End: HTML, CSS, JavaScript, Uikit
+- Front End: HTML, CSS, JavaScript(JQuery), Uikit
 - Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, ALB, Route53, S3 )
 - DB: PostgreSQL
 
-## 機能・使用Gem / Functions・Gem
-- devise
-- ransack
-- cancancan
-- rexml
-- devise-i18n
-- kaminari 
-- dotenv-rails
-- rspec
-- rubocop
-- Chartkickを使ったグラフ作成機能
-- Uikit(フロントフレームワーク)/AOS(jsライブラリ)/Lorem Picsum(画像表示API)によるデザイン構成
-- AWS/Docker/RDSを取り入れたインフラ構成
+## 主要Gem / Main Gems
+- devise :ログイン機能
+- ransack :検索機能
+- chartkick :グラフ機能
+- cancancan :管理者権限
+- kaminari :ページネーション 
+- rspec/rexml/factory_bot_rails :テストフレームワーク
+- mini_magick/aws-sdk-s3 :画像アップロード
+- rubocop/rubocop-performance/rubocop-rails/rubocop-rspec/erb_lint :Lintツール
+
+## 主要パッケージ / Main Packages
+- Uikit(フロントフレームワーク)
+- AOS(jsライブラリ)
+- Lorem Picsum(画像表示API)
+
+## 機能 / Functions
+- スケジュール自動作成機能
+- 復習タイミング自動作成機能
+- 復習タイミングチェックシート機能
+- 残りの復習までのカウントダウン表示機能
+- グラフ作成自動作成機能
+- レスポンシブデザイン対応
+- AWS/Docker/RDS/ALBを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
 使用ソフト: draw.io  
@@ -60,3 +70,7 @@ https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3
 ## 画面遷移図 / Screen Transition Diagram
 使用ソフト: draw.io  
 ![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
+
+## レスポンシブデザイン / Responsive Designs
+使用ソフト: Mockup Photos
+![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
