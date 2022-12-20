@@ -16,6 +16,7 @@ RSpec.describe "ユーザー管理機能", type: :system do
     context 'ログインせずにタスク一覧画面に遷移した場合' do
       it 'ログイン画面に遷移し、「ログインしてください」というメッセージが表示される' do
         visit user_path(1)
+        sleep 1
         expect(page).to have_content 'ログインもしくはアカウント登録してください。'
       end
     end

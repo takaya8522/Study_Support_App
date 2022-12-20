@@ -8,7 +8,9 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <script>
+          UIkit.notification({message: '<%= message %>', pos: 'top-right'});
+        </script>
       <% end %>
     </ul>
   </div>

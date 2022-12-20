@@ -1,11 +1,12 @@
 <%= form_with(model: [current_user, study_record], local: true) do |form| %>
   <% if study_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(study_record.errors.count, "件") %>エラーが発生しました！</h2>
-
+      <h2><%= pluralize(study_record.errors.count, "件の") %>エラーが発生しました！</h2>
       <ul>
         <% study_record.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <script>
+            UIkit.notification({message: '<%= message %>', pos: 'top-right'});
+          </script>
         <% end %>
       </ul>
     </div>
