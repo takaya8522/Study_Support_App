@@ -100,8 +100,6 @@ ActiveRecord::Schema.define(version: 2022_12_08_113757) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "provider"
-    t.string "uid"
     t.string "name", null: false
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true

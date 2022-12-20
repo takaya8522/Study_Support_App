@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   
   # devise lineログイン、ゲストログイン機能のため
   devise_for :users, controllers: {
-    omniauth_callbacks: "omniauth_callbacks",
     registrations: 'users/registrations'
   }
 
