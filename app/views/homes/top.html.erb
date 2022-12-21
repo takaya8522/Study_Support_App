@@ -42,16 +42,7 @@
                     <td><%= order_study_record[5] %></td>
                     <%# 学習までの残り時間を表示 %>
                     <td>
-                      <% if ((order_study_record[2] - Time.now)/86400) < -1 %>
-                        <%= ((order_study_record[2] - Time.now)/86400).floor.abs %>日の遅れ
-                      <% elsif ((order_study_record[2] - Time.now)/86400) >= -1 && ((order_study_record[2] - Time.now)/86400) < 0 %>
-                        復習タイミングになりました！
-                      <% elsif ((order_study_record[2] - Time.now)/86400) > 1 %>
-                        あと<%= ((order_study_record[2] - Time.now)/86400).floor %>日と<%= divide_hour(order_study_record[2] - Time.now) %>時間
-                      <% elsif ((order_study_record[2] - Time.now)/86400) >= 0 %>
-                        <%# ヘルパーに定義したdivideメソッドで小数点だけを返す %>
-                        あと<%= ((order_study_record[2] - Time.now)/86400*24).floor %>時間と<%= divide_minute(order_study_record[2] - Time.now) %>分
-                      <% end %>
+                      <%= render "time_limit", set_time: order_study_record[2] %>
                     </td>
                     <%# 復習進捗 %>
                     <td><%= order_study_record[1] %>回目</td>

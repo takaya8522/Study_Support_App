@@ -26,7 +26,7 @@ class CompletesController < ApplicationController
   end
 
   private
-  
+
   def set_study_record
     @study_record = StudyRecord.find(params[:id])
   end

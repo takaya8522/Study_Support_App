@@ -1,0 +1,10 @@
+<% if ((set_time - Time.now)/86400) < -1 %>
+  <%= ((set_time - Time.now)/86400).floor.abs %>日の遅れ
+<% elsif ((set_time - Time.now)/86400) >= -1 && ((set_time - Time.now)/86400) < 0 %>
+  復習タイミングになりました！
+<% elsif ((set_time - Time.now)/86400) > 1 %>
+  あと<%= ((set_time - Time.now)/86400).floor %>日と<%= divide_hour(set_time - Time.now) %>時間
+<% elsif ((set_time - Time.now)/86400) >= 0 %>
+  <%# ヘルパーに定義したdivideメソッドで小数点だけを返す %>
+  あと<%= ((set_time - Time.now)/86400*24).floor %>時間と<%= divide_minute(set_time - Time.now) %>分
+<% end %>

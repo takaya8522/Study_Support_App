@@ -6,11 +6,11 @@
       <i class="fab fa-twitter fa-2x post_show_twitter"></i>ツイッターで共有する</a>
       <p>
         <strong>次の学習まで: </strong>
-        <%= render partial: 'time_limit', locals: { study_timing: @study_timing, review_count: @review_count } %>
+        <%= render 'time_limit', { study_timing: @study_timing, review_count: @review_count } %>
       </p>
       <div class="uk-margin-small">
-        <%= render partial: 'check_form', locals: { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
-        <%= render partial: "chart", locals:{ study_record: @study_record, height: '400px' } %>
+        <%= render 'check_form', { study_record: @study_record, study_timing: @study_timing, current_time: @current_time, timing_result: @timing_result } %>
+        <%= render "chart", study_record: @study_record %>
       </div>
       <div class="uk-button-group uk-visible@s">
         <button class="uk-button uk-button-default"><%= link_to '理解済みにする!', change_comprehension_path(@study_record), method: :patch, data: {confirm: "理解済みにしますか？"} %></button>
