@@ -1,7 +1,7 @@
 class StudyRecordsController < ApplicationController
   before_action :set_study_record, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[index]
-  before_action :set_q, only: [:index]
+  skip_before_action :authenticate_user!, only: :index
+  before_action :set_q, only: :index
 
   def index
     # ページネーション用設定（N1対策済み）

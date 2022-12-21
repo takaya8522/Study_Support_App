@@ -1,4 +1,4 @@
-User.create!(name: "admins", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true)
+User.create!(name: "admin", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true)
 User.create!(name: "normal", email: "normalnormal@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
 User.create!(name: "一郎", email: "1111111111@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
 User.create!(name: "次郎", email: "2222222222@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # 学習理解度を更新するため
   patch 'users/:id/change_comprehension' => 'completes#change_comprehension', as: 'change_comprehension'
   
-  # devise ゲストログイン機能のため
+  # devise ゲストログイン用アカウント削除制限のため
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
