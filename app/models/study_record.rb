@@ -12,8 +12,7 @@ class StudyRecord < ApplicationRecord
     validates :comprehension
   end
 
-  # enum学習サイクル・理解度用
-  enum study_cycle: { 忘却曲線: 0, 一週間: 1, 一ヶ月: 2 }
+  # enum理解度用
   enum comprehension: { まだ理解していません: false, 理解しました: true }
 
   # 投稿の中で未復習でかつ最短の通知時間の投稿を振り分けるメソッド
