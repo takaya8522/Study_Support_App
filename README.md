@@ -30,6 +30,7 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 
 ## 主要パッケージ / Main Packages
 - Uikit(フロントフレームワーク)
+- Font Awesome(アイコン画像)
 - AOS(jsライブラリ)
 - Lorem Picsum(画像表示API)
 
