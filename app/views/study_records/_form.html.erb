@@ -1,17 +1,11 @@
 <%= form_with(model: [current_user, study_record], local: true) do |form| %>
   <% if study_record.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(study_record.errors.count, "件の") %>エラーが発生しました！</h2>
-      <ul>
-        <% study_record.errors.full_messages.each do |message| %>
-          <script>
-            UIkit.notification({message: '<%= message %>', pos: 'top-right'});
-          </script>
-        <% end %>
-      </ul>
-    </div>
+    <% study_record.errors.full_messages.each do |message| %>
+      <script>
+        UIkit.notification({message: '<%= message %>', pos: 'top-right'});
+      </script>
+    <% end %>
   <% end %>
-
   <div class="field uk-margin-small-bottom">
     <%= form.label :category_name %><br>
     <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: true, selected: 0}, {class: "uk-select uk-form-width-medium"} %>

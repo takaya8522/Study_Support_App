@@ -6,20 +6,20 @@
     <%# メイン画面 %>
     <main class="uk-section uk-section-small uk-section-muted uk-width-expand">
       <div class="uk-container uk-container-expand">
-        <%# フラッシュメッセージ %>
-        <% if flash %>
-          <% flash.each do |message_type, message| %>
-            <div uk-alert class="alert alert-<%= message_type %>">
-              <script>
-                UIkit.notification({message: '<%= message %>', pos: 'top-right'});
-              </script>
-            </div>
-          <% end %>
-        <% end %>
         <%= yield %>
         <%= render 'layouts/space' %>
       </div>
     </main>
+    <%# フラッシュメッセージ %>
+    <% if flash %>
+      <% flash.each do |message_type, message| %>
+        <div uk-alert class="alert alert-<%= message_type %>">
+          <script>
+            UIkit.notification({message: '<%= message %>', pos: 'top-right'});
+          </script>
+        </div>
+      <% end %>
+    <% end %>
     <script>
       AOS.init();
     </script>

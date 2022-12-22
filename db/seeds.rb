@@ -1,8 +1,10 @@
 User.create!(name: "admin", email: "adminadmino@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: true)
 User.create!(name: "normal", email: "normalnormal@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
-User.create!(name: "一郎", email: "1111111111@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
-User.create!(name: "次郎", email: "2222222222@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
-User.create!(name: "三郎", email: "3333333333@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "高橋", email: "1111111111@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "鈴木", email: "2222222222@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "佐藤", email: "3333333333@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "田中", email: "3333333333@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name: "加藤", email: "3333333333@piyopiyo.com", password: "123456", password_confirmation: "123456", admin: false)
 
 Category.create!(name: "英語", user_id: User.first.id)
 Category.create!(name: "プログラミング", user_id: User.first.id)

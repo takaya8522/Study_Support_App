@@ -60,3 +60,8 @@
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
 }
+
+// エラーメッセージレイアウトずれ防止のため
+.field_with_errors {
+  display: contents;
+}
