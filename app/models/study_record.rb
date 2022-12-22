@@ -14,6 +14,7 @@ class StudyRecord < ApplicationRecord
 
   # enum理解度用
   enum comprehension: { まだ理解していません: false, 理解しました: true }
+  enum study_cycle: { 忘却曲線: 0, 一週間: 1, 一ヶ月: 2 }
 
   # 投稿の中で未復習でかつ最短の通知時間の投稿を振り分けるメソッド
   def self.latest_study_record(study_records)
