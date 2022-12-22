@@ -1,7 +1,24 @@
 <% if user_signed_in? == false %>
-  <footer id="page-footer" class="uk-margin" uk-sticky>
+  <footer id="page-footer" class="uk-margin-medium" uk-sticky>
     <div class="uk-container uk-padding-small  uk-background-default">
-      <p class="uk-text-small  uk-text-middle uk-text-center">Created By Takaya Suzuki</p>
+      <div class="uk-text-small  uk-text-middle uk-text-center">
+        <p>Created By Takaya Suzuki</p>
+        <div class="uk-link-text">
+          <div class="uk-margin-small-buttom">About Me</div>
+          <%= link_to "https://github.com/takaya8522" do %>
+            <span class="uk-margin-small-right" uk-icon="icon: github"></span>Github
+          <% end %>
+          <%= link_to "https://www.wantedly.com/id/takaya_suzuki01" do %>
+            <span class="uk-margin-small-right" uk-icon="icon: happy"></span>Wantedly
+          <% end %>
+          <%= link_to "https://twitter.com/Takaya8522" do %>
+            <span class="uk-margin-small-right" uk-icon="icon: twitter"></span>Twitter
+          <% end %>
+          <%= mail_to 'tky8522@yahoo.co.jp' do %>
+            <span class="uk-margin-small-right" uk-icon="icon: mail"></span>Mail
+          <% end %>
+        </div>
+      </div>
     </div>
   </footer>
 <% end %>
