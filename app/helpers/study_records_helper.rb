@@ -24,20 +24,9 @@ module StudyRecordsHelper
     end
   end
 
+  # chartkick用の設定値を算出するメソッド
   def set_forgetting_curve(study_record)
-    # グラフの開始時刻日をレビューカウントごとに算出するメソッド
-    if study_record.review_count.zero?
-      study_record_time = study_record.created_at
-    elsif study_record.review_count == 1
-      study_record_time = study_record.timing_result[0][:first_record]
-    elsif study_record.review_count == 2
-      study_record_time = study_record.timing_result[0][:second_record]
-    elsif study_record.review_count == 3
-      study_record_time = study_record.timing_result[0][:third_record]
-    else
-      return
-    end
-
+    study_record_time = set_starting_time(study_record)
     forgetting_curve = []
     # 投稿時刻の1分前を記憶率0%として挿入
     forgetting_curve.push([study_record_time.ago(1.minute), 0])
@@ -51,8 +40,25 @@ module StudyRecordsHelper
     forgetting_curve.push([study_record_time.since(2.days), 27.2])
     forgetting_curve.push([study_record_time.since(6.days), 25.2])
     forgetting_curve.push([study_record_time.since(1.month), 21.2])
-
     # 送る値は日付だけにする
     forgetting_curve.map { |k, v| [k.strftime('%m/%d %H:%M'), v] }
+  end
+
+  private
+
+  def set_starting_time(study_record)
+    # グラフの開始時刻日をレビューカウントごとに算出するメソッド
+    case study_record.review_count
+    when 0
+      study_record.created_at
+    when 1
+      study_record.timing_result[0][:first_record]
+    when 2
+      study_record.timing_result[0][:second_record]
+    when 3
+      study_record.timing_result[0][:third_record]
+    else
+      return
+    end
   end
 end
