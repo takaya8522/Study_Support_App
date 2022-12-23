@@ -29,11 +29,9 @@ class StudyRecordsController < ApplicationController
 
     if @study_record.save
       # 予定復習タイミングを同時に作成
-      StudyTiming.create!(study_record_id: @study_record.id,
-        first_timing: 1.day.from_now, second_timing: 2.days.from_now,
-        third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+      StudyTiming.create!(study_record_id: @study_record.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,
+                          third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
       TimingResult.create!(study_record_id: @study_record.id)
-
       redirect_to root_path, notice: t('.study_record_created')
     else
       render :new
