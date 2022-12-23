@@ -35,7 +35,7 @@ module ApplicationHelper
   # 各ページのイメージ画像
   # SNS等でシェアされた際に活用されます
   def og_image(page_image = '')
-    base_image = "https://picsum.photos/id/20/1920/1100/?blur=1"
+    base_image = "https://picsum.photos/id/20/1200/630/?blur=1"
     if page_image.empty?
       base_image
     else
