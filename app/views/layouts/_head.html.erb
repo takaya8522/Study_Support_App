@@ -1,12 +1,18 @@
   <head prefix="og: https://ogp.me/ns#">
-    <title>StudySupport</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:url" content="https://study-support-app.jp/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="StudySupport" />
-    <meta property="og:description" content="学習に特化したタスク管理アプリ" />
-    <meta property="og:site_name" content="StudySupport" />
-    <meta property="og:image" content="https://picsum.photos/id/20/1920/1100/?blur=1" />
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="description" content="<%= full_description(yield(:description)) %>" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="<%= full_title(yield(:og_title)) %>" />
+    <meta property="og:description" content="<%= og_description(yield(:og_description)) %>" />
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:image" content="<%= og_image(yield(:og_image)) %>" />
+    <meta property="og:site_name" content="StudySupport" /> <!--サイト名-->
+    <meta property="og:type" content="website" /> <!--TOPページの場合は"website"、WEBサイト上の記事ページなど、TOPページ以外には"article"を指定します。-->
+    <meta name="twitter:card" content="summary" /> <!--"article"は画像とテキスト情報が横並びに表示され、"summary_large_image"は画像が横幅いっぱいに拡大されテキスト情報は下に表示されます-->
+    <meta name="twitter:site" content="@Takaya8522" /> <!--ツイッターユーザー名を記述します-->
+    <meta name="twitter:image" content="<%= og_image(yield(:og_image)) %>" />
+    <meta name="twitter:title" content="<%= full_title(yield(:og_title)) %>" />
+    <meta name="twitter:description" content="<%= og_description(yield(:og_description)) %>" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
