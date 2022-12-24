@@ -13,7 +13,7 @@ module ApplicationHelper
   # 各ページの説明文 120文字前後
   # Googleのような検索エンジンの検索結果一覧ページで活用されます
   def full_description(page_description = '')
-    base_description = "StudySupportは、学習に特化したタスク管理アプリです.忘却曲線に基いた学習スケジュールを自動的に作成し、あなたの学習をサポートします。"
+    base_description = "StudySupportは、学習に特化したタスク管理アプリです。忘却曲線に基いた学習スケジュールを自動的に作成し、あなたの学習をサポートします。"
     if page_description.empty?
       base_description
     else
@@ -24,7 +24,7 @@ module ApplicationHelper
   # 各ページの説明文 50文字前後
   # SNS等でシェアされた際に活用されます
   def og_description(page_description = '')
-    base_description = "StudySupportは、学習に特化したタスク管理アプリです."
+    base_description = "StudySupportは、学習に特化したタスク管理アプリです。"
     if page_description.empty?
       base_description
     else
