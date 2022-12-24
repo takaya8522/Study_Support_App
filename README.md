@@ -1,20 +1,19 @@
 ## README
-Study Support  
+StudySupport  
 url: https://study-support-app.jp/
 ![タイトルロゴ](app/assets/images/cover_photo.png "cover_photo.png")
 
 ## 製品概要 / Overview
-中級者の壁を突破するには1000時間費やす必要があるという法則があります。  
-しかし、1000時間を勉強に使うというのはとても大変なことです。  
-Study Supportはエビングハウスの忘却曲線理論による、脳科学的に脳の定着率が高いと言われている勉強周期を自動的に導き出し、
-あなたの学習をサポートします。
-また今まで費やしてきた勉強記録をアプリに登録することにより、時間の節約率をグラフにして表すことができます。
-Study Supportにより自分の努力過程を視覚的に得ることができ、あなたのモチベーションを高めることができます。
+プログラミングを勉強してみると覚えることが多すぎて大変！少しでも効率的に勉強をしたい！  
+そんなプログラミングスクール同期生の悩みを解決したい！という一心で「StudySupport」を開発しました。  
+このアプリは一言で言うと、学習に特化したタスク管理アプリとなります。  
+忘却曲線に基き、自分に最も最適なオリジナルのスケジュールを自動で作成することができます。  
+またこのアプリによって、どれだけ効率的に学習を進めることができるかを表す忘却率を、グラフで見ることも出来ます。  
 
 ## 開発言語 / Language
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
-- Front End: HTML, CSS, JavaScript(JQuery), Uikit
+- Front End: HTML, CSS, JavaScript(JQuery), UIkit
 - Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, ALB, Route53, S3 )
 - DB: PostgreSQL
 
@@ -29,7 +28,7 @@ Study Supportにより自分の努力過程を視覚的に得ることができ�
 - rubocop/rubocop-performance/rubocop-rails/rubocop-rspec/erb_lint :Lintツール
 
 ## 主要パッケージ / Main Packages
-- Uikit(フロントフレームワーク)
+- UIkit(フロントフレームワーク)
 - Font Awesome(アイコン画像)
 - AOS(jsライブラリ)
 - Lorem Picsum(画像表示API)
