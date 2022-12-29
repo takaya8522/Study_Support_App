@@ -7,13 +7,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
+    @study_records = @user.study_records
   end
 
   def edit
   end
 
   def update
-    if @user.update!(user_params)
+    if @user.update(user_params)
       redirect_to admin_users_path
       flash.now[:warning] = 'ユーザー情報更新しました。'
     else

@@ -1,0 +1,28 @@
+<h1><%= t('.admin_index_page') %></h1>
+<div class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" uk-grid>
+  <div class="uk-width-3-5@s uk-position-relative">
+    <div class="uk-card uk-card-default uk-card-body">
+      <table>
+        <thead>
+          <tr>
+            <th><%= t('.study_record') %></th>
+            <th><%= t('.study_record') %></th>
+            <th><%= t('.created_at') %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @study_records.each do |study_record| %>
+            <tr>
+              <td><%= study_record.category.name %></td>
+              <td><%= study_record.title %></td>
+              <td><%= study_record.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+              <td><%= link_to t('.edit'), edit_user_study_record_path(user_id: params[:id], id: study_record.id) %>
+              <td><%= link_to t('.destroy'), user_study_record_path(user_id: params[:id], id: study_record.id), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

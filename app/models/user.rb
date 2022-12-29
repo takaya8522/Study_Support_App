@@ -7,6 +7,9 @@ class User < ApplicationRecord
     validates :name
     validates :email
   end
+
+  # enum理解度用
+  enum admin: { 一般: false, 管理者: true }
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
