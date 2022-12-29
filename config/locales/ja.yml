@@ -102,8 +102,25 @@ ja:
       index:
         admin_index_page: '管理者用ページ'
         user: 'ユーザー名'
+        created_at: '登録日時'
+        destroy: 'ユーザー削除'
+        admin: '管理者権限'
+        edit: 'ユーザー情報変更'
+        show: '投稿一覧'
+      edit:
+        admin_edit_page: '管理者用ユーザー編集ページ'
+        name: '名前'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認用）'
+        admin: '管理者権限'
+      show:
+        admin_index_page: '管理者用ユーザー詳細ページ'
+        category: 'カテゴリー'
+        content: '内容'
         created_at: '作成日時'
-        destroy: '削除する'
+        edit: '編集'
+        destroy: '削除'
   views:
     pagination:
       first: "&laquo; 最初"
