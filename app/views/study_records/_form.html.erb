@@ -8,7 +8,7 @@
   <% end %>
   <div class="field uk-margin-small-bottom">
     <%= form.label :category_name %><br>
-    <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: true, selected: 0}, {class: "uk-select uk-form-width-medium"} %>
+    <%= form.select :category_id, current_user.categories.map{|g| [g.name, g.id]}, {include_blank: '選択してください'}, {class: "uk-select uk-form-width-medium"} %>
   </div>
 
   <div class="field uk-margin-small-bottom">
