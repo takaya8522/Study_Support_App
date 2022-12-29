@@ -15,8 +15,8 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to admin_users_path
       flash.now[:warning] = 'ユーザー情報更新しました。'
+      redirect_to admin_users_path
     else
       flash.now[:danger] = 'ユーザー情報更新に失敗しました。'
       render :edit
@@ -42,6 +42,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+    params.require(:user).permit(:name, :email, :admin)
   end
 end

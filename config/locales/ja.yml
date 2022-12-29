@@ -107,6 +107,7 @@ ja:
         admin: '管理者権限'
         edit: 'ユーザー情報変更'
         show: '投稿一覧'
+        number_of_posts: '投稿数'
       edit:
         admin_edit_page: '管理者用ユーザー編集ページ'
         name: '名前'

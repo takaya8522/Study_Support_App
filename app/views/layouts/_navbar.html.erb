@@ -217,23 +217,13 @@
             <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span><%= t('.sign_out') %>
           <% end %>
         </li>
-        <li class="uk-parent">
-          <a href="#"><span class="uk-margin-small-right" uk-icon="icon: settings"></span><%= t('.edit') %><span uk-nav-parent-icon></span></a>
-          <ul class="uk-nav-sub">
-            <li>
-              <%= link_to edit_user_registration_path do %>
-                <span class="uk-margin-small-right" uk-icon="icon: cog"></span>マイアカウント編集
-              <% end %>
-            </li>
-            <% if current_user.try(:admin?) %>
-              <li>
-                <%= link_to admin_users_path do %>
-                  <span class="uk-margin-small-right" uk-icon="icon: users"></span>管理者用ページ
-                <% end %>
-              </li>
+        <% if current_user.try(:admin?) %>
+          <li>
+            <%= link_to admin_users_path do %>
+              <span class="uk-margin-small-right" uk-icon="icon: cog"></span>管理者用ページ
             <% end %>
-          </ul>
-        </li>
+          </li>
+        <% end %>
         <li class="uk-nav-header">About Me</li>
         <li>
           <%= link_to "https://github.com/takaya8522" do %>

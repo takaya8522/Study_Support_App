@@ -19,16 +19,8 @@
           <%= f.email_field :email, class: "uk-textarea uk-form-width-large" %>
         </div>
         <div class="field uk-margin-small-bottom">
-          <%= f.label :password, t('.password') %><br>
-          <%= f.password_field :password, class: "uk-textarea uk-form-width-large" %>
-        </div>
-        <div class="field uk-margin-small-bottom">
-          <%= f.label :password_confirmation, t('.password_confirmation') %><br>
-          <%= f.password_field :password_confirmation, class: "uk-textarea uk-form-width-large" %>
-        </div>
-        <div class="field uk-margin-small-bottom">
           <%= f.label :admin, t('.admin') %><br>
-          <%= f.check_box :admin, { class: 'uk-checkbox' }, "管理者", "一般" %>
+          <%= f.check_box :admin, { class: 'uk-checkbox' }, "true", "false" %>
         </div>
         <div class="actions  uk-margin-small-bottom">
           <%= f.submit class: "uk-button uk-button-primary uk-button" %>
