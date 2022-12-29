@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "homes#top"
+
   # 学習理解度を更新するため
   patch 'users/:id/change_comprehension' => 'completes#change_comprehension', as: 'change_comprehension'
   
@@ -14,11 +15,11 @@ Rails.application.routes.draw do
     post 'users/guest_admin_sign_in', to: 'users/sessions#guest_admin_sign_in'
   end
   
-  resources :users, only: %i[show edit update destroy] do
+  resources :users, only: :show do
     resources :categories, only: %i[index create update destroy]
     resources :study_records
     resources :completes, only: %i[index show]
-    resources :review_counts, only: %i[update]
+    resources :review_counts, only: :update
   end
 
   # 管理者用ページ用
