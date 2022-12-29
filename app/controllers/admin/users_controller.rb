@@ -6,12 +6,6 @@ class Admin::UsersController < ApplicationController
     @users = User.all.order("created_at DESC")
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def show
   end
 
@@ -19,10 +13,16 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+    if @user.update!(user_params)
+      redirect_to admin_users_path
+      flash.now[:warning] = 'ユーザー情報更新しました。'
+    else
+      flash.now[:danger] = 'ユーザー情報更新に失敗しました。'
+      render :edit
+    end
   end
 
   def destroy
-    @user = User.find(params[:id])
     if @user.destroy
       flash[:warning] = 'ユーザーの削除に成功しました'
     else
@@ -40,7 +40,7 @@ class Admin::UsersController < ApplicationController
     redirect_to(root_path) unless current_user.admin?
   end
 
-  def category_params
+  def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
   end
 end

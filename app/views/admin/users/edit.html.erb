@@ -1,6 +1,6 @@
 <h1><%= t('.admin_edit_page') %></h1>
-  <% if study_record.errors.any? %>
-    <% study_record.errors.full_messages.each do |message| %>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
       <script>
         UIkit.notification({message: '<%= message %>', pos: 'top-right'});
       </script>
@@ -17,19 +17,11 @@
     <%= f.email_field :email %>
   </div>
   <div>
-    <%= f.label :password, t('.password') %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation, t('.password_confirmation') %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
     <%= f.label :admin, t('.admin') %><br>
     <%= f.check_box :admin, {}, "true", "false" %>
   </div>
   <div>
-    <%= f.submit id: 'update-user', class: "btn btn-primary" %>
+    <%= f.submit id: 'update-user' %>
   </div>
 <% end %>
 
