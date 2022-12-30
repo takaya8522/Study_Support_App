@@ -100,7 +100,7 @@ ja:
   admin:
     users:
       index:
-        admin_index_page: '管理者用ページ'
+        admin_index_page: '管理者用ユーザ一覧ページ'
         user: 'ユーザー名'
         created_at: '登録日時'
         destroy: 'ユーザー削除'
