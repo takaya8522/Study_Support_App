@@ -116,7 +116,7 @@ ja:
         password_confirmation: 'パスワード（確認用）'
         admin: '管理者権限'
       show:
-        admin_index_page: '管理者用ユーザー詳細ページ'
+        admin_index_page: '管理者用ユーザー学習記録確認ページ'
         category: 'カテゴリー'
         content: '内容'
         created_at: '作成日時'
