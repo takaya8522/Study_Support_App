@@ -48,7 +48,7 @@ jobs:
         run: |
 
           # SSHのセキュリティグループを開放する
-          aws --profile eyemovic-dev ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP} --protocol tcp --port 22 --cidr "$IP_ADDRESS"/32
+          aws --profile eyemovic-dev ec2 authorize-security-group-ingress --group-id ${EC2_SECURITY_GROUP_ID} --protocol tcp --port 22 --cidr "$IP_ADDRESS"/32
 
           # SSH接続して、git pullする
           echo "${{ secrets.MY_PRIVATE_KEY }}" > private_key
