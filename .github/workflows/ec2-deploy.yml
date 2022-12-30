@@ -1,53 +1,45 @@
-name: EC2 auto deploy
-
+name: TestDeploy
 on:
- pull_request:
-   branches: [ master ]
-   types: [closed]
-
- workflow_dispatch:
-
+push:
+branches: [master]
 jobs:
- build:
-   runs-on: ubuntu-latest
-   steps:
-
-     # IP取得ライブラリをインストール
-     - name: Public IP Install
-       id: ip
-       uses: haythem/public-ip@v1.2
-
-     # BranchをCheckout
-     - name: Checkout
-       uses: actions/checkout@v2
-
-     # AWS CLIをインストールする
-     - name: AWS CLI install
-       run: |
-         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-         unzip awscliv2.zip
-         sudo ./aws/install --update
-         aws --version
-
-     # AWS CLIにキーを設定をする
-     - name: AWS set Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: ap-northeast-1
-
-     # デプロイする
-     - name: Deploy
-       run: |
-
-         # SSHのセキュリティグループを開放する
-         aws ec2 authorize-security-group-ingress --group-id ${{ secrets.EC2_SECURITY_GROUP_ID }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
-
-         # SSH接続して、git pullする
-         echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key
-         chmod 600 private_key
-         ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd /var/www/html/ && git fetch --prune && git checkout master && git pull origin master"
-
-         # SSHのセキュリティグループを閉じる
-         aws ec2 revoke-security-group-ingress --group-id ${{ secrets.EC2_SECURITY_GROUP_ID }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
+deploy:
+if: github.ref == 'refs/heads/master'
+runs-on: ubuntu-latest
+steps:
+- name: Public IP
+id: ip
+uses: haythem/public-ip@v1
+- uses: actions/checkout@v2
+- name: Deploy
+env:
+PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+USER_NAME: ${{ secrets.USER_NAME }}
+HOST_NAME: ${{ secrets.HOST_NAME }}
+ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+SECURITY_GROUP: ${{ secrets.SECURITY_GROUP }}
+run: |
+# https://github.com/haythem/public-ip
+IP_ADDRESS=echo ${{ steps.ip.outputs.ipv4 }}
+# AWS CLIをインストール
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+# AWS CLIに設定をする
+printf "${ACCESS_KEY}\n${SECRET_ACCESS_KEY}\nap-northeast-1\njson\n" | aws configure --profile eyemovic-dev
+aws configure get aws_access_key_id --profile eyemovic-dev
+# SSHポートを開放する
+aws --profile eyemovic-dev ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP} --protocol tcp --port 22 --cidr "$IP_ADDRESS"/32
+# SSH接続して、git pullする
+echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} '
+cd /home/ec2-user/Gitプロジェクト &&
+git checkout master &&
+git fetch --all &&
+git reset --hard origin/master &&
+git pull origin master
+'
+# SSHのポートを閉じる
+aws --profile eyemovic-dev ec2 revoke-security-group-ingress --group-id ${SECURITY_GROUP} --protocol tcp --port 22 --cidr "$IP_ADDRESS"/32
