@@ -161,7 +161,7 @@ ja:
   enums:
     study_record:
       study_cycle:
-        default: '忘却曲線'
+        default: '標準'
         one_week: '一週間'
         two_weeks: '二週間'
 
