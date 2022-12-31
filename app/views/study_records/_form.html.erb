@@ -32,7 +32,7 @@
   </div>
 
   <div class="actions  uk-margin-small-bottom">
-    <%= form.submit class: "uk-button uk-button-primary uk-button" %>
+    <%= form.submit class: "uk-button uk-button-primary uk-button", data: { confirm: confirm } %>
     <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 <% end %>

@@ -6,7 +6,7 @@
         <p>まずはカテゴリーを登録してください！</p>
       <% end %>
       <button class="uk-button uk-button-default uk-button uk-margin-small-bottom"><%= link_to 'カテゴリーを登録する', user_categories_path(current_user) %></button>
-      <%= render 'form', study_record: @study_record %>
+      <%= render 'form', { study_record: @study_record, confirm: '' } %>
       <button class="uk-button uk-button-default uk-button-small"><%= link_to t('.back'), user_study_records_path(current_user) %></button>
     </div>
   </div>
