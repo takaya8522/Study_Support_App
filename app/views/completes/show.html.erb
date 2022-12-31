@@ -17,11 +17,11 @@
       </p>
       <p>
         <strong><%= t('.study_cycle') %>:</strong>
-        <%= @study_record.study_cycle %>
+        <%= @study_record.enum_i18n(:study_cycle) %>
       </p>
       <p>
         <strong><%= t('.comprehension') %>:</strong>
-        <%= @study_record.comprehension %>
+        <%= @study_record.comprehension ? '理解済み' : '学習中' %>
       </p>
       <p>
         <strong><%= t('.created_at') %>:</strong>
@@ -29,7 +29,7 @@
       </p>
       <p>
         <strong><%= t('.review_count') %>:</strong>
-        <%= @study_record.review_count %>
+        <%= @study_record.review_count %>回
       </p>
       <%= render 'checked_form', { study_record: @study_record, study_timing: @study_timing, timing_result: @timing_result } %>
       <div class="uk-button-group">

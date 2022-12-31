@@ -157,7 +157,13 @@ ja:
     submit:
       create: 登録する
       update: 更新する
-      submit: 保存する    
+      submit: 保存する
+  enums:
+    study_record:
+      study_cycle:
+        default: '標準'
+        one_week: '一週間'
+        two_weeks: '二週間'
 
   date:
     abbr_day_names:
