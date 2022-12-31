@@ -21,6 +21,15 @@
     <%= form.text_area :content, placeholder: "内容を入力してください", class: "uk-textarea uk-form-width-large" %>
   </div>
 
+  <div>
+    <%= form.radio_button :study_cycle, :default %>
+    <%= form.label :study_cycle, '忘却曲線' %>
+    <%= form.radio_button :study_cycle, :one_week %>
+    <%= form.label :study_cycle, '一週間' %>
+    <%= form.radio_button :study_cycle, :two_weeks %>
+    <%= form.label :study_cycle, '二週間' %>
+  </div>
+
   <div class="actions  uk-margin-small-bottom">
     <%= form.submit class: "uk-button uk-button-primary uk-button" %>
   </div>

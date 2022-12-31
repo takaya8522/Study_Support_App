@@ -9,12 +9,10 @@ class StudyRecord < ApplicationRecord
     validates :study_cycle
     validates :user_id
     validates :review_count
-    validates :comprehension
   end
 
-  # enum理解度用
-  enum comprehension: { まだ理解していません: false, 理解しました: true }
-  enum study_cycle: { 忘却曲線: 0, 一週間: 1, 二週間: 2 }
+  # enum学習周期用
+  enum study_cycle: { default: 0, one_week: 1, two_weeks: 2 }
 
   # 投稿の中で未復習でかつ最短の通知時間の投稿を振り分けるメソッド
   def self.latest_study_record(study_records)

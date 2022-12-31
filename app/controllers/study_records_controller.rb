@@ -29,12 +29,12 @@ class StudyRecordsController < ApplicationController
 
     if @study_record.save
       # 予定復習タイミングを同時に作成
-      if @study_record.study_cycle == 0
+      if @study_record.study_cycle == 'default'
         StudyTiming.create!(study_record_id: @study_record.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,
                             third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
-      elsif @study_record.study_cycle == 1
+      elsif @study_record.study_cycle == 'one_week'
         StudyTiming.create!(study_record_id: @study_record.id, first_timing: 7.day.from_now, second_timing: 14.days.from_now,
-                            third_timing: 21.days.from_now, fourth_timing:  21.day.from_now)
+                            third_timing: 21.days.from_now, fourth_timing:  28.day.from_now)
       else
         StudyTiming.create!(study_record_id: @study_record.id, first_timing: 14.day.from_now, second_timing: 28.days.from_now,
                             third_timing: 42.days.from_now, fourth_timing:  56.day.from_now)
@@ -66,7 +66,7 @@ class StudyRecordsController < ApplicationController
   end
 
   def study_record_params
-    params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id, :category_id)
+    params.require(:study_record).permit(:title, :content, :study_cycle, :comprehension, :user_id, :category_id, :study_cycle)
   end
 
   # ransack用設定
