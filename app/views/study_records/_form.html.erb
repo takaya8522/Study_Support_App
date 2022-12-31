@@ -33,5 +33,6 @@
 
   <div class="actions  uk-margin-small-bottom">
     <%= form.submit class: "uk-button uk-button-primary uk-button" %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 <% end %>
