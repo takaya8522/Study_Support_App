@@ -1,6 +1,6 @@
 <div class="uk-margin-medium-bottom">
   <%# 復習したらチェックして送信するフォーム %>
-  <%= form_with(model: study_record, url: user_review_count_path(current_user), method: :patch, local: true) do |f| %>
+  <%= form_with(model: study_record, url: user_review_count_path(current_user), method: :patch, local: false) do |f| %>
     <table>
       <thead>
         <tr>
