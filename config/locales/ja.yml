@@ -17,7 +17,7 @@ ja:
       study_record_index_page: '学習記録一覧ページ'
       title: 'タイトル'
       content: '内容'
-      next_study: '次の復習時間'
+      next_study: '次の復習時間まで'
       review_count: '復習回数'
       create_record: '学習履歴を登録する'
       review_page: '復習画面'
@@ -67,7 +67,7 @@ ja:
     top:
       title: 'タイトル'
       content: '内容'
-      next_study: '次の復習時間'
+      next_study: '次の復習時間まで'
       review_count: '復習タイミングの順番'
       create_record: '学習履歴を登録する'
       review_page: '復習画面'
