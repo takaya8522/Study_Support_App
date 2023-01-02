@@ -10,27 +10,27 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.user_id = current_user.id
     if @category.save
-      flash[:warning] = 'カテゴリーの追加に成功しました'
+      flash[:warning] = t('categories.flash.create_success')
     else
-      flash[:danger] = 'カテゴリーの追加に失敗しました'
+      flash[:danger] = t('categories.flash.create_failure')
     end
     redirect_to request.referer
   end
 
   def update
     if @category.update(category_params)
-      flash[:warning] = 'カテゴリーの更新に成功しました'
+      flash[:warning] = t('categories.flash.update_success')
     else
-      flash[:danger] = 'カテゴリーの更新に失敗しました'
+      flash[:danger] = t('categories.flash.update_failure')
     end
     redirect_to request.referer
   end
 
   def destroy
     if @category.destroy
-      flash[:warning] = 'カテゴリーの削除に成功しました'
+      flash[:warning] = t('categories.flash.destroy_success')
     else
-      flash[:danger] = 'カテゴリーの削除に失敗しました'
+      flash[:danger] = t('categories.flash.destroy_failure')
     end
     redirect_to request.referer
   end

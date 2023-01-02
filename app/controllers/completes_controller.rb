@@ -17,10 +17,10 @@ class CompletesController < ApplicationController
   def change_comprehension
     study_record = StudyRecord.find(params[:id])
     if study_record.update(comprehension: true)
-      flash[:warning] = '理解度ステータスを更新しました'
+      flash[:warning] = t('completes.flash.update_success')
       redirect_to user_completes_path(user_id: current_user.id)
     else
-      flash[:danger] = '理解度ステータスの更新に失敗しました'
+      flash[:danger] = t('completes.flash.update_failure')
       redirect_to request.referer
     end
   end

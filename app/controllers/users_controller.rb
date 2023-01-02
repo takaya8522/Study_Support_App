@@ -14,18 +14,18 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      flash.now[:warning] = 'ユーザー情報更新しました。'
+      flash.now[:warning] = t('users.flash.update_success')
     else
-      flash.now[:danger] = 'ユーザー情報更新に失敗しました。'
+      flash.now[:danger] = t('users.flash.update_failure')
       render :edit
     end
   end
 
   def destroy
     if @user.destroy
-      flash.now[:warning] = 'ユーザー情報更新しました。'
+      flash.now[:warning] = t('users.flash.destroy_success')
     else
-      flash.now[:danger] = 'ユーザー情報更新に失敗しました。'
+      flash.now[:danger] = t('users.flash.destroy_failure')
       render :edit
     end
   end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def correct_user?
     return if User.find(params[:id]) == current_user
-    redirect_to root_path, alert: "他のユーザーページにはアクセスできません。"
+    redirect_to root_path, alert: t('users.flash.access_failure')
   end
 
   def user_params

@@ -16,17 +16,17 @@ class ReviewCountsController < ApplicationController
       timing_result.update(timing)
       study_record.update(review_count: count, comprehension: true)
       redirect_to user_complete_path(user_id: current_user.id)
-      flash[:notice] = '全ての復習が完了しました'
+      flash[:notice] = t('review_counts.flash.complete_success')
     elsif timing
       timing_result.update(timing)
       study_record.update(review_count: count)
-      flash[:notice] = '復習登録に成功しました'
+      flash[:notice] = t('review_counts.flash.update_success')
       redirect_to request.referer
     elsif timing == false
-      flash[:danger] = 'チェックを入れてから登録してください'
+      flash[:danger] = t('review_counts.flash.check_failure')
       redirect_to request.referer
     else
-      flash[:danger] = '復習登録に失敗しました'
+      flash[:danger] = t('review_counts.flash.update_failure')
       redirect_to request.referer
     end
   end

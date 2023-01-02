@@ -15,19 +15,19 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash.now[:warning] = 'ユーザー情報更新しました。'
+      flash.now[:warning] = t('admin.users.flash.update_success')
       redirect_to admin_users_path
     else
-      flash.now[:danger] = 'ユーザー情報更新に失敗しました。'
+      flash.now[:danger] = t('admin.users.flash.update_failure')
       render :edit
     end
   end
 
   def destroy
     if @user.destroy
-      flash[:warning] = 'ユーザーの削除に成功しました'
+      flash[:warning] = t('admin.users.flash.destory_success')
     else
-      flash[:danger] = 'ユーザーの削除に失敗しました'
+      flash[:danger] = t('admin.users.flash.destroy_failure')
     end
     redirect_to request.referer
   end

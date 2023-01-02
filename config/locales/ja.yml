@@ -50,6 +50,16 @@ ja:
     destroy:
       study_record_destroyed: 学習記録を削除しました
   users:
+    flash:
+      update_success: 'ユーザー情報更新しました'
+      update_failure: 'ユーザー情報更新に失敗しました'
+      destroy_success: 'ユーザー情報を削除しました'
+      destroy_failure: 'ユーザー情報削除に失敗しました'
+      access_failure: '他のユーザーページにはアクセスできません'
+      guest_failure: 'ゲストユーザーは削除できません'
+      guest_admin_failure: 'ゲスト管理者ユーザーは削除できません'
+      login_success: 'ゲストユーザーとしてログインしました'
+      login_admin_success: 'ゲスト管理者ユーザーとしてログインしました'
     show:
       show_page: 'マイページ'
       name: "名前"
@@ -72,6 +82,13 @@ ja:
       create_record: '学習履歴を登録する'
       review_page: '復習画面'
   categories:
+    flash:
+      create_success: 'カテゴリーの追加に成功しました'
+      create_failure: 'カテゴリーの追加に失敗しました'
+      update_success: 'カテゴリーの更新に成功しました'
+      update_failure: 'カテゴリーの更新に失敗しました'
+      destroy_success: 'カテゴリーの削除に成功しました'
+      destroy_failure: 'カテゴリーの削除に失敗しました'
     index:
       categories_index_page: 'カテゴリー登録ページ'
       name: '名前'
@@ -79,6 +96,9 @@ ja:
       show: '詳細'
       destroy: '削除'
   completes:
+    flash:
+      update_success: '理解度ステータスを更新しました'
+      update_failure: '理解度ステータスの更新に失敗しました'
     index:
       completed_study_record_index_page: '復習済み学習一覧ページ'
       title: 'タイトル'
@@ -99,6 +119,11 @@ ja:
       category: 'カテゴリー'
   admin:
     users:
+      flash:
+        update_success: 'ユーザー情報更新しました'
+        update_failure: 'ユーザー情報更新に失敗しました'
+        destroy_success: 'ユーザーの削除に成功しました'
+        destroy_failure: 'ユーザーの削除に失敗しました'
       index:
         admin_index_page: '管理者用ユーザ一覧ページ'
         user: 'ユーザー名'
@@ -122,6 +147,12 @@ ja:
         created_at: '作成日時'
         edit: '編集'
         destroy: '削除'
+  review_counts:
+    flash:
+      complete_success: '全ての復習が完了しました'
+      check_failure: 'チェックを入れてから登録してください'
+      update_success: '復習登録に成功しました'
+      update_failure: '復習登録に失敗しました'
   views:
     pagination:
       first: "&laquo; 最初"
