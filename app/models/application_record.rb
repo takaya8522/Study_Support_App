@@ -10,8 +10,8 @@ class ApplicationRecord < ActiveRecord::Base
 
   # enumをi18n化するためのメソッド②
   def self.enums_i18n(enum_name)
-    send(enum_name.to_s.pluralize).map do |key, value|
-      [I18n.t!("enums.#{model_name.i18n_key}.#{enum_name}.#{key}"), value]
-    end.to_h
+    send(enum_name.to_s.pluralize).transform_keys do |key|
+      I18n.t!("enums.#{model_name.i18n_key}.#{enum_name}.#{key}")
+    end
   end
 end
