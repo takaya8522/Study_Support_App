@@ -11,7 +11,7 @@
       <% end %>
       <%= form_with(model: [:admin, @user], local: true) do |f| %>
         <div class="field uk-margin-small-bottom">
-          <%= f.label :name, t('.name')  %><br>
+          <%= f.label :name, t('.name') %><br>
           <%= f.text_field :name, class: "uk-textarea uk-form-width-large" %>
         </div>
         <div class="field uk-margin-small-bottom">
