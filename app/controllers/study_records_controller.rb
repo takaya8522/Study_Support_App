@@ -47,7 +47,7 @@ class StudyRecordsController < ApplicationController
       # review_countをリセットする
       @study_record.update(review_count: 0)
 
-      redirect_to user_study_record_path(user_id: current_user.id, id: @study_record.id ), notice: t('.study_record_updated')
+      redirect_to user_study_record_path(user_id: current_user.id, id: @study_record.id), notice: t('.study_record_updated')
     else
       render :edit
     end
@@ -78,13 +78,13 @@ class StudyRecordsController < ApplicationController
     case study_cycle
     when 'default'
       StudyTiming.create!(study_record_id: @study_record.id, first_timing: 1.day.from_now, second_timing: 2.days.from_now,
-                          third_timing: 6.days.from_now, fourth_timing:  1.month.from_now)
+                          third_timing: 6.days.from_now, fourth_timing: 1.month.from_now)
     when 'one_week'
-      StudyTiming.create!(study_record_id: @study_record.id, first_timing: 7.day.from_now, second_timing: 14.days.from_now,
-                          third_timing: 21.days.from_now, fourth_timing:  28.day.from_now)
+      StudyTiming.create!(study_record_id: @study_record.id, first_timing: 7.days.from_now, second_timing: 14.days.from_now,
+                          third_timing: 21.days.from_now, fourth_timing: 28.days.from_now)
     when 'two_weeks'
-      StudyTiming.create!(study_record_id: @study_record.id, first_timing: 14.day.from_now, second_timing: 28.days.from_now,
-                          third_timing: 42.days.from_now, fourth_timing:  56.day.from_now)
+      StudyTiming.create!(study_record_id: @study_record.id, first_timing: 14.days.from_now, second_timing: 28.days.from_now,
+                          third_timing: 42.days.from_now, fourth_timing: 56.days.from_now)
     end
     TimingResult.create!(study_record_id: @study_record.id)
   end
