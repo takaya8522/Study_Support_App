@@ -38,9 +38,9 @@
                   <% i += 1 %>
                   <tr>
                     <%# タイトル %>
-                    <td><%= order_study_record[4] %></td>
+                    <td><%= order_study_record[4].truncate(10) %></td>
                     <%# 内容 %>
-                    <td><%= order_study_record[5] %></td>
+                    <td><%= order_study_record[5].truncate(20) %></td>
                     <%# 学習までの残り時間を表示 %>
                     <td>
                       <%= render "time_limit", study_timing: order_study_record[0] %>

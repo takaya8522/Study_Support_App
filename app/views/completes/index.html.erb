@@ -16,9 +16,9 @@
         <tbody>
           <% @study_records.each do |study_record| %>
             <tr>
-              <td><%= study_record.category.name %></td>
-              <td><%= study_record.title %></td>
-              <td><%= study_record.content %></td>
+              <td><%= study_record.category.name.truncate(7) %></td>
+              <td><%= study_record.title.truncate(10) %></td>
+              <td><%= study_record.content.truncate(20) %></td>
               <td><%= study_record.created_at.strftime('%Y/%m/%d %H:%M') %></td>
               <td><button class="uk-button uk-button-default uk-button-small"><%= link_to t('.review_page'), user_complete_path(user_id: current_user.id, id: study_record.id) %></button></td>
             </tr>
