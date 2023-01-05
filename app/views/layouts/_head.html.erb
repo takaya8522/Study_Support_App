@@ -1,45 +1,45 @@
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-    <title><%= full_title(yield(:title)) %></title>
-    <meta name="description" content="<%= full_description(yield(:description)) %>" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="<%= full_title(yield(:og_title)) %>" />
-    <meta property="og:description" content="<%= og_description(yield(:og_description)) %>" />
-    <meta property="og:url" content="<%= request.url %>" />
-    <meta property="og:image" content="<%= og_image(yield(:og_image)) %>" />
-    <meta property="og:site_name" content="StudySupport" /> <!--サイト名-->
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@Takaya8522" /> <!--ツイッターユーザー名-->
-    <meta name="twitter:image" content="<%= og_image(yield(:og_image)) %>" />
-    <meta name="twitter:title" content="<%= full_title(yield(:og_title)) %>" />
-    <meta name="twitter:description" content="<%= og_description(yield(:og_description)) %>" />
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+  <title><%= full_title(yield(:title)) %></title>
+  <meta name="description" content="<%= full_description(yield(:description)) %>" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="<%= full_title(yield(:og_title)) %>" />
+  <meta property="og:description" content="<%= og_description(yield(:og_description)) %>" />
+  <meta property="og:url" content="<%= request.url %>" />
+  <meta property="og:image" content="<%= og_image(yield(:og_image)) %>" />
+  <meta property="og:site_name" content="StudySupport" /> <!--サイト名-->
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Takaya8522" /> <!--ツイッターユーザー名-->
+  <meta name="twitter:image" content="<%= og_image(yield(:og_image)) %>" />
+  <meta name="twitter:title" content="<%= full_title(yield(:og_title)) %>" />
+  <meta name="twitter:description" content="<%= og_description(yield(:og_description)) %>" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag('favicon.png') %>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/9ec8e86bb6.js" crossorigin="anonymous"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag('favicon.png') %>
+  <%# ビューポイント設定 %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/9ec8e86bb6.js" crossorigin="anonymous"></script>
-
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/css/uikit.min.css" />
-
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.18/dist/js/uikit-icons.min.js"></script>
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
-  </head>
+  <%# appleデバイス用設定 %>
+  <link rel="apple-touch-icon" type="image/png" href="<%= asset_path "favicon.png" %>">
+  <meta name="apple-mobile-web-app-title" content="StudySupport">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
