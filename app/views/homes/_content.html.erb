@@ -1,18 +1,34 @@
 <%# 通常用始めての方用ボタン %>
-<div class="uk-margin-large-bottom uk-visible@s">
+<div class="uk-margin-large-bottom uk-visible@s" >
   <h1 style="font-size: 20px; font-family: 'Raleway', sans-serif;">初めてご利用の方</h1>
-  <div class="uk-button-group">
+  <div class="uk-button-group" >
     <%= link_to new_user_registration_path do %>
-      <button class="uk-button uk-button-default">アカウント登録</button>
+      <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-animation-scale-up uk-transform-origin-top-center">
+          <button class="uk-button uk-button-default">アカウント登録</button>
+        </div>
+      </div>
     <% end %>
     <%= link_to new_user_session_path do %>
+          <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-animation-scale-up uk-transform-origin-top-center">
       <button class="uk-button uk-button-default">ログイン</button>
+        </div>
+      </div>
     <% end %>
     <%= link_to users_guest_sign_in_path, method: :post do %>
+          <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-animation-scale-up uk-transform-origin-top-center">
       <button class="uk-button uk-button-default">ゲストログイン</button>
+              </div>
+      </div>
     <% end %>
     <%= link_to users_guest_admin_sign_in_path, method: :post do %>
+          <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-animation-scale-up uk-transform-origin-top-center">
       <button class="uk-button uk-button-default">ゲスト管理者ログイン</button>
+              </div>
+      </div>
     <% end %>
   </div>
 </div>
