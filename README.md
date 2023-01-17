@@ -1,5 +1,4 @@
-## README
-StudySupport  
+## StudySupport  
 url: https://study-support-app.jp/  
 (初めての方は画面を下にスクロールしてください。ページ下部にてゲストログインが可能です。)
 <br>
