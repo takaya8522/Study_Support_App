@@ -1,7 +1,7 @@
 ## README
 StudySupport  
 url: https://study-support-app.jp/
-(トップページ下部にゲストログイン機能)
+(初めての方は画面を下にスクロールしてください。ページ下部にてゲストログインが可能です。)
 ![トップページ](app/assets/images/top_page.png "top_page.png")
 
 ## 製品概要 / Overview
@@ -24,9 +24,9 @@ url: https://study-support-app.jp/
 - chartkick :グラフ機能
 - cancancan :管理者権限
 - kaminari :ページネーション 
-- rspec/rexml/factory_bot_rails :テストフレームワーク
-- mini_magick/aws-sdk-s3 :画像アップロード
-- rubocop/rubocop-performance/rubocop-rails/rubocop-rspec/erb_lint :Lintツール
+- rspec / factory_bot_rails :テストフレームワーク
+- mini_magick / aws-sdk-s3 :画像アップロード
+- rubocop / erb_lint :Lintツール
 
 ## 主要パッケージ / Main Packages
 - UIkit(フロントフレームワーク)
@@ -44,6 +44,7 @@ url: https://study-support-app.jp/
 - 忘却率を表すグラフの自動作成機能 (chartkick)
 - ゲストログイン、ゲスト管理者ログイン機能 (devise)
 - レスポンシブデザイン対応 (Uikit)
+- UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
 - AWS/Docker/RDS/ALBを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
