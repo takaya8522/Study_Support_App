@@ -1,50 +1,52 @@
 <h1><%= t('.categories_index_page') %></h1>
-<div>
-  <%= form_with(model: [current_user, @category], method: :post, local: true) do |f| %>
-    <% if @category.errors.any? %>
-      <div>
-        <h2><%= pluralize(@category.errors.count, "件") %>エラーが発生しました！</h2>
-        <ul>
-          <% @category.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+<div class="uk-width-4-5@s uk-position-relative">
+  <div class="uk-card uk-card-default uk-card-body">
+    <%= form_with(model: [current_user, @category], method: :post, local: true) do |f| %>
+      <% if @category.errors.any? %>
+        <div>
+          <h2><%= pluralize(@category.errors.count, "件") %>エラーが発生しました！</h2>
+          <ul>
+            <% @category.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.text_field :name, class: "uk-textarea uk-form-width-large", placeholder: "新しく追加したいカテゴリーを入力してください" %>
+      <%= f.submit "追加", class: "uk-button uk-button-primary uk-button-small uk-margin-medium-bottom" %>
+    <% end %>
+  
+    <% if @categories.present? %>
+    <div class="">
+      <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+          <tr>
+            <td>現在のカテゴリー名</td>
+            <td>変更後のカテゴリー名</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <%= form_with(model: [current_user, category], method: :patch, local: true) do |f| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= f.text_field :name, class: "uk-textarea uk-form-width-medium" %></td>
+              <td><%= f.submit t('.edit'), class: "uk-button uk-button-primary uk-button-small" %></td>
+              <td><%= link_to t('.destroy'), user_category_path(user_id: current_user.id, id: category.id), method: :delete, data: {confirm: "紐付いた投稿がすべて削除されますが、本当に削除しますか？"}, class: "uk-button uk-button-default uk-button-small" %></td>
+            </tr>
+            <% end %>
           <% end %>
-        </ul>
+        </tbody>
+      </table>
+    </div>
+      <%= paginate @categories %>
+    <% else %>
+      <div>
+        <p>学習したいカテゴリー名を入れてください。</p>
       </div>
     <% end %>
-    <%= f.text_field :name, class: "uk-textarea uk-form-width-large", placeholder: "新しく追加したいカテゴリーを入力してください" %>
-    <%= f.submit "追加", class: "uk-button uk-button-primary uk-button-small uk-margin-medium-bottom" %>
-  <% end %>
-
-  <% if @categories.present? %>
-  <div class="">
-    <table class="uk-table uk-table-small uk-table-divider">
-      <thead>
-        <tr>
-          <td>現在のカテゴリー名</td>
-          <td>変更後のカテゴリー名</td>
-          <td></td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |category| %>
-          <%= form_with(model: [current_user, category], method: :patch, local: true) do |f| %>
-          <tr>
-            <td><%= category.name %></td>
-            <td><%= f.text_field :name, class: "uk-textarea uk-form-width-medium" %></td>
-            <td><%= f.submit t('.edit'), class: "uk-button uk-button-primary uk-button-small" %></td>
-            <td><%= link_to t('.destroy'), user_category_path(user_id: current_user.id, id: category.id), method: :delete, data: {confirm: "紐付いた投稿がすべて削除されますが、本当に削除しますか？"}, class: "uk-button uk-button-default uk-button-small" %></td>
-          </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
   </div>
-    <%= paginate @categories %>
-  <% else %>
-    <div>
-      <p>学習したいカテゴリー名を入れてください。</p>
-    </div>
-  <% end %>
 </div>
 
 <button class="uk-button uk-button-default uk-margin-medium-top"><%= link_to '戻る', new_user_study_record_path(current_user) %></button>
