@@ -1,7 +1,7 @@
 ## README
 StudySupport  
 url: https://study-support-app.jp/
-![タイトルロゴ](app/assets/images/cover_photo.png "cover_photo.png")
+![トップページ](app/assets/images/main_page.png "main_page.png")
 
 ## 製品概要 / Overview
 プログラミングを勉強してみると覚えることが多すぎて大変！少しでも効率的に勉強をしたい！  
@@ -36,11 +36,11 @@ url: https://study-support-app.jp/
 ## 機能 / Functions
 - スケジュール自動作成機能
 - 復習タイミング自動作成機能
-- ajaxを使い、非同期通信で復習タイミングを登録する機能
+- 非同期通信で復習タイミングを登録する機能 (ajax)
 - 残りの復習までのカウントダウン表示機能
-- 忘却率を表すグラフの自動作成機能
-- ゲストログイン、ゲスト管理者ログイン機能
-- レスポンシブデザイン対応
+- 忘却率を表すグラフの自動作成機能 (chartkick)
+- ゲストログイン、ゲスト管理者ログイン機能 (devise)
+- レスポンシブデザイン対応 (Uikit)
 - AWS/Docker/RDS/ALBを取り入れたインフラ構成
 
 ## インフラ図 / Infrastructure
@@ -50,6 +50,9 @@ url: https://study-support-app.jp/
 ## レスポンシブデザイン / Responsive Designs
 使用ソフト: Mockup Photos
 ![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
+
+## デモ画像 / Demo Image
+![デモ画像](app/assets/images/main_page.png "main_page")
 
 ## 実行手順 / Procedure
 ```
