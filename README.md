@@ -1,6 +1,7 @@
 ## README
 StudySupport  
 url: https://study-support-app.jp/
+(トップページ下部にゲストログイン機能)
 ![トップページ](app/assets/images/top_page.png "top_page.png")
 
 ## 製品概要 / Overview
@@ -34,10 +35,12 @@ url: https://study-support-app.jp/
 - Lorem Picsum(画像表示API)
 
 ## 機能 / Functions
-- スケジュール自動作成機能
-- 復習タイミング自動作成機能
+- スケジュール自動作成機能 (Gem使用無し)
+- 復習タイミング自動作成機能 (Gem使用無し)
+- 残りの復習までのカウントダウン表示機能 (Gem使用無し)
+- 管理者用ページ機能 (Gem使用無し)
+- カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
 - 非同期通信で復習タイミングを登録する機能 (ajax)
-- 残りの復習までのカウントダウン表示機能
 - 忘却率を表すグラフの自動作成機能 (chartkick)
 - ゲストログイン、ゲスト管理者ログイン機能 (devise)
 - レスポンシブデザイン対応 (Uikit)
