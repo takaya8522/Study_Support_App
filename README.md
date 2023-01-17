@@ -1,7 +1,7 @@
 ## README
 StudySupport  
 url: https://study-support-app.jp/
-![トップページ](app/assets/images/main_page.png "main_page.png")
+![トップページ](app/assets/images/top_page.png "top_page.png")
 
 ## 製品概要 / Overview
 プログラミングを勉強してみると覚えることが多すぎて大変！少しでも効率的に勉強をしたい！  
