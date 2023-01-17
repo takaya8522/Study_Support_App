@@ -91,3 +91,9 @@ https://docs.google.com/spreadsheets/d/18VkBayIlMdg-bML_hHs3Ka77BNrWWdjBx12f_PmN
 ## ワイヤーフレーム / Wire frame
 使用ソフト: figma  
 https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0?node-id=0%3A1
+
+## 今後実装したいもの / My plans
+- Github Actionsを使ったCI/CD実装
+- デプロイ先をEC2からFargateへ移行
+- フレームワークにReactを実装
+- 友達登録機能（他のユーザーの投稿を見れるようにする）追加
