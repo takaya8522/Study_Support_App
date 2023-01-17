@@ -28,29 +28,23 @@ url: https://study-support-app.jp/
 - mini_magick / aws-sdk-s3 :画像アップロード
 - rubocop / erb_lint :Lintツール
 
-## 主要パッケージ / Main Packages
-- UIkit(フロントフレームワーク)
-- Font Awesome(アイコン画像)
-- AOS(jsライブラリ)
-- Lorem Picsum(画像表示API)
+## インフラ図 / Infrastructure
+使用ソフト: draw.io  
+![インフラ図](app/assets/images/infrastructure.png "infrastructure")
 
 ## 機能 / Functions
-- スケジュール自動作成機能 (Gem使用無し)
+- スケジュール・復習タイミング自動作成 / 残り時間表示機能 (Gem使用無し)
 ![スケジュール](app/assets/images/schedule_page.png "schedule_page")
-- 復習タイミング自動作成機能 (Gem使用無し)
-- 残りの復習までのカウントダウン表示機能 (Gem使用無し)
 - 管理者用ページ機能 (Gem使用無し)
 ![管理者画面](app/assets/images/admin_page.png "admin_page")
-- カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
-- 非同期通信で復習タイミングを登録する機能 (ajax)
-- 忘却率を表すグラフの自動作成機能 (chartkick)
+- 忘却率を表すグラフの自動作成機能 (chartkick) / 非同期通信で復習タイミングを登録する機能 (ajax)
 ![グラフ機能](app/assets/images/review_page.png "review_page")
-- ゲストログイン、ゲスト管理者ログイン機能 (devise)
 - レスポンシブデザイン対応 (Uikit)
 ![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
 - UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
 ![使い方](app/assets/images/how_to_use_page.png "how_to_use_page")
-- AWS/Docker/RDS/ALBを取り入れたインフラ構成
+- カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
+- ゲストログイン、ゲスト管理者ログイン機能 (devise)
 
 ## 使い方 / How to use
 1. 「学習記録を登録する」をクリックしてください。
@@ -59,10 +53,6 @@ url: https://study-support-app.jp/
 「スケジュール」ページにて、次の学習予定一覧が自動的に作成されます。
 1. 復習時間になりましたら「復習画面」をクリックし、復習登録をしてください。  
 復習が4回終わると、学習完了済みとして登録されます。
-
-## インフラ図 / Infrastructure
-使用ソフト: draw.io  
-![インフラ図](app/assets/images/infrastructure.png "infrastructure")
 
 ## ER図 / Entity Relationship Diagram
 使用ソフト: draw.io  
