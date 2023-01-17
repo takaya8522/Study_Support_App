@@ -6,6 +6,21 @@ url: https://study-support-app.jp/
 
 ![トップページ](app/assets/images/top_page.png "top_page.png")
 
+[![Status](https://img.shields.io/badge/status-stable-blue.svg)](https://github.com/takaya8522/Study_Support_App/tree/main)
+[![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)](https://github.com/takaya8522/Study_Support_App/tree/main)
+[![Release](https://img.shields.io/github/release/takaya8522/Study_Support_App.svg?maxAge=3600&label=download)](https://github.com/takaya8522/Study_Support_App/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/takaya8522/Study_Support_App/total?style=flat-square)](https://github.com/takaya8522/Study_Support_App/releases/latest)
+[![Stars](https://img.shields.io/github/stars/takaya8522/Study_Support_App.svg?style=social&label=Stars)](https://github.com/takaya8522/Study_Support_App/stargazers)
+
+[![Last Commit](https://img.shields.io/github/last-commit/takaya8522/Study_Support_App.svg)](https://github.com/takaya8522/Study_Support_App/commits)
+[![Issues Open](https://img.shields.io/github/issues/takaya8522/Study_Support_App.svg)](https://github.com/takaya8522/Study_Support_App/issues)
+[![Issues Closed](https://img.shields.io/github/issues-closed/takaya8522/Study_Support_App.svg)](https://github.com/takaya8522/Study_Support_App/issues?q=is%3Aissue+is%3Aclosed)
+[![Code Size](https://img.shields.io/github/languages/code-size/takaya8522/Study_Support_App.svg)](https://github.com/takaya8522/Study_Support_App)
+[![Repo Size](https://img.shields.io/github/repo-size/takaya8522/Study_Support_App.svg)](https://github.com/takaya8522/Study_Support_App)
+
+
+<br>
+
 ## 製品概要 / Overview
 プログラミングを勉強してみると覚えることが多すぎて大変！少しでも効率的に勉強をしたい！  
 そんなプログラミングスクール同期生の悩みを解決したい！という一心で「StudySupport」を開発しました。  
