@@ -1,7 +1,7 @@
 <% if user_signed_in? && @study_records.empty? %>
   <div>
     <h1 class="uk-heading-line"><span>次の学習予定</span></h1>
-    <h4>下をクリックして、学習記録を登録してください！！！</h4>
+    <h4>まずは下をクリックして、学習記録を登録してください。</h4>
      <button class="uk-button uk-button-default"><%= link_to t('.create_record'), new_user_study_record_path(current_user) %></button>
   </div>
 <% elsif user_signed_in? %>
