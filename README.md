@@ -1,6 +1,6 @@
 ## StudySupport  
 https://study-support-app.jp/  
-(初めての方は画面を下にスクロールしてください。ページ下部にてゲストログインが可能です。)
+(アプリ内のページ下部にて、ゲストログインが可能です。)
 <br>
 
 ![トップページ](app/assets/images/top_page.png "top_page.png")
