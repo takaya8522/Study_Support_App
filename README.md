@@ -7,7 +7,7 @@ url: https://study-support-app.jp/
 
 [![Status](https://img.shields.io/badge/status-stable-blue.svg)](https://github.com/takaya8522/Study_Support_App/tree/main)
 [![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)](https://github.com/takaya8522/Study_Support_App/tree/main)
-[![Release](https://img.shields.io/github/release/takaya8522/Study_Support_App.svg?maxAge=3600&label=download)](https://github.com/takaya8522/Study_Support_App/releases/latest)
+[![Release](https://img.shields.io/github/v/release/takaya8522/Study_Support_App.svg?maxAge=3600&label=download)](https://github.com/takaya8522/Study_Support_App/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/takaya8522/Study_Support_App/total?style=flat-square)](https://github.com/takaya8522/Study_Support_App/releases/latest)
 [![Stars](https://img.shields.io/github/stars/takaya8522/Study_Support_App.svg?style=social&label=Stars)](https://github.com/takaya8522/Study_Support_App/stargazers)
 
