@@ -44,15 +44,8 @@ url: https://study-support-app.jp/
 - UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
 ![使い方](app/assets/images/how_to_use_page.png "how_to_use_page")
 - カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
+![カテゴリー](app/assets/images/category_page.png "category_page")
 - ゲストログイン、ゲスト管理者ログイン機能 (devise)
-
-## 使い方 / How to use
-1. 「学習記録を登録する」をクリックしてください。
-1. 「カテゴリーを登録する」をクリックし、カテゴリーを登録してください。
-1. 必要事項を記入して、学習記録を登録してください。  
-「スケジュール」ページにて、次の学習予定一覧が自動的に作成されます。
-1. 復習時間になりましたら「復習画面」をクリックし、復習登録をしてください。  
-復習が4回終わると、学習完了済みとして登録されます。
 
 ## ER図 / Entity Relationship Diagram
 使用ソフト: draw.io  
@@ -61,6 +54,14 @@ url: https://study-support-app.jp/
 ## 画面遷移図 / Screen Transition Diagram
 使用ソフト: draw.io  
 ![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
+
+## アプリの使い方 / How to use
+1. 「学習記録を登録する」をクリックしてください。
+1. 「カテゴリーを登録する」をクリックし、カテゴリーを登録してください。
+1. 必要事項を記入して、学習記録を登録してください。  
+「スケジュール」ページにて、次の学習予定一覧が自動的に作成されます。
+1. 復習時間になりましたら「復習画面」をクリックし、復習登録をしてください。  
+復習が4回終わると、学習完了済みとして登録されます。
 
 ## 実行手順 / Procedure
 ```
