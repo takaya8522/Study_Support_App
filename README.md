@@ -36,33 +36,41 @@ url: https://study-support-app.jp/
 
 ## 機能 / Functions
 - スケジュール自動作成機能 (Gem使用無し)
+![スケジュール](app/assets/images/schedule_page.png "schedule_page")
 - 復習タイミング自動作成機能 (Gem使用無し)
 - 残りの復習までのカウントダウン表示機能 (Gem使用無し)
 - 管理者用ページ機能 (Gem使用無し)
+![管理者画面](app/assets/images/admin_page.png "admin_page")
 - カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
 - 非同期通信で復習タイミングを登録する機能 (ajax)
 - 忘却率を表すグラフの自動作成機能 (chartkick)
+![グラフ機能](app/assets/images/review_page.png "review_page")
 - ゲストログイン、ゲスト管理者ログイン機能 (devise)
 - レスポンシブデザイン対応 (Uikit)
+![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
 - UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
+![使い方](app/assets/images/how_to_use_page.png "how_to_use_page")
 - AWS/Docker/RDS/ALBを取り入れたインフラ構成
 
 ## 使い方 / How to use
 1. 「学習記録を登録する」をクリックしてください。
 1. 「カテゴリーを登録する」をクリックし、カテゴリーを登録してください。
-1. 必要事項を記入して、学習記録を登録してください。「スケジュール」ページにて、次の学習予定一覧が自動的に作成されます。
-1. 復習時間になりましたら「復習画面」をクリックし、復習登録をしてください。復習が4回終わると、学習完了済みとして登録されます。
+1. 必要事項を記入して、学習記録を登録してください。  
+「スケジュール」ページにて、次の学習予定一覧が自動的に作成されます。
+1. 復習時間になりましたら「復習画面」をクリックし、復習登録をしてください。  
+復習が4回終わると、学習完了済みとして登録されます。
 
 ## インフラ図 / Infrastructure
 使用ソフト: draw.io  
 ![インフラ図](app/assets/images/infrastructure.png "infrastructure")
 
-## レスポンシブデザイン / Responsive Designs
-使用ソフト: Mockup Photos
-![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
+## ER図 / Entity Relationship Diagram
+使用ソフト: draw.io  
+![ER図](app/assets/images/ER_diagram.png "ER_diagram")
 
-## デモ画像 / Demo Image
-![デモ画像](app/assets/images/main_page.png "main_page")
+## 画面遷移図 / Screen Transition Diagram
+使用ソフト: draw.io  
+![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
 
 ## 実行手順 / Procedure
 ```
@@ -80,11 +88,3 @@ https://docs.google.com/spreadsheets/d/18VkBayIlMdg-bML_hHs3Ka77BNrWWdjBx12f_PmN
 ## ワイヤーフレーム / Wire frame
 使用ソフト: figma  
 https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0?node-id=0%3A1
-
-## ER図 / Entity Relationship Diagram
-使用ソフト: draw.io  
-![ER図](app/assets/images/ER_diagram.png "ER_diagram")
-
-## 画面遷移図 / Screen Transition Diagram
-使用ソフト: draw.io  
-![画面遷移図](app/assets/images/screen_transition_diagram.png "screen_transition_diagram")
