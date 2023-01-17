@@ -47,16 +47,16 @@ url: https://study-support-app.jp/
 ![グラフ機能](app/assets/images/review_page.png "review_page")
 <br>
 
-- レスポンシブデザイン対応 (Uikit)
-![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
-<br>
-
 - UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
 ![使い方](app/assets/images/how_to_use_page.png "how_to_use_page")
 <br>
 
 - カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
 ![カテゴリー](app/assets/images/category_page.png "category_page")
+<br>
+
+- レスポンシブデザイン対応 (Uikit)
+![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
 <br>
 
 ## ER図 / Entity Relationship Diagram
