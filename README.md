@@ -51,6 +51,7 @@ https://study-support-app.jp/
 ## 機能 / Functions
 - スケジュール・復習タイミング自動作成 / 残り時間表示機能 (Gem使用無し)
 ![スケジュール](app/assets/images/schedule_page.png "schedule_page")
+アソシエーションされた子モデルを順番に並べるのではなく、
 <br>
 
 - 管理者用ページ機能 (Gem使用無し)
@@ -109,5 +110,5 @@ https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3
 ## 今後実装したいもの / My plans
 - Github Actionsを使ったCI/CD実装
 - デプロイ先をEC2からFargateへ移行
-- フレームワークにReactを実装
+- UIkitだとコードの可読性や拡張性が悪い、Reactを実装して改善できないか
 - 友達登録機能（他のユーザーの投稿を見れるようにする）追加
