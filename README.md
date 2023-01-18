@@ -51,27 +51,35 @@ https://study-support-app.jp/
 ## 機能 / Functions
 - スケジュール・復習タイミング自動作成 / 残り時間表示機能 (Gem使用無し)
 ![スケジュール](app/assets/images/schedule_page.png "schedule_page")
-アソシエーションされた子モデルを順番に並べるのではなく、
+タスクを登録すると学習タイミングが4件が自動的に登録され、スケジュールが作成されます。
+学習タイミングはorderで順番に並べるのではなく、残り時間昇順、カテゴリーは何か、現在の復習タイミングは何回目かということを順に判断し、現在のステータスによって表示させる内容に変化を付けています。（つまり復習完了した復習タイミングは表示させないようにしてあります。）
 <br>
 
 - 管理者用ページ機能 (Gem使用無し)
 ![管理者画面](app/assets/images/admin_page.png "admin_page")
+この管理者ページはadmin権限があるユーザーのみ表示できるよう設定してあります。
+登録ユーザーの一覧・ユーザーの投稿数・ユーザーの投稿一覧を閲覧、ユーザーの情報を変更（管理者権限付与可）、ユーザーの削除が可能となっています。
 <br>
 
 - 忘却率を表すグラフの自動作成機能 (chartkick) / 非同期通信で復習タイミングを登録する機能 (ajax)
 ![グラフ機能](app/assets/images/review_page.png "review_page")
+復習した際どれだけ時間を節約できたかを表す「忘却率」をグラフで表示することができます。
 <br>
 
 - UI/UX改善 (ダッシュボード実装、使い方表示用のボタン実装など)
 ![使い方](app/assets/images/how_to_use_page.png "how_to_use_page")
+始めてアプリを使うユーザーでも簡単に使用できるように、わかりやすいダッシュボード実装しました。
+また、ページごとに使い方を表示させるボタンを設置しました。
 <br>
 
 - カテゴリーを登録する際、ページ遷移無しでCRUD機能を実行する機能 (ajax)
 ![カテゴリー](app/assets/images/category_page.png "category_page")
+カテゴリーを登録する際、毎回ページ遷移があると操作性が落ちてしまうため、ページ遷移させずに登録をすることができます。
 <br>
 
 - レスポンシブデザイン対応 (Uikit)
 ![レスポンシブデザイン](app/assets/images/responsive_designs.png "responsive_designs")
+通常のパソコンでの閲覧、iPad、iPhoneでの閲覧を想定し、レスポンシブなデザインに対応してあります。
 <br>
 
 ## ER図 / Entity Relationship Diagram
