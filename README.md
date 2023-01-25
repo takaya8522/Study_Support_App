@@ -137,5 +137,5 @@ https://www.figma.com/file/0tbZ7puai7oA7PGhsBlbHV/%E3%83%AF%E3%82%A4%E3%83%A4%E3
 ## 今後実装したいもの / My plans
 - Github Actionsを使ったCI/CD実装
 - デプロイ先をEC2からFargateへ移行
-- UIkitだとコードの可読性や拡張性が悪い、Reactを実装して改善できないか
+- UIkitだとコードの可読性や拡張性が悪い、Reactを実装して改善できないか。またSPAでの開発。
 - 友達登録機能（他のユーザーの投稿を見れるようにする）追加
