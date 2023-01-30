@@ -47,7 +47,7 @@ StudySupportは自分オリジナルの勉強スケジュールを作成する�
 - OS: Linux
 - Back End: Ruby 3.0.1, Ruby on Rails 6.1.7 ( Puma ), Nginx
 - Front End: HTML, CSS, JavaScript(JQuery), UIkit
-- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, ALB, Route53, S3 )
+- Infra: Docker, Docker-Compose, AWS ( EC2, VPC, IAM, RDS, ALB, ACM, Route53, S3 )
 - DB: PostgreSQL
 
 ## 主要Gem / Main Gems
