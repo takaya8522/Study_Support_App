@@ -56,7 +56,7 @@ StudySupportは自分オリジナルの勉強スケジュールを作成する�
 - chartkick :グラフ機能
 - cancancan :管理者権限
 - kaminari :ページネーション 
-- rspec / factory_bot_rails :テストフレームワーク
+- rspec / factory_bot_rails :テストフレームワーク(Model Spec, System Spec)
 - mini_magick / aws-sdk-s3 :画像アップロード
 - rubocop / erb_lint :Lintツール
 
